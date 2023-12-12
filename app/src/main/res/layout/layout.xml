@@ -9,7 +9,6 @@
             android:layout_height="800dp"
             android:clipToOutline="true"
             android:background="#03BF46"
-
             tools:ignore="MissingConstraints">
         <TextView
                 android:layout_marginLeft="185dp"
@@ -22,6 +21,7 @@
                 android:outlineSpotShadowColor="#F9F9F9"
                 android:textColor="#FFFF"
                 />
+
     </RelativeLayout>
     <!-- Auto layout, variables, and unit scale are not yet supported -->
 
