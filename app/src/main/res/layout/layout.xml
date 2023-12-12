@@ -11,16 +11,17 @@
             android:background="#03BF46"
             tools:ignore="MissingConstraints">
         <TextView
-                android:layout_marginLeft="185dp"
+                android:layout_marginLeft="140dp"
                 android:layout_marginTop="350dp"
+                android:textSize="49dp"
                 android:text="Эллай"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#00FFFFFF"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/pattaya"
                 android:outlineSpotShadowColor="#F9F9F9"
                 android:textColor="#FFFF"
-                />
+        />
 
     </RelativeLayout>
     <!-- Auto layout, variables, and unit scale are not yet supported -->
