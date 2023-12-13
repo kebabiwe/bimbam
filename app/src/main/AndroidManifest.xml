@@ -16,7 +16,9 @@
 
         <activity
                 android:name=".MainActivity"
-                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,20 +27,47 @@
 
         <activity
                 android:name="Mainactivity1"
-                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
+
         </activity>
 
         <activity
                 android:name=".splachactivity"
-                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
+
         </activity>
+
+        <activity
+                android:name=".Registration"
+                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
+
+        </activity>
+
+        <activity
+                android:name=".Registration1"
+                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
+
+        </activity>
+
+        <activity
+                android:name=".Login"
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
+
+        </activity>
+
+        <activity
+                android:name=".Confirmation"
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
+
+        </activity>
+
     </application>
 </manifest>
