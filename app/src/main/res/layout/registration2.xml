@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_constraintStart_toStartOf="parent"
+            android:layout_constraintEnd_toEndOf="parent"
+            android:layout_constraintBottom_toBottomOf="parent"
+            android:clipToOutline="true"
+            android:background="#F9F9F9"
+    />
+
+    <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/image"
+            android:layout_width="236dp"
+            android:layout_height="251dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clipToOutline="true"
+            android:layout_constraintTop_toTopOf="parent"
+            android:layout_constraintStart_toStartOf="parent"
+            android:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="212dp" tools:layout_editor_absoluteX="87dp"
+            android:contentDescription="@string/todo"/>
+
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="307dp"
+            android:layout_height="112dp"
+            android:fontFamily="@font/pattaya"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:text="Регистрация прошла успешно"
+            android:lineSpacingExtra="0sp"
+            android:translationY="-0.25sp"
+            android:gravity="center_horizontal|top"
+            android:textAppearance="@style/title"
+            tools:layout_editor_absoluteY="82dp"
+            tools:layout_editor_absoluteX="52dp"
+            tools:ignore="MissingConstraints"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
