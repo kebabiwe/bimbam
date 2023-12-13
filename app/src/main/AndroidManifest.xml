@@ -15,7 +15,7 @@
             android:theme="@style/Theme.Bimbam">
 
         <activity
-                android:name=".Layout"
+                android:name=".MainActivity"
                 android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-                android:name=".Layout1"
+                android:name="Mainactivity1"
                 android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,16 +33,7 @@
         </activity>
 
         <activity
-                android:name=".Mainactivity"
-                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-                android:name=".Mainactivity1"
+                android:name=".splachactivity"
                 android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
