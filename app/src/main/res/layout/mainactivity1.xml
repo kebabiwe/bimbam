@@ -19,7 +19,7 @@
 
     <ImageView
             android:id="@+id/image"
-            android:src="@drawable/image"
+            android:src="@drawable/image0"
             android:layout_width="236dp"
             android:layout_height="251dp"
             android:layout_centerHorizontal="true"

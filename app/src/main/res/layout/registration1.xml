@@ -59,7 +59,7 @@
                     android:layout_height="8dp"
                     android:layout_marginLeft="314dp"
                     android:layout_marginTop="284dp"
-                    android:background="@drawable/vector_1"/>
+                    android:background="@drawable/vector_11"/>
 
         </RelativeLayout>
         <TextView
@@ -124,7 +124,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="569dp"
                 android:clipToOutline="true"
-                android:background="@drawable/button"
+                android:background="@drawable/button0"
 
         />
     </RelativeLayout>
