@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
         android:layout_height="match_parent">
     <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,9 +16,10 @@
             android:background="#F9F9F9"
            />
     <!-- Auto layout, variables, and unit scale are not yet supported -->
+
     <ImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/allay.svg"
+            android:id="@+id/image"
+            android:src="@drawable/image"
             android:layout_width="236dp"
             android:layout_height="251dp"
             android:layout_centerHorizontal="true"
@@ -27,23 +28,26 @@
             android:layout_constraintTop_toTopOf="parent"
             android:layout_constraintStart_toStartOf="parent"
             android:layout_constraintEnd_toEndOf="parent"
-    />
-
+            tools:layout_editor_absoluteY="212dp" tools:layout_editor_absoluteX="87dp"
+            android:contentDescription="@string/todo"/>
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
     <TextView
-            android:id="@+id/text"
-            android:layout_width="182dp"
+            android:id="@+id/text_1"
+            android:fontFamily="Open Sans"
+
+            android:layout_width="206dp"
             android:layout_height="22dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="196dp"
-            android:text="@string/text"
-            android:textAppearance="@style/text"
+            android:layout_marginTop="166dp"
+            android:text="@string/text_1"
+            android:textAppearance="@style/text_1"
             android:gravity="center_horizontal|top"
-            android:layout_constraintTop_toTopOf="parent"
-            android:layout_constraintStart_toStartOf="parent"
-            android:layout_constraintEnd_toEndOf="parent"
-            android:layout_constraintBottom_toBottomOf="parent"
-            android:clipToOutline="true"
-    />
+            tools:ignore="MissingConstraints"/>
+    <!--
+      Font family: Open Sans
+      Line height: 22sp
+      (identical to box height)
+      -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
