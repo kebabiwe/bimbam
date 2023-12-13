@@ -34,7 +34,7 @@
         </activity>
 
         <activity
-                android:name=".splachactivity"
+                android:name=".splashactivity"
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
@@ -43,13 +43,17 @@
 
         <activity
                 android:name=".Registration"
-                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
 
         </activity>
 
         <activity
                 android:name=".Registration1"
-                android:theme="@style/Theme.Bimbam.NoActionBar" android:exported="true" tools:ignore="WrongManifestParent">
+                android:theme="@style/Theme.Bimbam.NoActionBar"
+                android:exported="true"
+                tools:ignore="WrongManifestParent">
 
         </activity>
 

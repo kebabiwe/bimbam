@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class splashactivity extends AppCompatActivity {
 
+
     private static final long SPLASH_TIME_OUT = 3000; // 3 секунды
     private static final int REPEAT_COUNT = 2; // Количество повторений
     private int repeatCounter = 0; // Счетчик повторений

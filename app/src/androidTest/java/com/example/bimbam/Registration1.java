@@ -12,7 +12,7 @@ public class Registration1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mainactivity1);
+        setContentView(R.layout.registration1);
 
         // Assuming your ImageView is in the activity_main1.xml layout
         ImageView image = findViewById(R.id.image);
