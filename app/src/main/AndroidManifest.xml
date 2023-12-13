@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-                android:name="Mainactivity1"
+                android:name=".Mainactivity1"
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
