@@ -22,13 +22,12 @@
             android:text="Я - Ваш персональный помощник"
             android:layout_width="266dp"
             android:layout_height="22dp"
-            android:layout_marginTop="196dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:textAppearance="@style/text_2"
             android:gravity="center_horizontal|top"
-            tools:ignore="MissingConstraints"/>
-
+            tools:ignore="MissingConstraints" tools:layout_editor_absoluteY="162dp"
+            tools:layout_editor_absoluteX="72dp"/>
     <TextView
             android:id="@+id/text_1"
             android:fontFamily="sans-serif-condensed"
