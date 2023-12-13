@@ -27,17 +27,18 @@
             android:background="@drawable/form"
             tools:ignore="MissingConstraints" tools:layout_editor_absoluteY="295dp"
             tools:layout_editor_absoluteX="30dp">
+
         <TextView
                 android:id="@+id/some_id"
                 android:layout_width="49dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
                 android:layout_alignParentTop="true"
+                android:layout_marginTop="17dp"
                 android:text="Логин"
-                android:fontFamily="sans-serif-condensed"
                 android:textAppearance="@style/some_id"
-                android:gravity="top"
-                android:layout_marginLeft="16dp" android:layout_marginTop="17dp"/>
+                android:gravity="top"/>
     </RelativeLayout>
     <RelativeLayout
             android:id="@+id/form"
@@ -54,10 +55,11 @@
                 android:layout_width="59dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
                 android:text="Пароль"
                 android:textAppearance="@style/some_id"
-                android:gravity="top"
-                android:layout_marginLeft="17dp"/>
+                android:gravity="top"/>
     </RelativeLayout>
     <!-- Auto layout, variables, and unit scale are not yet supported -->
     <RelativeLayout
