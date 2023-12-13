@@ -30,6 +30,10 @@
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -38,6 +42,10 @@
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -46,6 +54,10 @@
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -54,6 +66,10 @@
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -62,6 +78,10 @@
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
@@ -70,6 +90,10 @@
                 android:theme="@style/Theme.Bimbam.NoActionBar"
                 android:exported="true"
                 tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
