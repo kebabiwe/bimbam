@@ -46,7 +46,6 @@
             tools:layout_editor_absoluteX="102dp"/>
 
     <!-- Auto layout, variables, and unit scale are not yet supported -->
-
     <RelativeLayout
             android:id="@+id/button"
             android:layout_width="320dp"
@@ -54,9 +53,30 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
-            android:background="@drawable/button"
-            tools:ignore="MissingConstraints" tools:layout_editor_absoluteY="585dp"
+            android:background="@drawable/button1"
+            tools:ignore="MissingConstraints" tools:layout_editor_absoluteY="516dp"
             tools:layout_editor_absoluteX="45dp"/>
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <TextView
+            android:id="@+id/button"
+            android:layout_width="124dp"
+            android:layout_height="26dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Регистрация"
+            android:fontFamily="sans-serif-condensed"
+            android:textAppearance="@style/button"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            tools:ignore="MissingConstraints" tools:layout_editor_absoluteY="590dp"
+            tools:layout_editor_absoluteX="160dp"/>
+    <!--
+      Font family: Open Sans
+      Line height: 26sp
+      (identical to box height)
+      -->
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
