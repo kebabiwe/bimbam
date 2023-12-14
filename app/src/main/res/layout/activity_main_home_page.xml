@@ -55,7 +55,9 @@
             android:id="@+id/imageView2"
             tools:layout_editor_absoluteY="35dp"
             tools:layout_editor_absoluteX="29dp"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints"
+
+    />
 
     <View
             android:id="@+id/profile"
@@ -77,8 +79,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
-            tools:layout_editor_absoluteY="408dp"
-            tools:layout_editor_absoluteX="35dp"
             android:textAppearance="@style/title"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.112" app:layout_constraintVertical_bias="0.579"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
