@@ -5,97 +5,26 @@
 
     <application
             android:allowBackup="true"
-            android:fullBackupContent="@xml/backup_rules"
-            tools:targetApi="31"
             android:dataExtractionRules="@xml/data_extraction_rules"
-            android:label="Эллай"
+            android:fullBackupContent="@xml/backup_rules"
             android:icon="@mipmap/ic_launcher"
+            android:label="Эллай"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Theme.Bimbam">
-
+            android:theme="@style/Theme.Bimbam"
+            tools:targetApi="31">
         <activity
-                android:name=".MainActivity"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
+                android:name=".SplashActivity1"
+                android:exported="false"/>
+        <activity
+                android:name=".SplashActivityy"
+                android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity
-                android:name=".Mainactivity1"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-                android:name=".splashactivity"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-                android:name=".Registration"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-                android:name=".Registration1"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-                android:name=".Login"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
-        <activity
-                android:name=".Confirmation"
-                android:theme="@style/Theme.Bimbam.NoActionBar"
-                android:exported="true"
-                tools:ignore="WrongManifestParent">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
-
     </application>
+
 </manifest>
