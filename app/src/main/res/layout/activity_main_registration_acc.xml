@@ -122,6 +122,18 @@
                     android:textAppearance="@style/some_id"
                     android:gravity="top"/>
         </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/button"
+                android:layout_width="320dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="607dp"
+                android:background="@drawable/button4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
 
+        />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
