@@ -11,13 +11,12 @@
             android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:clipToOutline="true"
             android:background="#F9F9F9"
             tools:ignore="MissingConstraints"/>
     <ImageView
             android:id="@+id/image"
-            android:src="@drawable/image0"
+            android:src="@drawable/image"
             android:layout_width="236dp"
             android:layout_height="251dp"
             android:layout_centerHorizontal="true"

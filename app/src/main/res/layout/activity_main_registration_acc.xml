@@ -15,10 +15,13 @@
             tools:ignore="MissingConstraints">
 
         <RelativeLayout
+                android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintVertical_bias="0.376"
                 android:id="@+id/form"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -43,11 +46,15 @@
         </RelativeLayout>
 
 
+
         <RelativeLayout
+                android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintVertical_bias="0.376"
                 android:id="@+id/form0"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -71,10 +78,13 @@
         </RelativeLayout>
 
         <RelativeLayout
+                android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintVertical_bias="0.376"
                 android:id="@+id/form4"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -113,9 +123,11 @@
                 android:layout_marginTop="106dp"
                 app:layout_constraintTop_toTopOf="parent"/>
 
-
-
         <RelativeLayout
+                android:layout_centerHorizontal="true"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintVertical_bias="0.376"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
