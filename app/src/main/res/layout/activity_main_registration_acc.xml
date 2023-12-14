@@ -26,12 +26,12 @@
                 android:layout_marginTop="410dp">
 
             <TextView
-                    android:id="@+id/some_id2"
                     android:layout_width="59dp"
                     android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="20dp"
                     android:layout_centerVertical="true"
+                    android:id="@+id/some_id2"
                     android:layout_marginTop="30dp"
                     android:text="Пароль"
                     android:textAppearance="@style/some_id"

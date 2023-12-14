@@ -19,6 +19,7 @@
             android:textAppearance="@style/title"
             android:lineSpacingExtra="0sp"
             android:translationY="-0.25sp"
+
             android:gravity="top"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
