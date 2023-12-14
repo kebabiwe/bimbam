@@ -15,6 +15,10 @@
             tools:ignore="MissingConstraints">
 
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -40,6 +44,10 @@
 
 
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form0"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -63,6 +71,10 @@
         </RelativeLayout>
 
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form4"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -104,6 +116,10 @@
 
 
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form3"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
