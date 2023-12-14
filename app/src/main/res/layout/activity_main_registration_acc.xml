@@ -27,12 +27,12 @@
 
             <TextView
                     android:id="@+id/some_id2"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_width="59dp"
+                    android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
                     android:layout_centerVertical="true"
+                    android:layout_marginTop="30dp"
                     android:text="Пароль"
                     android:textAppearance="@style/some_id"
                     android:gravity="top"/>
@@ -50,13 +50,13 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="313dp">
             <TextView
-                    android:id="@+id/e_mail"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_width="46dp"
+                    android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
                     android:layout_centerVertical="true"
+                    android:id="@+id/e_mail"
+                    android:layout_marginTop="30dp"
                     android:text="@string/e_mail"
                     android:textAppearance="@style/e_mail"
                     android:gravity="top"/>
@@ -74,12 +74,13 @@
                 android:layout_marginTop="216dp">
 
             <TextView
-                    android:id="@+id/some_id"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_width="33dp"
+                    android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/some_id"
                     android:layout_centerVertical="true"
                     android:text="Имя"
                     android:textAppearance="@style/some_id"
@@ -113,13 +114,13 @@
                 android:background="@drawable/form">
 
             <TextView
-                    android:id="@+id/some_id1"
-                    android:layout_width="152dp"
-                    android:layout_height="37dp"
+                    android:layout_width="146dp"
+                    android:layout_height="22dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="30dp"
                     android:layout_centerVertical="true"
+                    android:id="@+id/some_id1"
+                    android:layout_marginTop="30dp"
                     android:text="Повторите пароль"
                     android:textAppearance="@style/some_id"
                     android:gravity="top"/>
