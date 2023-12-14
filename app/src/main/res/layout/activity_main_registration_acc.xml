@@ -63,7 +63,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-                android:id="@+id/form"
+                android:id="@+id/form4"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
                 android:layout_alignParentTop="true"
@@ -122,8 +122,8 @@
 
             <TextView
                     android:id="@+id/some_id1"
-                    android:layout_width="80dp"
-                    android:layout_height="30dp"
+                    android:layout_width="152dp"
+                    android:layout_height="37dp"
                     android:layout_alignParentLeft="true"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
