@@ -6,5 +6,59 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity_confirmation">
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:clipToOutline="true"
+            android:background="#F9F9F9"
+            tools:ignore="MissingConstraints"/>
+    <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/image0"
+            android:layout_width="236dp"
+            android:layout_height="251dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clipToOutline="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteY="212dp" tools:layout_editor_absoluteX="87dp"
+            android:contentDescription="@string/todo"/>
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="307dp"
+            android:layout_height="112dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:text="Регистрация прошла успешно"
+            android:fontFamily="@font/pattaya"
+            android:textAppearance="@style/title"
+            android:lineSpacingExtra="0sp"
+            android:translationY="-0.25sp"
+            android:gravity="center_horizontal|top"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.432" app:layout_constraintVertical_bias="0.093"/>
+    <RelativeLayout
+            android:id="@+id/button"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:background="@drawable/button0"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.494" app:layout_constraintVertical_bias="0.86"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
