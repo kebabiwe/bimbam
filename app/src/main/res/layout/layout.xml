@@ -7,25 +7,28 @@
     <!-- Auto layout, variables, and unit scale are not yet supported -->
     <RelativeLayout
             android:id="@+id/welcomescreen"
-            android:layout_width="415dp"
-            android:layout_height="800dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:clipToOutline="true"
             android:background="#03BF46"
-            tools:ignore="MissingConstraints">
+            tools:ignore="MissingConstraints"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <TextView
-                android:layout_marginLeft="140dp"
-                android:layout_marginTop="350dp"
-                android:textSize="49dp"
+                android:id="@+id/myTextView"
+                android:layout_width="175.41dp"
+                android:layout_height="49.03dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
                 android:text="Эллай"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:textSize="49dp"
                 android:backgroundTint="#00FFFFFF"
                 android:fontFamily="@font/pattaya"
                 android:outlineSpotShadowColor="#F9F9F9"
-                android:textColor="#FFFF"
-
-        />
-
+                android:textColor="#FFFF"/>
     </RelativeLayout>
     <!-- Auto layout, variables, and unit scale are not yet supported -->
 
