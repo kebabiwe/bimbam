@@ -8,8 +8,8 @@
         tools:context=".MainActivity_registrationAcc">
     <RelativeLayout
             android:id="@+id/sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="412dp"
+            android:layout_height="800dp"
             android:clipToOutline="true"
             android:background="#F9F9F9"
             tools:ignore="MissingConstraints">
@@ -23,13 +23,7 @@
                 android:background="@drawable/form"
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="410dp"
-                android:layout_centerHorizontal="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.494" app:layout_constraintVertical_bias="0.499">
+                android:layout_marginTop="410dp">
 
             <TextView
                     android:id="@+id/some_id"
@@ -53,14 +47,7 @@
                 android:background="@drawable/form"
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="313dp"
-                android:layout_centerHorizontal="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintVertical_bias="0.499">
+                android:layout_marginTop="313dp">
             <TextView
                     android:id="@+id/e_mail"
                     android:layout_width="46dp"
@@ -76,20 +63,13 @@
         <RelativeLayout
                 android:id="@+id/form"
                 android:layout_width="320dp"
+                android:layout_height="56dp"
+                android:layout_alignParentTop="true"
                 android:clipToOutline="true"
                 android:background="@drawable/form"
                 android:layout_marginLeft="35dp"
                 tools:ignore="MissingConstraints"
-                android:layout_marginTop="216dp"
-                android:layout_height="56dp"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.494" app:layout_constraintVertical_bias="0.499">
-                >
+                android:layout_marginTop="216dp">
 
             <TextView
                     android:id="@+id/some_id"
@@ -109,16 +89,17 @@
                 android:id="@+id/title"
                 android:layout_width="222dp"
                 android:layout_height="56dp"
-                android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:text="Регистрация"
                 android:textAppearance="@style/title"
                 android:lineSpacingExtra="0sp"
-                android:gravity="top|center_horizontal"
+                android:gravity="top"
                 android:fontFamily="@font/pattaya"
                 android:layout_marginLeft="83dp"
-                android:layout_marginTop="106dp"/>
-
+                android:layout_marginTop="106dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
         <RelativeLayout
                 android:id="@+id/form"
@@ -128,14 +109,7 @@
                 android:layout_marginLeft="35dp"
                 android:layout_alignParentTop="true"
                 android:clipToOutline="true"
-                android:background="@drawable/form"
-                android:layout_centerHorizontal="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintVertical_bias="0.499"  >
+                android:background="@drawable/form">
 
             <TextView
                     android:id="@+id/some_id"
