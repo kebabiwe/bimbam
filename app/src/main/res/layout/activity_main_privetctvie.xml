@@ -46,7 +46,6 @@
             android:text="Привет! Меня зовут Эллай"
             android:textAppearance="@style/text_1"
             android:gravity="center_horizontal|top"
-
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
