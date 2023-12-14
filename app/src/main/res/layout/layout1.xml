@@ -6,4 +6,28 @@
 
     <!-- Auto layout, variables, and unit scale are not yet supported -->
 
+
+    <RelativeLayout
+            android:id="@+id/welcomescreen1"
+            android:layout_width="415dp"
+            android:layout_height="800dp"
+            android:clipToOutline="true"
+            android:background="#03BF46"
+            tools:ignore="MissingConstraints">
+        <TextView
+                android:layout_marginLeft="32.5dp"
+                android:layout_marginTop="350dp"
+                android:textSize="42.5dp"
+                android:text="Добро пожаловать!"
+                android:scaleType = "center"
+                android:layout_width="800dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:fontFamily="@font/pattaya"
+                android:outlineSpotShadowColor="#F9F9F9"
+                android:textColor="#FFFF"
+
+        />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
