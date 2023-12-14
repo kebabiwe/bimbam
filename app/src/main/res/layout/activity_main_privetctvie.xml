@@ -44,18 +44,17 @@
 
     <!-- Auto layout, variables, and unit scale are not yet supported -->
 
+
     <ImageView
             android:id="@+id/image"
-            android:src="@drawable/image0"
+            android:src="@drawable/image"
             android:layout_width="236dp"
             android:layout_height="251dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:clipToOutline="true"
-
-            tools:layout_editor_absoluteY="212dp" tools:layout_editor_absoluteX="87dp"
-            android:contentDescription="@string/todo" tools:ignore="MissingConstraints"/>
-
+            android:contentDescription="@string/todo" tools:layout_editor_absoluteY="203dp"
+            tools:layout_editor_absoluteX="87dp"/>
     <RelativeLayout
             android:id="@+id/button"
             android:layout_width="320dp"

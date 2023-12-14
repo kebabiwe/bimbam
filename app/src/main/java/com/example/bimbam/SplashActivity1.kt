@@ -13,8 +13,8 @@ class SplashActivity1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash1)
 
-        val imageButton2 = findViewById<RelativeLayout>(R.id.welcomescreen1)
-        imageButton2.setOnClickListener {
+        val imageButton3 = findViewById<RelativeLayout>(R.id.welcomescreen1)
+        imageButton3.setOnClickListener {
             val intent = Intent(this@SplashActivity1, MainActivity_privetctvie::class.java)
             startActivity(intent)
         }

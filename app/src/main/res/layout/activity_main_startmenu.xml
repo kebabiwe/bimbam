@@ -17,9 +17,10 @@
           tools:ignore="MissingConstraints"/>
   <!-- Auto layout, variables, and unit scale are not yet supported -->
 
+  <!-- Auto layout, variables, and unit scale are not yet supported -->
   <ImageView
           android:id="@+id/image"
-          android:src="@drawable/image0"
+          android:src="@drawable/image"
           android:layout_width="236dp"
           android:layout_height="251dp"
           android:layout_centerHorizontal="true"
@@ -27,7 +28,6 @@
           android:clipToOutline="true"
           tools:layout_editor_absoluteY="212dp" tools:layout_editor_absoluteX="87dp"
           android:contentDescription="@string/todo" tools:ignore="MissingConstraints"/>
-  <!-- Auto layout, variables, and unit scale are not yet supported -->
   <TextView
           android:id="@+id/text_1"
           android:fontFamily="sans-serif-condensed"
