@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RelativeLayout
 
-class MainActivity_registrationAcc : AppCompatActivity() {
+class MainActivity_registrationChild : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_registration_acc)
+        setContentView(R.layout.activity_main_registration_child)
         val RelativeLayout = findViewById<RelativeLayout>(R.id.sign_up)
         RelativeLayout.setOnClickListener {
-            val intent = Intent(this@MainActivity_registrationAcc, MainActivity_registrationChild::class.java)
+            val intent = Intent(this@MainActivity_registrationChild, MainActivity_confirmation::class.java)
             startActivity(intent)
-        }
     }
 }
+    }

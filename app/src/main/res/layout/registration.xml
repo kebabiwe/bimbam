@@ -56,17 +56,6 @@
                     android:textAppearance="@style/e_mail"
                     android:gravity="top"/>
         </RelativeLayout>
-        <!-- Auto layout, variables, and unit scale are not yet supported -->
-        <!--
-          Font family: Open Sans
-          Line height: 22sp
-          (identical to box height)
-          -->
-
-        <!-- styles.xml -->
-
-
-        <!-- strings.xml -->
 
         <RelativeLayout
                 android:id="@+id/form"
