@@ -8,14 +8,18 @@
         tools:context=".MainActivity_registrationChild">
     <RelativeLayout
             android:id="@+id/sign_up"
-            android:layout_width="412dp"
-            android:layout_height="800dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:clipToOutline="true"
             android:background="#F9F9F9"
             tools:ignore="MissingConstraints">
         <!-- Auto layout, variables, and unit scale are not yet supported -->
 
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -34,7 +38,9 @@
                 android:text="Дата рождения"
                 android:textAppearance="@style/text"
                 android:gravity="top"
-                android:layout_marginLeft="40dp" android:layout_marginTop="319dp"/>
+                android:layout_marginLeft="40dp" android:layout_marginTop="319dp" android:layout_alignParentEnd="true"
+                android:layout_marginEnd="252dp" android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"/>
         <TextView
                 android:id="@+id/text"
                 android:layout_width="102dp"
@@ -44,9 +50,15 @@
                 android:text="Имя ребенка"
                 android:textAppearance="@style/text"
                 android:gravity="top"
-                android:layout_marginLeft="40dp" android:layout_marginTop="144dp"/>
+                android:layout_marginLeft="40dp" android:layout_marginTop="144dp" android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp" android:layout_alignParentEnd="true"
+                android:layout_marginEnd="269dp"/>
 
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -66,16 +78,22 @@
 
         </RelativeLayout>
         <TextView
-                android:id="@+id/text"
                 android:layout_width="31dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
+                android:id="@+id/text"
                 android:text="Пол"
                 android:textAppearance="@style/text"
                 android:gravity="top"
-                android:layout_marginLeft="40dp" android:layout_marginTop="232dp"/>
+                android:layout_marginLeft="40dp" android:layout_marginTop="232dp" android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp"
+        />
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -86,21 +104,24 @@
                 tools:ignore="MissingConstraints"
                 android:layout_marginTop="172dp">
         </RelativeLayout>
+
         <TextView
                 android:id="@+id/title"
-                android:layout_width="277dp"
+                android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="71dp"
+                android:gravity="center"
                 android:text="Введите данные"
                 android:fontFamily="@font/pattaya"
                 android:textAppearance="@style/title"
                 android:lineSpacingExtra="0sp"
+                android:layout_marginTop="71dp"/>
 
-                android:gravity="top"
-        />
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/form"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -118,8 +139,14 @@
                 android:text="Индивидуальная особенность"
                 android:textAppearance="@style/text"
                 android:gravity="top"
-                android:layout_marginLeft="40dp" android:layout_marginTop="410dp"/>
+                android:layout_marginLeft="40dp" android:layout_marginTop="410dp" android:layout_alignParentStart="true"
+                android:layout_marginStart="40dp" android:layout_alignParentEnd="true"
+                android:layout_marginEnd="133dp"/>
         <RelativeLayout
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:id="@+id/button"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
