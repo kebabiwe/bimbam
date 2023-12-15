@@ -11,10 +11,16 @@
             android:id="@+id/rectangle_5"
             android:layout_width="424dp"
             android:layout_height="194dp"
+           android:layout_marginTop="-20dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:background="@drawable/rectangle_5"
             tools:ignore="MissingConstraints"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+
             tools:layout_editor_absoluteY="-24dp" tools:layout_editor_absoluteX="-7dp"/>
 
     <androidx.cardview.widget.CardView
@@ -40,35 +46,34 @@
 
     <RelativeLayout
             android:id="@+id/navbar"
-            android:layout_width="351dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentTop="false"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="25dp"
-            tools:layout_editor_absoluteX="29dp"/>
+            tools:layout_editor_absoluteX="29dp">
 
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/logo1"
-            android:id="@+id/imageView2"
-            tools:layout_editor_absoluteY="35dp"
-            tools:layout_editor_absoluteX="29dp"
-            tools:ignore="MissingConstraints"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/logo1"
+        android:id="@+id/imageView2"
+        tools:ignore="MissingConstraints"/>
 
-    <View
-            android:id="@+id/profile"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/profile1"
-            tools:layout_editor_absoluteY="26dp"
-            tools:layout_editor_absoluteX="337dp"
-            tools:ignore="MissingConstraints"/>
+        <View
+                android:id="@+id/profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:layout_centerVertical="true"
+        android:background="@drawable/profile1"
+        tools:ignore="MissingConstraints"/>
+    </RelativeLayout>
 
     <TextView
             android:text="Список дел"
@@ -77,8 +82,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
-            tools:layout_editor_absoluteY="408dp"
-            tools:layout_editor_absoluteX="35dp"
             android:textAppearance="@style/title"
-            tools:ignore="MissingConstraints"/>
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.112" app:layout_constraintVertical_bias="0.579"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
