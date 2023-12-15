@@ -14,6 +14,9 @@
             android:theme="@style/Theme.Bimbam"
             tools:targetApi="31">
         <activity
+                android:name=".MainActivity_you_acc"
+                android:exported="false"/>
+        <activity
                 android:name=".MainActivity_homePage"
                 android:exported="false"/>
         <activity
