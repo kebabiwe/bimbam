@@ -46,9 +46,10 @@
     </style>
     <style name="frame_edit">
         <item name="android:elevation">20dp</item>
-        <item name="android:width">320dp</item>
-        <item name="android:height">56dp</item>
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">56dp</item>
     </style>
+
     <style name="name">
         <item name="android:textSize">32sp</item>
         <item name="android:textColor">#03BF46</item>
