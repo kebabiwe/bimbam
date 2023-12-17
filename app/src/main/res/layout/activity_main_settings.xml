@@ -60,8 +60,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
-            style="@style/frame_elevation"
-            android:background="@drawable/frame_30"
+            style="@style/frame_edit"
             tools:layout_editor_absoluteY="235dp" tools:layout_editor_absoluteX="19dp"
             tools:ignore="MissingConstraints">
         <TextView
