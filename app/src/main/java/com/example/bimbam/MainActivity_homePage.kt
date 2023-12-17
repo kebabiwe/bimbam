@@ -11,9 +11,16 @@ class MainActivity_homePage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_home_page)
 
-        val View = findViewById<View>(R.id.profile)
-        View.setOnClickListener {
+        val profileView = findViewById<View>(R.id.profile)
+        profileView.setOnClickListener {
             val intent = Intent(this@MainActivity_homePage, MainActivity_you_acc::class.java)
+            startActivity(intent)
+        }
+
+
+        val View = findViewById<View>(R.id.icon5)
+        View.setOnClickListener {
+            val intent = Intent(this@MainActivity_homePage, MainActivity_settings::class.java)
             startActivity(intent)
         }
     }
