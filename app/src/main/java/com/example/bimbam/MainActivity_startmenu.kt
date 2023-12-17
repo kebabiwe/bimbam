@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RelativeLayout
 import android.widget.TextView
-import org.w3c.dom.Text
 
 class MainActivity_startmenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
