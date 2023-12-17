@@ -10,10 +10,19 @@
             android:id="@+id/rectangle_5"
             android:layout_width="424dp"
             android:layout_height="194dp"
+            android:layout_marginTop="-20dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/rectangle_5" tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="-24dp" tools:layout_editor_absoluteX="-7dp"/>
+            android:background="@drawable/rectangle_5"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            tools:layout_editor_absoluteY="-24dp"
+            tools:layout_editor_absoluteX="-7dp"/>
 
     <TextView
             app:layout_constraintStart_toStartOf="parent"

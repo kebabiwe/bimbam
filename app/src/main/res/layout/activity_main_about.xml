@@ -29,6 +29,51 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.023">
 
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp">
+
+                <TextView
+                        android:id="@+id/some_id"
+                        android:layout_width="320dp"
+                        android:layout_height="60dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Эллай - Ваш помощник, разработанный специально для родителей и опекунов детей с ограниченными возможностями."
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.27sp"
+                        android:gravity="top"
+                        tools:layout_editor_absoluteY="214dp" tools:layout_editor_absoluteX="29dp"/>
+
+                <ImageView
+                        android:layout_width="236dp"
+                        android:layout_height="251dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:clipToOutline="true"
+                        android:id="@+id/image"
+                        android:src="@drawable/image"
+                        android:contentDescription="@string/todo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.497"
+                        app:layout_constraintVertical_bias="0.612"/>
+
+                <TextView
+                        android:id="@+id/some_id98"
+                        android:layout_width="370dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/image"
+                        android:text="Он обеспечивает персонализированный и всесторонний уход за ребёнком, отслеживая важные аспекты его здоровья и развития. 1. Эллай — напомнит вам о медицинских процедурах, приёме лекарств, специальных упражнениях и других важных моментах по уходу за ребёнком. 2. Приложение предлагает календарь событий и задач, где можно отмечать выполненные действия, чтобы обеспечить систематичность и точность ухода. 3. Оно содержит базу знаний о различных состояниях ОВЗ, советы по уходу, а также возможность консультироваться с экспертами в случае необходимости 4. Эллай адаптируется под индивидуальные потребности ребёнка, предоставляя персонализированные рекомендации и расписание действий. 5. Эллай уведомит о предстоящих визитах к врачу, терапевтических сессиях и других важных событиях, связанных с заботой о здоровье ребёнка. 6. Эллай обладает дружественным интерфейсом, который легко использовать даже для тех, кто не имеет опыта работы с подобными приложениями."
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:gravity="top"
+                        android:layout_centerHorizontal="true"/>
+        </ScrollView>
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,45 +117,8 @@
             android:lineSpacingExtra="-7sp"
             android:gravity="center_horizontal|top"/>
 
-    <TextView
-            android:id="@+id/some_id"
-            android:layout_width="320dp"
-            android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Эллай - Ваш помощник, разработанный специально для родителей и опекунов детей с ограниченными возможностями."
-            android:textAppearance="@style/some_id"
-            android:lineSpacingExtra="1sp"
-            android:translationY="-0.27sp"
-            android:gravity="top"
-            tools:layout_editor_absoluteY="214dp" tools:layout_editor_absoluteX="29dp"/>
 
-    <ImageView
-            android:layout_width="236dp"
-            android:layout_height="251dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:clipToOutline="true"
-            android:id="@+id/image"
-            android:src="@drawable/image"
-            android:contentDescription="@string/todo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.497" app:layout_constraintVertical_bias="0.612"/>
 
-    <TextView
-            android:id="@+id/some_id98"
-            android:layout_width="370dp"
-            android:layout_height="469dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Он обеспечивает персонализированный и всесторонний уход за ребёнком, отслеживая важные аспекты его здоровья и развития. 1. Эллай — напомнит вам о медицинских процедурах, приёме лекарств, специальных упражнениях и других важных моментах по уходу за ребёнком. 2. Приложение предлагает календарь событий и задач, где можно отмечать выполненные действия, чтобы обеспечить систематичность и точность ухода. 3. Оно содержит базу знаний о различных состояниях ОВЗ, советы по уходу, а также возможность консультироваться с экспертами в случае необходимости 4. Эллай адаптируется под индивидуальные потребности ребёнка, предоставляя персонализированные рекомендации и расписание действий. 5. Эллай уведомит о предстоящих визитах к врачу, терапевтических сессиях и других важных событиях, связанных с заботой о здоровье ребёнка. 6. Эллай обладает дружественным интерфейсом, который легко использовать даже для тех, кто не имеет опыта работы с подобными приложениями."
-            android:textAppearance="@style/some_id"
-            android:lineSpacingExtra="1sp"
-            android:translationY="-0.27sp"
-            android:gravity="top"
-            tools:layout_editor_absoluteY="557dp" tools:layout_editor_absoluteX="25dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
