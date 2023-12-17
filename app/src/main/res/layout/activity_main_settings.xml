@@ -53,7 +53,6 @@
             android:background="@drawable/profile1" tools:layout_editor_absoluteY="26dp"
             tools:layout_editor_absoluteX="337dp" tools:ignore="MissingConstraints"/>
     <RelativeLayout
-
             android:id="@+id/frame_30"
             android:layout_width="366dp"
             android:layout_height="55dp"
@@ -61,7 +60,8 @@
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
             style="@style/frame_edit"
-            tools:layout_editor_absoluteY="235dp" tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="235dp"
+            tools:layout_editor_absoluteX="19dp"
             tools:ignore="MissingConstraints">
         <TextView
                 android:id="@+id/some_id"
@@ -79,7 +79,6 @@
         />
     </RelativeLayout>
     <!-- нет тени! -->
-    <!-- Auto layout, variables, and unit scale are not yet supported -->
     <RelativeLayout
             android:id="@+id/tabbar"
             android:layout_width="400dp"
