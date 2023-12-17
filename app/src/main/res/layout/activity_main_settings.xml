@@ -148,7 +148,7 @@
             android:layout_width="366dp"
             android:layout_height="55dp"
             android:clipToOutline="true"
-            android:background="@drawable/frame_30"
+
             android:elevation="8dp"
             tools:layout_editor_absoluteY="318dp" tools:layout_editor_absoluteX="21dp"
             tools:ignore="MissingConstraints">
@@ -182,7 +182,7 @@
             android:layout_width="366dp"
             android:layout_height="55dp"
             android:clipToOutline="true"
-            android:background="@drawable/frame_30"
+
             android:elevation="8dp"
             tools:layout_editor_absoluteY="406dp" tools:layout_editor_absoluteX="22dp"
             tools:ignore="MissingConstraints">
@@ -216,7 +216,7 @@
             android:layout_width="366dp"
             android:layout_height="55dp"
             android:clipToOutline="true"
-            android:background="@drawable/frame_30"
+
             android:elevation="8dp"
             tools:layout_editor_absoluteY="494dp" tools:layout_editor_absoluteX="25dp"
             tools:ignore="MissingConstraints">
