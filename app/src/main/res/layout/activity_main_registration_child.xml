@@ -109,6 +109,16 @@
                 android:layout_marginLeft="35dp"
                 tools:ignore="MissingConstraints"
                 android:layout_marginTop="172dp">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:textColor="@color/black"
+                    android:id="@+id/childname"
+                    android:background="@android:color/transparent"/>
         </RelativeLayout>
 
         <TextView
