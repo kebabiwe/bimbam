@@ -9,7 +9,7 @@
             android:id="@+id/sign_up"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clipToOutline="true"
+
             android:background="#F9F9F9"
             tools:ignore="MissingConstraints">
         <!-- Auto layout, variables, and unit scale are not yet supported -->
@@ -27,7 +27,7 @@
                 android:layout_width="320dp"
                 android:layout_height="56dp"
                 android:layout_alignParentTop="true"
-                android:clipToOutline="true"
+
                 android:background="@drawable/form"
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
