@@ -72,14 +72,14 @@
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="259dp">
-            <View
-                    android:id="@+id/vector_1"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginLeft="314dp"
-                    android:layout_marginTop="284dp"
-                    android:background="@drawable/vector_11"/>
 
+            <ImageView
+                    android:layout_width="20dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="28dp" app:srcCompat="@drawable/vector_11"
+                    android:id="@+id/imageView" android:layout_alignParentEnd="true" android:layout_marginEnd="20dp"
+                    android:layout_alignParentTop="true"/>
         </RelativeLayout>
         <TextView
                 android:layout_width="31dp"
@@ -148,7 +148,8 @@
                 android:layout_marginLeft="35dp"
                 android:layout_alignParentTop="true"
                 android:clipToOutline="true"
-                android:background="@drawable/form"/>
+                android:background="@drawable/form">
+    </RelativeLayout>
         <TextView
                 android:id="@+id/text5"
                 android:layout_width="238dp"
@@ -178,7 +179,8 @@
                 android:clipToOutline="true"
                 android:background="@drawable/button0"
 
-        />
+        >
+    </RelativeLayout>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
