@@ -32,6 +32,15 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="410dp">
 
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:inputType="text"
+                    android:text="Name"
+                    android:ems="10"
+                    android:id="@+id/editTextText2"/>
             <TextView
                     android:layout_width="59dp"
                     android:layout_height="22dp"
@@ -64,6 +73,13 @@
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="313dp">
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="Name"
+                    android:ems="10"
+                    android:id="@+id/editTextText"/>
             <TextView
                     android:layout_width="46dp"
                     android:layout_height="22dp"
@@ -95,6 +111,13 @@
                 tools:ignore="MissingConstraints"
                 android:layout_marginTop="216dp">
 
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="Name"
+                    android:ems="10"
+                    android:id="@+id/editTextText3"/>
             <TextView
                     android:layout_width="33dp"
                     android:layout_height="22dp"
@@ -141,6 +164,13 @@
                 android:clipToOutline="true"
                 android:background="@drawable/form">
 
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:text="Name"
+                    android:ems="10"
+                    android:id="@+id/editTextText4"/>
             <TextView
                     android:layout_width="146dp"
                     android:layout_height="22dp"
