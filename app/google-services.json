@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "743913590870",
+    "project_id": "bimbam-132d9",
+    "storage_bucket": "bimbam-132d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743913590870:android:08489dd31e25ff973eabf7",
+        "android_client_info": {
+          "package_name": "com.example.bimbam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFn8u8n7uLHXr-KARnxSjM7aC1mVza0-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
