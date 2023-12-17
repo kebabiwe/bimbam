@@ -49,7 +49,7 @@
             android:background="@drawable/profile1" tools:layout_editor_absoluteY="26dp"
             tools:layout_editor_absoluteX="337dp" tools:ignore="MissingConstraints"/>
     <RelativeLayout
-            android:id="@+id/frame_30"
+            android:id="@+id/frame_31"
             android:layout_width="366dp"
             android:layout_height="55dp"
             android:layout_alignParentLeft="true"
