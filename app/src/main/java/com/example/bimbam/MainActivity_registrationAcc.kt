@@ -60,6 +60,8 @@ class MainActivity_registrationAcc : AppCompatActivity() {
                 }
 
             }
+            val intent = Intent(this@MainActivity_registrationAcc,MainActivity_registrationChild::class.java)
+            startActivity(intent)
 
         }
     }
