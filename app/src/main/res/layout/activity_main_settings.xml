@@ -53,14 +53,15 @@
             android:background="@drawable/profile1" tools:layout_editor_absoluteY="26dp"
             tools:layout_editor_absoluteX="337dp" tools:ignore="MissingConstraints"/>
     <RelativeLayout
+
             android:id="@+id/frame_30"
             android:layout_width="366dp"
             android:layout_height="55dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
+            style="@style/frame_elevation"
             android:background="@drawable/frame_30"
-            android:elevation="8dp"
             tools:layout_editor_absoluteY="235dp" tools:layout_editor_absoluteX="19dp"
             tools:ignore="MissingConstraints">
         <TextView
@@ -75,6 +76,7 @@
                 android:lineSpacingExtra="1sp"
                 android:translationY="-0.31sp"
                 android:gravity="top"
+
         />
     </RelativeLayout>
     <!-- нет тени! -->
