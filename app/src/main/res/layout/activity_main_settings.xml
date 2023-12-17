@@ -79,7 +79,7 @@
         />
     </RelativeLayout>
     <!-- нет тени! -->
-    <RelativeLayout
+    <LinearLayout
             android:id="@+id/tabbar"
             android:layout_width="400dp"
             android:layout_height="62dp"
@@ -87,62 +87,67 @@
             android:layout_alignParentTop="true"
             android:layout_marginBottom="100dp"
             android:layout_marginLeft="50dp"
-            tools:ignore="MissingConstraints" tools:layout_editor_absoluteY="674dp"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="674dp"
             tools:layout_editor_absoluteX="0dp">
 
         <View
                 android:id="@+id/icon"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
+                android:layout_height="30dp"
                 android:background="@drawable/icon1"
                 android:alpha="0.5"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
         />
+
         <View
                 android:id="@+id/icon3"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
+                android:layout_height="30dp"
                 android:background="@drawable/icon2"
                 android:alpha="0.5"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
         />
-        <RelativeLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
+
+        <View
                 android:id="@+id/divider"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
                 android:clipToOutline="true"
                 android:background="@drawable/divider1"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
         />
+
         <View
                 android:id="@+id/icon2"
-                android:layout_width="101dp"
-                android:layout_height="47dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
                 android:background="@drawable/icon3"
                 android:alpha="0.5"
-                android:layout_marginTop="15dp" android:layout_marginRight="299dp"/>
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+        />
+
         <View
                 android:id="@+id/icon1"
                 android:layout_width="0dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_height="30dp"
                 android:alpha="0.5"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
         />
-    </RelativeLayout>
+    </LinearLayout>
+
+
+
     <RelativeLayout
             android:id="@+id/frame_30.2"
             android:layout_width="366dp"
