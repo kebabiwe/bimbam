@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity_recommendations">
+        tools:context=".MainActivity_you_acc_edit">
 
     <View
             android:id="@+id/rectangle_5"
@@ -22,8 +22,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-    />
 
+    />
 
     <RelativeLayout
             android:layout_marginTop="10dp"
@@ -59,22 +59,43 @@
                 android:background="@drawable/profile1"
                 tools:ignore="MissingConstraints"/>
     </RelativeLayout>
-    <TextView
-            android:text="   Список дел"
-            android:fontFamily="@font/pattaya"
-            android:textSize="30dp"
+
+    <View
+            android:id="@+id/vector"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:textAppearance="@style/title"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/vector_12"
+            android:alpha="0.5"
+            tools:ignore="MissingConstraints"/>
+
+
+
+   >
+    <View
+            android:translationY="-0.25sp"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.077"/>
+            app:layout_constraintVertical_bias="0.104"
+            android:id="@+id/avatar"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/avatar"
+            tools:layout_editor_absoluteY="67dp"
+            tools:layout_editor_absoluteX="129dp"/>
+
     <RelativeLayout
             android:id="@+id/tabbar"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="63dp"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
@@ -138,77 +159,9 @@
 
     </RelativeLayout>
 
-    <TextView
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.102"
-            android:textSize="37sp"
-            android:fontFamily="@font/pattaya"
-            tools:ignore="MissingConstraints"
-            android:gravity="center_horizontal|top"
-            android:id="@+id/title"
-            android:layout_width="243dp"
-            android:layout_height="88dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:text="Рекомендации специалистов"
-            android:textColor="#FFFFFF"
-            android:textAppearance="@style/title"
-            android:lineSpacingExtra="-7sp"
-
-    />
-
-    <RelativeLayout
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintVertical_bias="0.815"
-            android:layout_centerHorizontal="true"
-            tools:ignore="MissingConstraints"
-            android:textColor="#FFFFFF"
-            android:gravity="center_horizontal|top"
 
 
-            android:id="@+id/frame_31"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:clipToOutline="true"
-            android:background="#FFFFFF"
-            app:layout_constraintHorizontal_bias="0.494" app:layout_constraintBottom_toTopOf="@+id/tabbar"
-            app:layout_constraintTop_toBottomOf="@+id/rectangle_5" android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
 
-        <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/image"
-                tools:ignore="NotSibling">
-
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <TextView
-                        android:textColor="#115931"
-                        android:id="@+id/title1"
-                        android:layout_width="155dp"
-                        android:layout_height="match_parent"
-                        android:layout_centerHorizontal="true"
-                        android:layout_alignParentTop="true"
-                        android:fontFamily="@font/opensans"
-                        android:textAppearance="@style/title"
-                        android:textSize="26sp"
-                        android:lineSpacingExtra="-1sp"
-                        android:text="Совет дня"
-                        android:gravity="center_horizontal|top"
-                />
-            </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

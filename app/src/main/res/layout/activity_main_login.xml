@@ -52,6 +52,7 @@
                 android:id="@+id/some_id2"
                 android:layout_centerVertical="true"
                 android:text="Логин"
+                android:fontFamily="@font/opensans"
                 android:textAppearance="@style/some_id"
 
                 android:gravity="top"/>
@@ -79,6 +80,7 @@
                 android:id="@+id/some_id"
                 android:layout_marginTop="30dp"
                 android:text="Пароль"
+                android:fontFamily="@font/opensans"
                 android:textAppearance="@style/some_id"
                 android:gravity="top"/>
     </RelativeLayout>

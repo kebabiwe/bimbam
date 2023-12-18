@@ -40,6 +40,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:text="Дата рождения"
+                android:fontFamily="@font/opensans"
                 android:textAppearance="@style/text"
                 android:gravity="top"
                 android:layout_marginLeft="40dp" android:layout_marginTop="319dp"
@@ -51,6 +52,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:text="Имя ребенка"
+                android:fontFamily="@font/opensans"
                 android:textAppearance="@style/text"
                 android:gravity="top"
                 android:layout_marginLeft="40dp" android:layout_marginTop="144dp"
@@ -90,6 +92,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentTop="true"
                 android:id="@+id/text1"
                 android:text="Пол"
+                android:fontFamily="@font/opensans"
                 android:textAppearance="@style/text"
                 android:gravity="top"
                 android:layout_marginLeft="40dp" android:layout_marginTop="232dp"
@@ -161,6 +164,7 @@ tools:context=".MainActivity_registrationChild">
                 android:text="Индивидуальная особенность"
                 android:textAppearance="@style/text"
                 android:gravity="top"
+                android:fontFamily="@font/opensans"
                 android:layout_marginLeft="40dp" android:layout_marginTop="410dp"
         />
 
