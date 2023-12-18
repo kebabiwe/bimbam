@@ -78,10 +78,10 @@ tools:context=".MainActivity_registrationChild">
                     android:layout_width="match_parent"
                     android:layout_height="55dp" android:id="@+id/spinner"
                     style="@style/SpinnerStyle"
-                    android:layout_alignParentEnd="true" android:layout_marginEnd="0dp"
-                    android:layout_alignParentBottom="true" android:layout_marginBottom="-1dp"
-                    android:layout_alignParentStart="true" android:layout_marginStart="0dp"
-                    android:layout_marginTop="2dp" android:layout_alignParentTop="true"/>
+                    android:layout_alignParentEnd="true" android:layout_marginEnd="-2dp"
+                    android:layout_alignParentBottom="true" android:layout_marginBottom="1dp"
+                    android:layout_alignParentStart="true" android:layout_marginStart="2dp"
+                    android:layout_marginTop="0dp" android:layout_alignParentTop="true"/>
         </RelativeLayout>
         <TextView
                 android:layout_width="31dp"
