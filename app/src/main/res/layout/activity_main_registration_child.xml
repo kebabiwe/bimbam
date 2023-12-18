@@ -56,33 +56,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginLeft="40dp" android:layout_marginTop="144dp"
         />
 
-        <RelativeLayout
-                android:layout_centerHorizontal="true"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.494" app:layout_constraintVertical_bias="0.376"
-                android:id="@+id/form2"
-                android:layout_width="320dp"
-                android:layout_height="56dp"
-                android:layout_alignParentTop="true"
-                android:clipToOutline="true"
-                android:background="@drawable/form"
-                tools:ignore="MissingConstraints"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="259dp">
 
-            <Spinner
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp" android:id="@+id/spinner"
-                    style="@style/SpinnerStyle"
-                    android:layout_alignParentEnd="true" android:layout_marginEnd="-2dp"
-                    android:layout_alignParentBottom="true" android:layout_marginBottom="1dp"
-                    android:layout_alignParentStart="true" android:layout_marginStart="2dp"
-                    android:layout_marginTop="0dp" android:layout_alignParentTop="true"/>
-        </RelativeLayout>
         <TextView
                 android:layout_width="31dp"
                 android:layout_height="22dp"
@@ -183,6 +157,18 @@ tools:context=".MainActivity_registrationChild">
 
         >
         </RelativeLayout>
+        <Spinner
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp" android:id="@+id/spinner"
+                style="@style/SpinnerStyle"
+                android:layout_marginEnd="46dp"
+                android:layout_marginBottom="-133dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="5dp" android:layout_below="@+id/text1" android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/form"
+                android:spinnerMode="dropdown" android:popupBackground="@drawable/sex"/>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

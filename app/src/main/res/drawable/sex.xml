@@ -19,5 +19,12 @@
                 android:strokeWidth="2"
                 android:strokeColor="#33115931"
         />
+
+        <!-- Добавляем горизонтальную полосу -->
+        <path
+                android:pathData="M0 54H320"
+                android:strokeWidth="2"
+                android:strokeColor="#CCCCCC"
+        />
     </group>
 </vector>
