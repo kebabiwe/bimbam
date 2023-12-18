@@ -5,7 +5,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity_settings">
+        tools:context=".MainActivity_you_acc_edit">
+
     <View
             android:id="@+id/rectangle_5"
             android:layout_width="0dp"
@@ -21,28 +22,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
+
     />
 
-    <TextView
-            app:layout_constraintVertical_bias="0.12"
-            android:layout_width="286dp"
-            android:layout_height="53dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            tools:ignore="MissingConstraints"
-            android:textColor="#FFFFFF"
-            android:lineSpacingExtra="-7sp"
-            android:gravity="center_horizontal|top"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/title2"
-            android:text="Настройки"
-            android:textSize="37dp"
-            android:fontFamily="@font/pattaya"
-            android:textAppearance="@style/title"/>
     <RelativeLayout
             android:layout_marginTop="10dp"
             android:id="@+id/navbar"
@@ -77,43 +59,32 @@
                 android:background="@drawable/profile1"
                 tools:ignore="MissingConstraints"/>
     </RelativeLayout>
-    <RelativeLayout
-            android:layout_centerHorizontal="true"
+
+
+
+
+   >
+    <View
+            android:translationY="-0.25sp"
+            tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintVertical_bias="0.376"
-            android:id="@+id/frame_30"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_alignParentLeft="true"
+            app:layout_constraintVertical_bias="0.104"
+            android:id="@+id/avatar"
+            android:layout_width="164dp"
+            android:layout_height="164dp"
+            android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:clipToOutline="true"
-            tools:ignore="MissingConstraints">
-        <TextView
-                android:id="@+id/some_id"
-                android:layout_width="117dp"
-                android:layout_height="22dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
-                android:layout_centerVertical="true"
-                android:text="О приложении"
-                android:fontFamily="@font/opensans"
-                android:textAppearance="@style/some_id"
-                android:lineSpacingExtra="1sp"
-                android:translationY="-0.31sp"
-                android:gravity="top"
-
-        />
-    </RelativeLayout>
-    <!-- нет тени! -->
-
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/avatar"
+            tools:layout_editor_absoluteY="67dp"
+            tools:layout_editor_absoluteX="129dp"/>
 
     <RelativeLayout
             android:id="@+id/tabbar"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="63dp"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
@@ -176,119 +147,98 @@
                 app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
+
     <RelativeLayout
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.175"
+            app:layout_constraintVertical_bias="0.367"
+            android:id="@+id/form5"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/form"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="346dp"/>
+
+    <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/text3"
+            android:layout_width="119dp"
+            android:layout_height="22dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:id="@+id/frame_30.2"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:clipToOutline="true"
+            android:text="Дата рождения"
+            android:fontFamily="@font/opensans"
+            android:textAppearance="@style/text"
+            android:gravity="top"
+            app:layout_constraintHorizontal_bias="0.154" app:layout_constraintVertical_bias="0.627"/>
+    <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
 
-            android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.495">
-        <TextView
-                android:id="@+id/some_id3"
-                android:layout_width="106dp"
-                android:layout_height="22dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
-                android:layout_centerVertical="true"
-                android:text="Уведомления"
-                android:fontFamily="@font/opensans"
-                android:textAppearance="@style/some_id"
-                android:lineSpacingExtra="1sp"
-                android:translationY="-0.31sp"
-                android:gravity="top"
-        />
-        <Switch
-                android:id="@+id/switch1"
+            android:layout_width="31dp"
+            android:layout_height="22dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/text1"
+            android:text="Пол"
+            android:fontFamily="@font/opensans"
+            android:textAppearance="@style/text"
+            android:gravity="top"
+            app:layout_constraintHorizontal_bias="0.118" app:layout_constraintVertical_bias="0.486"/>
+    <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/text2"
+            android:layout_width="102dp"
+            android:layout_height="22dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Имя ребенка"
+            android:fontFamily="@font/opensans"
+            android:textAppearance="@style/text"
+            android:gravity="top"
+            app:layout_constraintHorizontal_bias="0.145" app:layout_constraintVertical_bias="0.342"/>
+    <RelativeLayout
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.175"
+            app:layout_constraintVertical_bias="0.184"
+            android:id="@+id/form1"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:background="@drawable/form"
+            android:layout_marginLeft="35dp"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="172dp">
+        <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/frame281"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="280dp"
+                android:layout_marginLeft="20dp"
                 android:layout_centerVertical="true"
-                android:clipToOutline="true"
-        />
-
-
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:textColor="@color/black"
+                android:id="@+id/childname"
+                android:background="@android:color/transparent"/>
     </RelativeLayout>
-    <RelativeLayout
-            android:layout_centerHorizontal="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
 
 
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:id="@+id/frame_30.3"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:clipToOutline="true"
-            android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintVertical_bias="0.613">
-        <TextView
-                android:id="@+id/some_id2"
-                android:layout_width="78dp"
-                android:layout_height="22dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
-                android:layout_centerVertical="true"
-                android:text="Вибрация"
-                android:fontFamily="@font/opensans"
-                android:textAppearance="@style/some_id"
-                android:lineSpacingExtra="1sp"
-                android:translationY="-0.31sp"
-                android:gravity="top"
-        />
-        <Switch
-                android:id="@+id/switch2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/frame281"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="280dp"
-                android:layout_centerVertical="true"
-                android:clipToOutline="true"
-        />
-    </RelativeLayout>
-    <RelativeLayout
-
-
-            android:layout_centerHorizontal="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:id="@+id/frame_30.1"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:clipToOutline="true"
-            android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintVertical_bias="0.713">
-        <TextView
-                android:id="@+id/some_id1"
-                android:layout_width="146dp"
-                android:layout_height="21dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
-                android:layout_centerVertical="true"
-                android:text="Выйти из аккаунта"
-                android:fontFamily="@font/opensans"
-                android:textAppearance="@style/some_id1"
-                android:lineSpacingExtra="-1sp"
-                android:gravity="top"
-        />
-    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

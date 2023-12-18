@@ -115,6 +115,7 @@
                         android:layout_height="wrap_content"
                         android:text="Эллай - Ваш помощник, разработанный специально для родителей и опекунов детей с ограниченными возможностями."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:textColor="@color/black"
                         android:lineSpacingExtra="1sp"
                         android:gravity="top"/>
@@ -141,6 +142,7 @@
                         android:layout_marginTop="8dp"
                         android:text="Он обеспечивает персонализированный и всесторонний уход за ребёнком, отслеживая важные аспекты его здоровья и развития."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:lineSpacingExtra="1sp"
                         android:textColor="@color/black"
                         android:gravity="top"/>
@@ -152,6 +154,7 @@
                         android:layout_marginTop="8dp"
                         android:text=" 1. Эллай — напомнит вам о медицинских процедурах, приёме лекарств, специальных упражнениях и других важных моментах по уходу за ребёнком."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:lineSpacingExtra="1sp"
                         android:textColor="@color/black"
                         android:gravity="top"/>
@@ -162,6 +165,7 @@
                         android:layout_marginTop="8dp"
                         android:text=" 2. Приложение предлагает календарь событий и задач, где можно отмечать выполненные действия, чтобы обеспечить систематичность и точность ухода."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:lineSpacingExtra="1sp"
                         android:textColor="@color/black"
                         android:gravity="top"/>
@@ -173,6 +177,7 @@
                         android:layout_marginTop="8dp"
                         android:text=" 3. Оно содержит базу знаний о различных состояниях ОВЗ, советы по уходу, а также возможность консультироваться с экспертами в случае необходимости."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:lineSpacingExtra="1sp"
                         android:textColor="@color/black"
                         android:gravity="top"/>
@@ -184,6 +189,7 @@
                         android:layout_marginTop="8dp"
                         android:text=" 4. Эллай адаптируется под индивидуальные потребности ребёнка, предоставляя персонализированные рекомендации и расписание действий."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:lineSpacingExtra="1sp"
                         android:textColor="@color/black"
                         android:gravity="top"/>
@@ -195,6 +201,7 @@
                         android:layout_marginTop="8dp"
                         android:text=" 5. Эллай уведомит о предстоящих визитах к врачу, терапевтических сессиях и других важных событиях, связанных с заботой о здоровье ребёнка."
                         android:textAppearance="@style/some_id"
+                        android:fontFamily="@font/opensans"
                         android:lineSpacingExtra="1sp"
                         android:textColor="@color/black"
                         android:gravity="top"/>
@@ -207,6 +214,7 @@
                         android:text=" 6. Эллай обладает дружественным интерфейсом, который легко использовать даже для тех, кто не имеет опыта работы с подобными приложениями."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:fontFamily="@font/opensans"
                         android:textColor="@color/black"
                         android:gravity="top"/>
 

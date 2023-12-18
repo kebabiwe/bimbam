@@ -199,6 +199,7 @@
                         android:layout_height="match_parent"
                         android:layout_centerHorizontal="true"
                         android:layout_alignParentTop="true"
+                        android:fontFamily="@font/opensans"
                         android:textAppearance="@style/title"
                         android:textSize="26sp"
                         android:lineSpacingExtra="-1sp"

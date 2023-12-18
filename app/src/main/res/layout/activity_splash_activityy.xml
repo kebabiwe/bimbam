@@ -21,13 +21,12 @@
                 android:id="@+id/myTextView"
                 android:layout_width="175.41dp"
                 android:layout_height="53.03dp"
-                android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Эллай"
                 android:textSize="49dp"
                 android:backgroundTint="#00FFFFFF"
                 android:fontFamily="@font/pattaya"
                 android:outlineSpotShadowColor="#F9F9F9"
-                android:textColor="#FFFF"/>
+                android:textColor="#FFFF" android:layout_centerInParent="true"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

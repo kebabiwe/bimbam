@@ -36,12 +36,12 @@
   <!-- Auto layout, variables, and unit scale are not yet supported -->
   <TextView
           android:id="@+id/text_1"
-          android:fontFamily="sans-serif-condensed"
           android:layout_width="214dp"
           android:layout_height="30dp"
           android:layout_centerHorizontal="true"
           android:layout_alignParentTop="true"
           android:text="У вас уже есть аккаунт?"
+          android:fontFamily="@font/opensans"
           android:textAppearance="@style/text_1"
           android:gravity="center_horizontal|top"
           tools:ignore="MissingConstraints"
@@ -72,7 +72,7 @@
           android:layout_centerHorizontal="true"
           android:layout_centerVertical="true"
           android:text="Регистрация"
-          android:fontFamily="sans-serif-condensed"
+          android:fontFamily="@font/opensans"
           android:textAppearance="@style/button"
           android:lineSpacingExtra="-1sp"
           tools:ignore="MissingConstraints"
