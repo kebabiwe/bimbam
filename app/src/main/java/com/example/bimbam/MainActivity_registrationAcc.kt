@@ -1,6 +1,5 @@
 package com.example.bimbam
 
-import MainActivity_registrationChild
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,12 +9,12 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth  // Add this import statement
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Log
-
+import android.widget.TextView
 
 
 class MainActivity_registrationAcc : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private  lateinit var database: FirebaseDatabase
+    private lateinit var database: FirebaseDatabase
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +25,12 @@ class MainActivity_registrationAcc : AppCompatActivity() {
         val email: EditText = findViewById(R.id.email)
         val password: EditText = findViewById(R.id.password)
         val repeatpass: EditText = findViewById(R.id.repeatpass)
-        val RelativeLayout = findViewById<RelativeLayout>(R.id.sign_up)
+        val RelativeLayout = findViewById<RelativeLayout>(R.id.buttonreg)
+        val signupText = findViewById<TextView>(R.id.title)
+        signupText.setOnClickListener {
+            val intent = Intent(this, MainActivity_registrationAcc::class.java)
+            startActivity(intent)
+        }
         RelativeLayout.setOnClickListener {
             val login = login.text.toString().trim()
             val email = email.text.toString().trim()
@@ -35,25 +39,25 @@ class MainActivity_registrationAcc : AppCompatActivity() {
 
             if (login == "" || email == "" || password == "" || repeatpass == "")
                 Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
-            else if(!email.matches(emailPattern.toRegex())){
-                    Toast.makeText(this,"Некорректный формат E-mail",Toast.LENGTH_LONG).show()
-            }
-            else if(repeatpass == "" || repeatpass != password){
-                        Toast.makeText(this,"Пароли не совпадают", Toast.LENGTH_LONG).show()}
-            else if(password.length < 6)
-                Toast.makeText(this,"Пароль должен содержать не менее 6 символов",Toast.LENGTH_LONG).show()
-            else{
-                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
-                    if(it.isSuccessful){
+            else if (!email.matches(emailPattern.toRegex())) {
+                Toast.makeText(this, "Некорректный формат E-mail", Toast.LENGTH_LONG).show()
+            } else if (repeatpass == "" || repeatpass != password) {
+                Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_LONG).show()
+            } else if (password.length < 6)
+                Toast.makeText(this, "Пароль должен содержать не менее 6 символов", Toast.LENGTH_LONG).show()
+            else {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
+                    if (it.isSuccessful) {
                         val database =
                             database.reference.child("users").child(auth.currentUser!!.uid)
-                        val users:Users = Users(login,email,auth.currentUser!!.uid)
+                        val users: Users = Users(login, email, auth.currentUser!!.uid)
                         database.setValue(users).addOnCompleteListener {
-                            if(it.isSuccessful){
-                                val intent = Intent(this@MainActivity_registrationAcc,MainActivity_registrationChild::class.java)
+                            if (it.isSuccessful) {
+                                val intent = Intent(this, MainActivity_registrationChild::class.java)
                                 startActivity(intent)
-                            }else{
-                                Toast.makeText(this, "Что-то пошло не так: ${it.exception?.message}", Toast.LENGTH_LONG).show()
+                            } else {
+                                Toast.makeText(this, "Что-то пошло не так: ${it.exception?.message}", Toast.LENGTH_LONG)
+                                    .show()
                                 Log.e("Firebase", "Authentication failed: ${it.exception?.message}")
                             }
                         }
@@ -61,8 +65,9 @@ class MainActivity_registrationAcc : AppCompatActivity() {
                 }
 
             }
-            val intent = Intent(this@MainActivity_registrationAcc,MainActivity_registrationChild::class.java)
+            val intent = Intent(this, MainActivity_registrationChild::class.java)
             startActivity(intent)
+
 
         }
     }

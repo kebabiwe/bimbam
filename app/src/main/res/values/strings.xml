@@ -146,4 +146,9 @@
     <string name="your_gender">Ваш пол: %s</string>
     <string name="ok">OK</string>
     <string name="cancel">Отмена</string>
+    <string-array name="sex_array">
+        <item>Мужской</item>
+        <item>Женский</item>
+
+    </string-array>
 </resources>
