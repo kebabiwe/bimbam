@@ -111,28 +111,23 @@
 
 
     <RelativeLayout
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/tabbar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="63dp"
-            tools:ignore="MissingConstraints"
-            android:layout_marginTop="668dp"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintHorizontal_bias="0.0">
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
 
         <View
                 android:id="@+id/icon1"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="27dp"
+                android:layout_marginStart="17dp"
                 android:background="@drawable/icon1"
                 android:alpha="1"
-        />
+                android:layout_alignParentStart="true"/>
 
         <View
                 android:id="@+id/icon2"
@@ -143,7 +138,7 @@
                 android:layout_marginStart="37dp"
                 android:background="@drawable/icon2"
                 android:alpha="1"
-        />
+                app:layout_constraintHorizontal_bias="0.5"/>
 
         <View
                 android:id="@+id/icon3"
@@ -154,7 +149,7 @@
                 android:layout_marginStart="37dp"
                 android:background="@drawable/divider1"
                 android:alpha="1"
-        />
+                app:layout_constraintHorizontal_bias="0.5"/>
 
         <View
                 android:id="@+id/icon4"
@@ -165,7 +160,7 @@
                 android:layout_marginStart="37dp"
                 android:background="@drawable/icon3"
                 android:alpha="1"
-        />
+                app:layout_constraintHorizontal_bias="0.5"/>
 
         <View
                 android:id="@+id/icon5"
@@ -174,9 +169,10 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/icon4"
                 android:layout_marginStart="37dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/icon4"
                 android:alpha="1"
-        />
+                app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
     <RelativeLayout

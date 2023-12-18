@@ -219,8 +219,9 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:layout_alignParentBottom="true"
-            android:background="#FFFFFF" tools:layout_editor_absoluteY="721dp" tools:layout_editor_absoluteX="-16dp"
-            tools:ignore="MissingConstraints">
+            android:background="#FFFFFF"
+            tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
 
         <View
                 android:id="@+id/icon1"

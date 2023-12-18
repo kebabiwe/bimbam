@@ -20,7 +20,10 @@ class MainActivity_settings : AppCompatActivity() {
         val profileView = findViewById<View>(R.id.profile)
         profileView.setOnClickListener {
             val intent = Intent(this@MainActivity_settings, MainActivity_you_acc::class.java)
-            startActivity(intent)
-        }
+            startActivity(intent) }
+        val View1 = findViewById<View>(R.id.icon1)
+        View1.setOnClickListener {
+            val intent = Intent(this@MainActivity_settings, MainActivity_homePage::class.java)
+            startActivity(intent)}
     }
 }
