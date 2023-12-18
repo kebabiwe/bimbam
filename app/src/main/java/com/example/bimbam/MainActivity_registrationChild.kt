@@ -29,16 +29,14 @@ class MainActivity_registrationChild : AppCompatActivity() {
 
         // Set the adapter to the Spinner
         mSpinner.adapter = mArrayAdapter
-        val dSpinner = findViewById<Spinner>(R.id.spinner1)
 
+        val dSpinner = findViewById<Spinner>(R.id.spinner1)
         // Create a list to display in the Spinner
         val dList = arrayOf<String?>("Синдром дефицита внимания и гиперактивности","Аутизм", "Синдром диссоциации движений и говора", "Синдром Туретта", "Синдром Дауна", "Синдром Аспергера","ДЦП", "Дислексия","Синдром Ретта")
-
         // Create an adapter as shown below
         val dArrayAdapter = ArrayAdapter<Any?>(this, R.layout.spinner_list, mList)
-        mArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
-
+        dArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
         // Set the adapter to the Spinner
-        mSpinner.adapter = mArrayAdapter
+        dSpinner.adapter = dArrayAdapter
     }
 }
