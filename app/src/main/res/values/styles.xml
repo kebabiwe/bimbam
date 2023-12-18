@@ -70,10 +70,9 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">#0D0D0D</item>
     </style>
-    <style name="CustomSpinnerDropDownItem" parent="Widget.AppCompat.DropDownItem.Spinner">
-        <!-- Задание шрифта для выпадающих элементов -->
+    <style name="SpinnerStyle">
         <item name="android:fontFamily">@font/opensans</item>
-        <!-- Другие настройки -->
-        <item name="android:background">@drawable/custom_spinner_dropdown_background</item>
+        <item name="android:background">@drawable/sex</item>
     </style>
+
 </resources>
