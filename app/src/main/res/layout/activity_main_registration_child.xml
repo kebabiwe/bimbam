@@ -183,7 +183,8 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentStart="true"
                 android:background="@drawable/form"
                 android:spinnerMode="dropdown" android:popupBackground="@drawable/diagnos" android:layout_marginTop="7dp"
-                android:layout_below="@+id/text5"/>
+                android:layout_below="@+id/text5"
+                android:textAlignment="gravity"/>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
