@@ -142,12 +142,5 @@
         \u00d1\u0081\u00c2\u00a0\u00d0\u00bf\u00d0\u00be\u00d0\u00b4\u00d0\u00be\u00d0\u00b1\u00d0\u00bd\u00d1\u008b\u00d0\u00bc\u00d0\u00b8
         \u00d0\u00bf\u00d1\u0080\u00d0\u00b8\u00d0\u00bb\u00d0\u00be\u00d0\u00b6\u00d0\u00b5\u00d0\u00bd\u00d0\u00b8\u00d1\u008f\u00d0\u00bc\u00d0\u00b8.
     </string>
-    <string name="choose_gender">Выберите пол</string>
-    <string name="your_gender">Ваш пол: %s</string>
-    <string name="ok">OK</string>
-    <string name="cancel">Отмена</string>
-    <string-array name="sex_array">
-        <item>Мужской</item>
-        <item>Женский</item>
-    </string-array>
+
 </resources>
