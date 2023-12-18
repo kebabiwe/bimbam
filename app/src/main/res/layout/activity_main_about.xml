@@ -101,7 +101,8 @@
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image">
+                android:layout_below="@id/image"
+                tools:ignore="NotSibling">
 
             <LinearLayout
                     android:orientation="vertical"
@@ -215,21 +216,18 @@
     </RelativeLayout>
     <RelativeLayout
             android:id="@+id/tabbar"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="63dp"
             android:layout_alignParentBottom="true"
-            android:background="#FFFFFF"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:background="#FFFFFF" tools:layout_editor_absoluteY="721dp" tools:layout_editor_absoluteX="-16dp"
+            tools:ignore="MissingConstraints">
 
         <View
                 android:id="@+id/icon1"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="27dp"
+                android:layout_marginStart="17dp"
                 android:background="@drawable/icon1"
                 android:alpha="1"
                 android:layout_alignParentStart="true"/>
@@ -239,45 +237,47 @@
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="37dp"
                 android:layout_toEndOf="@id/icon1"
+                android:layout_marginStart="37dp"
                 android:background="@drawable/icon2"
-                android:alpha="1"/>
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
 
         <View
                 android:id="@+id/icon3"
-                android:layout_marginStart="37dp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/icon2"
+                android:layout_marginStart="37dp"
                 android:background="@drawable/divider1"
-                android:alpha="1"/>
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
 
         <View
+                android:id="@+id/icon4"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="37dp"
-                android:id="@+id/icon4"
-                android:layout_centerInParent="true"
                 android:layout_toEndOf="@id/icon3"
+                android:layout_marginStart="37dp"
                 android:background="@drawable/icon3"
-                android:alpha="1"/>
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
 
         <View
-                android:layout_centerVertical="true"
-                android:layout_marginStart="37dp"
                 android:id="@+id/icon5"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
-                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/icon4"
+                android:layout_marginStart="37dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/icon4"
-                android:alpha="1"/>
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
