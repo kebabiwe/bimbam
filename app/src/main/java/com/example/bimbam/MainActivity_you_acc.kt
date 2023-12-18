@@ -17,10 +17,13 @@ class MainActivity_you_acc : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val View = findViewById<View>(R.id.icon1)
-        View.setOnClickListener {
+        val View1 = findViewById<View>(R.id.icon1)
+        View1.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_homePage::class.java)
-            startActivity(intent)
-        }
+            startActivity(intent) }
+        val View2 = findViewById<View>(R.id.icon2)
+        View2.setOnClickListener {
+            val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
+            startActivity(intent)}
     }
 }
