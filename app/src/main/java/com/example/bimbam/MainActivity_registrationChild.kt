@@ -18,6 +18,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
             startActivity(intent)
         }
         val spinner: Spinner = findViewById(R.id.spinner)
+
 // Create an ArrayAdapter using the string array and a default spinner layout.
         ArrayAdapter.createFromResource(
             this,
