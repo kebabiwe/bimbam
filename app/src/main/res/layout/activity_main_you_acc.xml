@@ -61,13 +61,14 @@
     </RelativeLayout>
 
     <TextView
+            android:scaleType="center"
             android:translationY="-0.25sp"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.104"
+            app:layout_constraintVertical_bias="0.106"
             android:layout_alignParentTop="true"
             android:lineSpacingExtra="0sp"
             android:fontFamily="@font/pattaya"
@@ -80,8 +81,7 @@
             android:text="Арсений"
             android:textAppearance="@style/name"
             android:gravity="top"
-
-    />
+            app:layout_constraintHorizontal_bias="0.55"/>
     <TextView
 
             app:layout_constraintStart_toStartOf="parent"

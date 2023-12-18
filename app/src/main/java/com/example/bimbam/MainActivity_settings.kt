@@ -16,5 +16,11 @@ class MainActivity_settings : AppCompatActivity() {
             val intent = Intent(this@MainActivity_settings, MainActivity_about::class.java)
             startActivity(intent)
         }
+
+        val profileView = findViewById<View>(R.id.profile)
+        profileView.setOnClickListener {
+            val intent = Intent(this@MainActivity_settings, MainActivity_you_acc::class.java)
+            startActivity(intent)
+        }
     }
 }

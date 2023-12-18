@@ -9,7 +9,7 @@
 
     <View
             android:id="@+id/rectangle_5"
-            android:layout_width="424dp"
+            android:layout_width="0dp"
             android:layout_height="194dp"
             android:layout_marginTop="-20dp"
             android:layout_centerHorizontal="true"
@@ -22,9 +22,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-
-            tools:layout_editor_absoluteY="-24dp"
-            tools:layout_editor_absoluteX="-7dp"/>
+    />
     <RelativeLayout
             android:layout_marginTop="10dp"
             android:id="@+id/navbar"
@@ -66,9 +64,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.104"
+            app:layout_constraintVertical_bias="0.105"
             android:id="@+id/title2"
-            android:layout_width="286dp"
+            android:layout_width="0dp"
             android:layout_height="53dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
@@ -77,16 +75,11 @@
             tools:ignore="MissingConstraints"
             android:textColor="#FFFFFF"
             android:text="О приложении"
-            tools:layout_editor_absoluteY="76dp"
-            tools:layout_editor_absoluteX="62dp"
             android:lineSpacingExtra="-7sp"
-            android:gravity="center_horizontal|top"/>
-
+            android:gravity="center_horizontal|top" app:layout_constraintHorizontal_bias="0.0"/>
     <RelativeLayout
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.815"
             android:layout_centerHorizontal="true"
             tools:ignore="MissingConstraints"
@@ -95,13 +88,15 @@
 
 
             android:id="@+id/frame_31"
-            android:layout_width="320dp"
-            android:layout_height="503dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
             android:background="#FFFFFF"
-            app:layout_constraintHorizontal_bias="0.494">
+            app:layout_constraintHorizontal_bias="0.494" app:layout_constraintBottom_toTopOf="@+id/tabbar"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_5" android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
         <ScrollView
                 android:layout_width="match_parent"
@@ -119,6 +114,7 @@
                         android:layout_height="wrap_content"
                         android:text="Эллай - Ваш помощник, разработанный специально для родителей и опекунов детей с ограниченными возможностями."
                         android:textAppearance="@style/some_id"
+                        android:textColor="@color/black"
                         android:lineSpacingExtra="1sp"
                         android:gravity="top"/>
 
@@ -126,7 +122,7 @@
                 <ImageView
                         android:id="@+id/image"
                         android:layout_width="match_parent"
-                        android:layout_height="290dp"
+                        android:layout_height="match_parent"
                         android:layout_centerInParent="true"
                         android:src="@drawable/image"
                         android:clipToOutline="true"
@@ -139,78 +135,149 @@
                 />
                 <TextView
                         android:id="@+id/some_id_long1"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Он обеспечивает персонализированный и всесторонний уход за ребёнком, отслеживая важные аспекты его здоровья и развития."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
 
                 <TextView
                         android:id="@+id/some_id_long2"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 1. Эллай — напомнит вам о медицинских процедурах, приёме лекарств, специальных упражнениях и других важных моментах по уходу за ребёнком."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
-
                 <TextView
                         android:id="@+id/some_id_long3"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 2. Приложение предлагает календарь событий и задач, где можно отмечать выполненные действия, чтобы обеспечить систематичность и точность ухода."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
 
                 <TextView
                         android:id="@+id/some_id_long4"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 3. Оно содержит базу знаний о различных состояниях ОВЗ, советы по уходу, а также возможность консультироваться с экспертами в случае необходимости."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
 
                 <TextView
                         android:id="@+id/some_id_long5"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 4. Эллай адаптируется под индивидуальные потребности ребёнка, предоставляя персонализированные рекомендации и расписание действий."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
 
                 <TextView
                         android:id="@+id/some_id_long6"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 5. Эллай уведомит о предстоящих визитах к врачу, терапевтических сессиях и других важных событиях, связанных с заботой о здоровье ребёнка."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
 
                 <TextView
                         android:id="@+id/some_id_long7"
-                        android:layout_width="320dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 6. Эллай обладает дружественным интерфейсом, который легко использовать даже для тех, кто не имеет опыта работы с подобными приложениями."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
+                        android:textColor="@color/black"
                         android:gravity="top"/>
 
 
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/tabbar"
+            android:layout_width="0dp"
+            android:layout_height="63dp"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+                android:id="@+id/icon1"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="27dp"
+                android:background="@drawable/icon1"
+                android:alpha="1"
+                android:layout_alignParentStart="true"/>
+
+        <View
+                android:id="@+id/icon2"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="37dp"
+                android:layout_toEndOf="@id/icon1"
+                android:background="@drawable/icon2"
+                android:alpha="1"/>
+
+        <View
+                android:id="@+id/icon3"
+                android:layout_marginStart="37dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon2"
+                android:background="@drawable/divider1"
+                android:alpha="1"/>
+
+        <View
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="37dp"
+                android:id="@+id/icon4"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/icon3"
+                android:background="@drawable/icon3"
+                android:alpha="1"/>
+
+        <View
+                android:layout_centerVertical="true"
+                android:layout_marginStart="37dp"
+                android:id="@+id/icon5"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@id/icon4"
+                android:background="@drawable/icon4"
+                android:alpha="1"/>
+
+    </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
