@@ -58,30 +58,12 @@
                 android:layout_centerVertical="true"
                 android:background="@drawable/profile1"
                 tools:ignore="MissingConstraints"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        </LinearLayout>
     </RelativeLayout>
-
-    <TextView
-            android:scaleType="center"
-            android:translationY="-0.25sp"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.105"
-            android:layout_alignParentTop="true"
-            android:lineSpacingExtra="0sp"
-            android:fontFamily="@font/pattaya"
-            android:layout_marginTop="180dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="44sp"
-            android:id="@+id/namу1"
-            android:layout_width="172dp"
-            android:layout_height="56dp"
-            android:text="Арсений"
-            android:textAppearance="@style/name"
-            android:gravity="top"
-            app:layout_constraintHorizontal_bias="0.496"/>
 
 
     <TextView
@@ -341,8 +323,39 @@
                 app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
+    <View
 
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/vector_13"
+            android:alpha="0.5"
 
+            android:translationY="-0.25sp"
+            tools:ignore="MissingConstraints"
+            android:id="@+id/vector_13"
+
+            android:layout_centerHorizontal="true"
+            tools:layout_editor_absoluteY="247dp" tools:layout_editor_absoluteX="297dp"/>
+    <TextView
+            android:scaleType="center"
+            android:translationY="-0.25sp"
+            tools:ignore="MissingConstraints"
+            android:layout_alignParentTop="true"
+            android:lineSpacingExtra="0sp"
+            android:fontFamily="@font/pattaya"
+            android:layout_centerHorizontal="true"
+            android:textSize="44sp"
+            android:id="@+id/namу1"
+            android:layout_width="172dp"
+            android:layout_height="56dp"
+            android:text="Арсений"
+            android:textAppearance="@style/name"
+            android:gravity="top"
+            tools:layout_editor_absoluteY="224dp" tools:layout_editor_absoluteX="120dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
