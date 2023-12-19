@@ -22,7 +22,7 @@
 
         <!-- Добавляем горизонтальную полосу -->
         <path
-                android:pathData="M0 54H320"
+                android:pathData="M32 54H287"
                 android:strokeWidth="2"
                 android:strokeColor="#CCCCCC"
         />
