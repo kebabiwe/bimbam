@@ -184,10 +184,10 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/form"
                 android:gravity="center_vertical"
-        android:popupBackground="@drawable/diagnos"
-        android:spinnerMode="dropdown"
-        android:textAlignment="gravity"
-        android:layout_below="@+id/text5"/>
+                android:popupBackground="@drawable/diagnos"
+                android:spinnerMode="dropdown"
+                android:textAlignment="gravity"
+                android:layout_below="@+id/text5" android:dropDownWidth="wrap_content"/>
 
     </RelativeLayout>
 
