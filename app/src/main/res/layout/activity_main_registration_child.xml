@@ -47,7 +47,7 @@ tools:context=".MainActivity_registrationChild">
                     android:layout_marginStart="25dp" android:layout_marginTop="16dp"
                     android:layout_alignParentTop="true"/>
         </RelativeLayout>
-        />
+
         <TextView
                 android:id="@+id/text3"
                 android:layout_width="119dp"
