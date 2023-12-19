@@ -169,7 +169,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/text3"
             android:layout_width="119dp"
             android:layout_height="22dp"
@@ -179,12 +178,12 @@
             android:fontFamily="@font/opensans"
             android:textAppearance="@style/text"
             android:gravity="top"
-            app:layout_constraintHorizontal_bias="0.154" app:layout_constraintVertical_bias="0.627"/>
+            app:layout_constraintHorizontal_bias="0.154" app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/form5"/>
     <TextView
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
 
             android:layout_width="31dp"
             android:layout_height="22dp"
@@ -195,12 +194,12 @@
             android:fontFamily="@font/opensans"
             android:textAppearance="@style/text"
             android:gravity="top"
-            app:layout_constraintHorizontal_bias="0.118" app:layout_constraintVertical_bias="0.486"/>
+            app:layout_constraintHorizontal_bias="0.118" app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/spinner"/>
     <TextView
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/text2"
             android:layout_width="102dp"
             android:layout_height="22dp"
@@ -210,7 +209,8 @@
             android:fontFamily="@font/opensans"
             android:textAppearance="@style/text"
             android:gravity="top"
-            app:layout_constraintHorizontal_bias="0.145" app:layout_constraintVertical_bias="0.342"/>
+            app:layout_constraintHorizontal_bias="0.145" app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toTopOf="@+id/form1"/>
     <RelativeLayout
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
@@ -270,6 +270,28 @@
             android:background="@drawable/form"
             android:spinnerMode="dropdown" android:popupBackground="@drawable/sex"
             app:layout_constraintVertical_bias="0.449"/>
+
+    <View
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/vector_12"
+            android:alpha="0.5"
+
+            android:translationY="-0.25sp"
+            tools:ignore="MissingConstraints"
+            android:id="@+id/vector_12"
+
+            android:layout_centerHorizontal="true"
+            app:layout_constraintHorizontal_bias="0.62" app:layout_constraintVertical_bias="0.276"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
