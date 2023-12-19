@@ -163,15 +163,20 @@ tools:context=".MainActivity_registrationChild">
         <Spinner
                 android:layout_marginLeft="10dp"
                 android:layout_width="320dp"
-                android:layout_height="56dp" android:id="@+id/spinner"
+                android:layout_height="56dp"
+                android:id="@+id/spinner"
                 style="@style/SpinnerStyle"
                 android:layout_marginEnd="46dp"
-                android:layout_marginBottom="-133dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="5dp" android:layout_below="@+id/text1" android:layout_alignParentEnd="true"
-                android:layout_alignParentStart="true"
-                android:background="@drawable/form"
-                android:spinnerMode="dropdown" android:popupBackground="@drawable/sex"/>
+                android:layout_marginBottom="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/text1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/form"
+        android:spinnerMode="dropdown"
+        android:popupBackground="@drawable/sex"/>
+
         <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="320dp"
@@ -183,7 +188,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:background="@drawable/form"
-                android:gravity="center_vertical"
+                android:gravity="top"
                 android:popupBackground="@drawable/diagnos"
                 android:spinnerMode="dropdown"
                 android:textAlignment="gravity"
