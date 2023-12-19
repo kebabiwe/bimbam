@@ -6,68 +6,80 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth  // Add this import statement
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import android.util.Log
 import android.widget.TextView
-
 
 class MainActivity_registrationAcc : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_registration_acc)
+
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
-        val login: EditText = findViewById(R.id.login)
-        val email: EditText = findViewById(R.id.email)
-        val password: EditText = findViewById(R.id.password)
-        val repeatpass: EditText = findViewById(R.id.repeatpass)
-        val RelativeLayout = findViewById<RelativeLayout>(R.id.buttonreg)
-        val signupText = findViewById<TextView>(R.id.title)
+
+        val loginEditText: EditText = findViewById(R.id.login)
+        val emailEditText: EditText = findViewById(R.id.email)
+        val passwordEditText: EditText = findViewById(R.id.password)
+        val repeatPasswordEditText: EditText = findViewById(R.id.repeatpass)
+        val registrationButton: RelativeLayout = findViewById(R.id.buttonreg)
+        val signupText: TextView = findViewById(R.id.title)
+
         signupText.setOnClickListener {
-            val intent = Intent(this, MainActivity_registrationAcc::class.java)
+            val intent = Intent(this, MainActivity_registrationChild::class.java)
             startActivity(intent)
         }
-        RelativeLayout.setOnClickListener {
-            val login = login.text.toString().trim()
-            val email = email.text.toString().trim()
-            val password = password.text.toString().trim()
-            val repeatpass = repeatpass.text.toString().trim()
 
-            if (login == "" || email == "" || password == "" || repeatpass == "")
-                Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
-            else if (!email.matches(emailPattern.toRegex())) {
-                Toast.makeText(this, "Некорректный формат E-mail", Toast.LENGTH_LONG).show()
-            } else if (repeatpass == "" || repeatpass != password) {
-                Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_LONG).show()
-            } else if (password.length < 6)
-                Toast.makeText(this, "Пароль должен содержать не менее 6 символов", Toast.LENGTH_LONG).show()
-            else {
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val database = database.reference.child("users").child(auth.currentUser!!.uid)
-                        val users: Users = Users(login, email, auth.currentUser!!.uid)
-                        database.setValue(users).addOnCompleteListener {
-                            if (it.isSuccessful) {
-                                val intent = Intent(this, MainActivity_registrationChild::class.java)
-                                startActivity(intent)
-                                finish()
-                            } else {
-                                Toast.makeText(this, "Что-то пошло не так: ${it.exception?.message}", Toast.LENGTH_LONG).show()
-                                Log.e("Firebase", "Authentication failed: ${it.exception?.message}")
+        registrationButton.setOnClickListener {
+            Log.d("ButtonClickListener", "Button clicked")
+            val login = loginEditText.text.toString().trim()
+            val email = emailEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+            val repeatPassword = repeatPasswordEditText.text.toString().trim()
+
+            when {
+                login.isEmpty() || email.isEmpty() || password.isEmpty() || repeatPassword.isEmpty() -> {
+                    Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
+                }
+                !email.matches(emailPattern.toRegex()) -> {
+                    Toast.makeText(this, "Некорректный формат E-mail", Toast.LENGTH_LONG).show()
+                }
+                repeatPassword != password -> {
+                    Toast.makeText(this, "Пароли не совпадают", Toast.LENGTH_LONG).show()
+                }
+                password.length < 6 -> {
+                    Toast.makeText(this, "Пароль должен содержать не менее 6 символов", Toast.LENGTH_LONG).show()
+                }
+                else -> {
+                    auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val usersRef = database.reference.child("users").child(auth.currentUser!!.uid)
+                            val user = Users(login, email, auth.currentUser!!.uid)
+                            usersRef.setValue(user).addOnCompleteListener { innerTask ->
+                                if (innerTask.isSuccessful) {
+                                    val intent = Intent(this, MainActivity_registrationChild::class.java)
+                                    startActivity(intent)
+                                    finish()
+                                } else {
+                                    handleFirebaseError(innerTask.exception?.message)
+                                }
                             }
+                        } else {
+                            handleFirebaseError(task.exception?.message)
                         }
                     }
                 }
-
             }
-            val intent = Intent(this, MainActivity_registrationChild::class.java)
-            startActivity(intent)
-
-
         }
+    }
+
+    private fun handleFirebaseError(errorMessage: String?) {
+        Toast.makeText(this, "Что-то пошло не так: $errorMessage", Toast.LENGTH_LONG).show()
+        Log.e("Firebase", "Authentication failed: $errorMessage")
     }
 }
