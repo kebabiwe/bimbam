@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-tools:context=".MainActivity_registrationChild">
+        tools:context=".MainActivity_registrationChild">
     <RelativeLayout
             android:id="@+id/sign_up"
             android:layout_width="match_parent"
@@ -72,8 +72,6 @@ tools:context=".MainActivity_registrationChild">
                 android:gravity="top"
                 android:layout_marginLeft="40dp" android:layout_marginTop="144dp"
         />
-
-
         <TextView
                 android:layout_width="31dp"
                 android:layout_height="22dp"
@@ -156,23 +154,54 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="569dp"
                 android:clipToOutline="true"
-                android:background="@drawable/button0"
-
-        >
+                android:background="@drawable/button0">
         </RelativeLayout>
         <Spinner
-                android:layout_marginLeft="10dp"
-                android:layout_width="320dp"
-                android:layout_height="56dp" android:id="@+id/spinner"
+                android:paddingTop="1dp"
+                android:paddingLeft="3dp"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                tools:ignore="MissingConstraints"
                 style="@style/SpinnerStyle"
-                android:layout_marginEnd="46dp"
                 android:layout_marginBottom="-133dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="5dp" android:layout_below="@+id/text1" android:layout_alignParentEnd="true"
+                android:id="@+id/spinner"
+                android:layout_width="320dp"
+                android:layout_height="56dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="46dp"
+
+
+                android:gravity="center_vertical"
+                android:textAlignment="gravity"
+
+
+
+
+
+            android:layout_below="@+id/text1"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:background="@drawable/form"
                 android:spinnerMode="dropdown" android:popupBackground="@drawable/sex"/>
+
         <Spinner
+                android:paddingTop="1dp"
+                android:paddingLeft="3dp"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                tools:ignore="MissingConstraints"
+                style="@style/SpinnerStyle"
+                android:layout_marginBottom="-133dp"
                 android:id="@+id/spinner1"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
