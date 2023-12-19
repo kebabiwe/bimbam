@@ -48,16 +48,15 @@ class MainActivity_registrationAcc : AppCompatActivity() {
             else {
                 auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val database =
-                            database.reference.child("users").child(auth.currentUser!!.uid)
+                        val database = database.reference.child("users").child(auth.currentUser!!.uid)
                         val users: Users = Users(login, email, auth.currentUser!!.uid)
                         database.setValue(users).addOnCompleteListener {
                             if (it.isSuccessful) {
                                 val intent = Intent(this, MainActivity_registrationChild::class.java)
                                 startActivity(intent)
+                                finish()
                             } else {
-                                Toast.makeText(this, "Что-то пошло не так: ${it.exception?.message}", Toast.LENGTH_LONG)
-                                    .show()
+                                Toast.makeText(this, "Что-то пошло не так: ${it.exception?.message}", Toast.LENGTH_LONG).show()
                                 Log.e("Firebase", "Authentication failed: ${it.exception?.message}")
                             }
                         }
