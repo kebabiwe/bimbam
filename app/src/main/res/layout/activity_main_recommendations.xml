@@ -208,8 +208,7 @@
                         android:id="@+id/cnt"
                         android:gravity="center"
                         android:layout_marginLeft="32dp"
-                        android:background="@drawable/cnt"
-                        android:elevation="4dp">
+                        android:background="@drawable/cnt">
                     <View
                             android:layout_width="320dp"
                             android:layout_height="178dp"
