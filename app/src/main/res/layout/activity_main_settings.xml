@@ -297,5 +297,5 @@
             android:lineSpacingExtra="-1sp"
             android:gravity="top"
             tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintVertical_bias="0.68"/>
+            app:layout_constraintVertical_bias="0.693"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
