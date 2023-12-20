@@ -43,7 +43,9 @@
                     android:ems="10"
                     android:textColor="@color/black"
                     android:id="@+id/password"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent"
+
+            />
 
         </RelativeLayout>
 
