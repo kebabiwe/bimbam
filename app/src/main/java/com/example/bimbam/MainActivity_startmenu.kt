@@ -1,7 +1,5 @@
 package com.example.bimbam
 
-
-import MainActivity_registrationAcc
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
