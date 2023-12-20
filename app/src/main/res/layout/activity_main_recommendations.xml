@@ -214,7 +214,6 @@
                             android:background="@drawable/img" android:layout_marginTop="0dp"
                             android:layout_marginLeft="0dp"/>
                     <TextView
-
                             android:id="@+id/some_id"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -237,7 +236,6 @@
                             android:background="@drawable/img_1"
                             android:layout_marginTop="40dp"
                             android:layout_marginLeft="0dp"
-
                             android:id="@+id/img_1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
