@@ -59,6 +59,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
                     binding.childname.text.clear()
                     binding.childbirthday.text.clear()
                     val intent = Intent(this, MainActivity_confirmation::class.java)
+                    startActivity(intent)
                     Toast.makeText(this, "Данные успешно сохранены", Toast.LENGTH_SHORT).show()
 
                 }.addOnFailureListener {
