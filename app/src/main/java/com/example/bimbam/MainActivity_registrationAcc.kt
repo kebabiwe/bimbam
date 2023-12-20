@@ -31,8 +31,7 @@ class MainActivity_registrationAcc : AppCompatActivity() {
                 if(password==repeatpass) {
                     firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val intent = Intent(this,MainActivity_registrationChild::class.java)
-                            startActivity(intent)
+                            startSuccessfulLoginActivity()
                         } else {
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_LONG).show()
                         }
@@ -46,6 +45,12 @@ class MainActivity_registrationAcc : AppCompatActivity() {
 
             }
         }
+    }
+    private fun startSuccessfulLoginActivity() {
+        val intent = Intent(this, MainActivity_registrationChild::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        startActivity(intent)
     }
 }
 
