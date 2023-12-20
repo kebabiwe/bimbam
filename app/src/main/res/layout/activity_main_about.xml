@@ -9,7 +9,7 @@
 
     <View
             android:id="@+id/rectangle_5"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="194dp"
             android:layout_marginTop="-20dp"
             android:layout_centerHorizontal="true"
@@ -64,10 +64,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.105"
+            app:layout_constraintVertical_bias="0.12"
             android:id="@+id/title2"
-            android:layout_width="0dp"
-            android:layout_height="53dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:textSize="37sp"
@@ -76,7 +76,7 @@
             android:textColor="#FFFFFF"
             android:text="О приложении"
             android:lineSpacingExtra="-7sp"
-            android:gravity="center_horizontal|top" app:layout_constraintHorizontal_bias="0.0"/>
+            android:gravity="center_horizontal|top"/>
     <RelativeLayout
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,7 @@
 
 
             android:id="@+id/frame_31"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -111,7 +111,7 @@
 
                 <TextView
                         android:id="@+id/some_id"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Эллай - Ваш помощник, разработанный специально для родителей и опекунов детей с ограниченными возможностями."
                         android:textAppearance="@style/some_id"
@@ -137,7 +137,7 @@
                 />
                 <TextView
                         android:id="@+id/some_id_long1"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Он обеспечивает персонализированный и всесторонний уход за ребёнком, отслеживая важные аспекты его здоровья и развития."
@@ -149,7 +149,7 @@
 
                 <TextView
                         android:id="@+id/some_id_long2"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 1. Эллай — напомнит вам о медицинских процедурах, приёме лекарств, специальных упражнениях и других важных моментах по уходу за ребёнком."
@@ -172,7 +172,7 @@
 
                 <TextView
                         android:id="@+id/some_id_long4"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text=" 3. Оно содержит базу знаний о различных состояниях ОВЗ, советы по уходу, а также возможность консультироваться с экспертами в случае необходимости."
@@ -224,8 +224,8 @@
     </RelativeLayout>
     <RelativeLayout
             android:id="@+id/tabbar"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
             tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"

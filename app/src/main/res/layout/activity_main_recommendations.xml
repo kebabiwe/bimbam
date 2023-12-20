@@ -74,8 +74,8 @@
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.077"/>
     <RelativeLayout
             android:id="@+id/tabbar"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
             tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
@@ -149,8 +149,8 @@
             tools:ignore="MissingConstraints"
             android:gravity="center_horizontal|top"
             android:id="@+id/title"
-            android:layout_width="243dp"
-            android:layout_height="88dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:text="Рекомендации специалистов"
@@ -195,8 +195,8 @@
                 <TextView
                         android:textColor="#115931"
                         android:id="@+id/title1"
-                        android:layout_width="155dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_alignParentTop="true"
                         android:fontFamily="@font/opensans"

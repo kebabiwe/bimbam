@@ -25,8 +25,8 @@
 
     <TextView
             app:layout_constraintVertical_bias="0.12"
-            android:layout_width="286dp"
-            android:layout_height="53dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             tools:ignore="MissingConstraints"
@@ -77,17 +77,20 @@
                 android:background="@drawable/profile1"
                 tools:ignore="MissingConstraints"/>
     </RelativeLayout>
+    <!-- нет тени! -->
+
+
     <RelativeLayout
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintVertical_bias="0.376"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintVertical_bias="0.4"
             android:id="@+id/frame_30"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_width="328dp"
+            android:layout_height="29dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
@@ -97,7 +100,7 @@
                 android:layout_width="117dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:text="О приложении"
                 android:fontFamily="@font/opensans"
@@ -108,13 +111,10 @@
 
         />
     </RelativeLayout>
-    <!-- нет тени! -->
-
-
     <RelativeLayout
             android:id="@+id/tabbar"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
             tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
@@ -185,18 +185,18 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:id="@+id/frame_30.2"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:clipToOutline="true"
 
             android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.495">
+            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493">
         <TextView
                 android:id="@+id/some_id3"
                 android:layout_width="106dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:text="Уведомления"
                 android:fontFamily="@font/opensans"
@@ -229,18 +229,18 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:id="@+id/frame_30.3"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:clipToOutline="true"
             android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintVertical_bias="0.613">
+            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintVertical_bias="0.599">
         <TextView
                 android:id="@+id/some_id2"
                 android:layout_width="78dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:text="Вибрация"
                 android:fontFamily="@font/opensans"
@@ -271,24 +271,31 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:id="@+id/frame_30.1"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:clipToOutline="true"
             android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.495"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintVertical_bias="0.713">
-        <TextView
-                android:id="@+id/some_id1"
-                android:layout_width="146dp"
-                android:layout_height="21dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
-                android:layout_centerVertical="true"
-                android:text="Выйти из аккаунта"
-                android:fontFamily="@font/opensans"
-                android:textAppearance="@style/some_id1"
-                android:lineSpacingExtra="-1sp"
-                android:gravity="top"
-        />
     </RelativeLayout>
+    <TextView
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/some_id1"
+            android:layout_width="328dp"
+            android:layout_height="27dp"
+            android:text="  Выйти из аккаунта"
+            android:fontFamily="@font/opensans"
+            android:textAppearance="@style/some_id1"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="top"
+            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintVertical_bias="0.693"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

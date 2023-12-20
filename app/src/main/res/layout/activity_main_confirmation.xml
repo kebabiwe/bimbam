@@ -17,8 +17,8 @@
     <ImageView
             android:id="@+id/image"
             android:src="@drawable/image"
-            android:layout_width="236dp"
-            android:layout_height="251dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:clipToOutline="true"
@@ -26,12 +26,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteY="212dp" tools:layout_editor_absoluteX="87dp"
             android:contentDescription="@string/todo"/>
     <TextView
             android:id="@+id/title"
-            android:layout_width="0dp"
-            android:layout_height="112dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:text="Регистрация прошла успешно"
@@ -45,11 +44,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.171"/>
+            app:layout_constraintVertical_bias="0.175" app:layout_constraintHorizontal_bias="0.0"/>
     <RelativeLayout
             android:id="@+id/button"
-            android:layout_width="320dp"
-            android:layout_height="56dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:clipToOutline="true"

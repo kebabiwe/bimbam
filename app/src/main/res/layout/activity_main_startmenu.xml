@@ -21,13 +21,12 @@
   <ImageView
           android:id="@+id/image"
           android:src="@drawable/image"
-          android:layout_width="236dp"
-          android:layout_height="251dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:layout_centerHorizontal="true"
           android:layout_centerVertical="true"
           android:clipToOutline="true"
-          android:contentDescription="@string/todo" tools:layout_editor_absoluteY="203dp"
-          tools:layout_editor_absoluteX="87dp"
+          android:contentDescription="@string/todo"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toTopOf="parent"
@@ -36,8 +35,8 @@
   <!-- Auto layout, variables, and unit scale are not yet supported -->
   <TextView
           android:id="@+id/text_1"
-          android:layout_width="214dp"
-          android:layout_height="30dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:layout_centerHorizontal="true"
           android:layout_alignParentTop="true"
           android:text="У вас уже есть аккаунт?"
@@ -52,8 +51,8 @@
   <!-- Auto layout, variables, and unit scale are not yet supported -->
   <RelativeLayout
           android:id="@+id/button"
-          android:layout_width="320dp"
-          android:layout_height="56dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:layout_centerHorizontal="true"
           android:layout_alignParentTop="true"
           android:clipToOutline="true"
@@ -66,8 +65,8 @@
           app:layout_constraintHorizontal_bias="0.494" app:layout_constraintVertical_bias="0.767"/>
   <TextView
           android:id="@+id/button1"
-          android:layout_width="200dp"
-          android:layout_height="34dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
           android:gravity="center"
           android:layout_centerHorizontal="true"
           android:layout_centerVertical="true"
