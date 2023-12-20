@@ -1,3 +1,5 @@
 package com.example.bimbam
 
-data class Users(val login:String?=null,val email:String?=null, val uid:String?=null)
+data class Users(val name:String?=null,val sex:String?=null, val birthday:String?=null, val diagnos:String?=null){
+
+}
