@@ -195,17 +195,16 @@
                         android:gravity="center_horizontal|top"/>
 
                 <RelativeLayout
-
                         android:layout_width="321dp"
                         android:layout_height="264dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
 
-
                         android:id="@+id/cnt"
                         android:gravity="center"
                         android:layout_marginLeft="32dp"
-                        android:background="@drawable/cnt">
+                        android:background="@drawable/cnt"
+                        android:elevation="4dp">
                     <View
                             android:layout_width="320dp"
                             android:layout_height="178dp"
@@ -213,7 +212,7 @@
                             android:layout_alignParentTop="true"
                             android:id="@+id/img"
                             android:background="@drawable/img" android:layout_marginTop="0dp"
-                            android:layout_marginLeft="1dp"/>
+                            android:layout_marginLeft="0dp"/>
                     <TextView
 
                             android:id="@+id/some_id"
@@ -226,10 +225,41 @@
                             android:text="Ежедневный массаж стимулирует нервную активность, кровоснабжение и поддерживает мышечный тонус"
                             android:lineSpacingExtra="1sp"
                             android:textSize="17dp"
+                            android:layout_marginLeft="18dp"
                             android:translationY="-0.27sp"
                             android:gravity="top"/>
 
                 </RelativeLayout>
+                <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                    <RelativeLayout
+                            android:background="@drawable/img_1"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginLeft="0dp"
+
+                            android:id="@+id/img_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:clipToOutline="true">
+
+                        <TextView
+                                android:textSize="28sp"
+                                android:fontFamily="@font/pattaya"
+                                tools:ignore="MissingConstraints"
+                                android:id="@+id/some_id85"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Играем вместе"
+                                android:textColor="#FFFFFF"
+                                android:textAppearance="@style/some_id"
+                                android:lineSpacingExtra="-5sp"
+                                android:gravity="top"
+                                android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                </HorizontalScrollView>
+
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
