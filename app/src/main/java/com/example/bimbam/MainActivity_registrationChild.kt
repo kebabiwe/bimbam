@@ -13,7 +13,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
     private lateinit var mAuth : FirebaseAuth
     //In xml we have this edit text to take data input and a button to submit
     private lateinit var name : EditText
-    private lateinit var btn : Button
+    private lateinit var btn : RelativeLayout
     private lateinit var birthday : EditText
 private lateinit var sex : Spinner
 private lateinit var diagnos : Spinner
@@ -27,6 +27,7 @@ private lateinit var diagnos : Spinner
         diagnos = findViewById(R.id.spinner1)
 
         btn = findViewById(R.id.button)
+
         btn.setOnClickListener{
             val data = name.text.toString()
             val data1 = birthday.text.toString()
