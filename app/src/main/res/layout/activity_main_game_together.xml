@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity_game_together">
+
+    <View
+            android:id="@+id/rectangle_5"
+            android:layout_width="0dp"
+            android:layout_height="194dp"
+            android:layout_marginTop="-20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rectangle_5"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+    />
+
+
+    <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/navbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="false"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.023">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/logo1"
+                android:id="@+id/imageView2"
+                tools:ignore="MissingConstraints"/>
+
+        <View
+                android:id="@+id/profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/profile1"
+                tools:ignore="MissingConstraints"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/tabbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+                android:id="@+id/icon1"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/icon1"
+                android:alpha="1"
+                android:layout_alignParentStart="true"/>
+
+        <View
+                android:id="@+id/icon2"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon1"
+                android:layout_marginStart="37dp"
+                android:background="@drawable/icon2"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+        <View
+                android:id="@+id/icon3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon2"
+                android:layout_marginStart="37dp"
+                android:background="@drawable/divider1"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+        <View
+                android:id="@+id/icon4"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon3"
+                android:layout_marginStart="37dp"
+                android:background="@drawable/icon3"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+        <View
+                android:id="@+id/icon5"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon4"
+                android:layout_marginStart="37dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/icon4"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="1.0"/>
+
+    </RelativeLayout>
+
+    <TextView
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.021"
+            android:textSize="37sp"
+            android:fontFamily="@font/pattaya"
+            tools:ignore="MissingConstraints"
+            android:id="@+id/title"
+            android:layout_width="287dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp"
+            android:text="Играем вместе"
+            android:textAppearance="@style/title"
+            android:lineSpacingExtra="-7sp"
+            android:gravity="center_horizontal|top"
+    />
+    <RelativeLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.815"
+            android:layout_centerHorizontal="true"
+            tools:ignore="MissingConstraints"
+            android:textColor="#FFFFFF"
+            android:gravity="center_horizontal|top"
+
+
+            android:id="@+id/frame_31"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:background="#FFFFFF"
+            app:layout_constraintHorizontal_bias="0.494" app:layout_constraintBottom_toTopOf="@+id/tabbar"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_5" android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                tools:ignore="NotSibling">
+
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <RelativeLayout
+                        android:id="@+id/frame_32"
+                        android:layout_width="320dp"
+                        android:layout_height="480dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentTop="true"
+                        android:clipToOutline="true"
+                        android:background="@drawable/frame"
+                        android:elevation="4dp">
+
+                    <View
+                            android:id="@+id/rectangle_8"
+                            android:layout_width="320dp"
+                            android:layout_height="164dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/rest_8"
+                    />
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

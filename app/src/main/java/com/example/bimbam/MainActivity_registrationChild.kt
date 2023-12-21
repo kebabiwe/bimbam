@@ -1,74 +1,71 @@
+package com.example.bimbam
+
 import android.content.Intent
-import android.os.Bundle
-import android.widget.Spinner
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.example.bimbam.databinding.ActivityMainRegistrationChildBinding
+import android.os.Bundle
+import android.graphics.Typeface
+import android.widget.*
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import android.widget.Toast
-import com.example.bimbam.MainActivity_confirmation
-import com.example.bimbam.R
-import com.example.bimbam.Users
 
 class MainActivity_registrationChild : AppCompatActivity() {
-    private lateinit var binding: ActivityMainRegistrationChildBinding
-    private lateinit var database: DatabaseReference
-    private lateinit var firebaseAuth: FirebaseAuth
-    private var userUid: String? = null
-
+    private lateinit var mAuth : FirebaseAuth
+    //In xml we have this edit text to take data input and a button to submit
+    private lateinit var name : EditText
+    private lateinit var btn : RelativeLayout
+    private lateinit var birthday : EditText
+    private lateinit var sex : Spinner
+    private lateinit var diagnos : Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main_registration_child)
+        mAuth = FirebaseAuth.getInstance()
+        name = findViewById(R.id.childname)
+        birthday = findViewById(R.id.childbirthday)
+        sex = findViewById(R.id.spinner)
+        diagnos = findViewById(R.id.spinner1)
 
-        binding = ActivityMainRegistrationChildBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        btn = findViewById(R.id.button)
 
-        firebaseAuth = FirebaseAuth.getInstance()
-        userUid = intent.getStringExtra("userUid") // Получаем UID пользователя
-
-        val mSpinner = findViewById<Spinner>(R.id.spinner)
-        val mList = arrayOf("Мужской", "Женский")
-        val mArrayAdapter = ArrayAdapter(this, R.layout.spinner_list, mList)
-        mArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
-        mSpinner.adapter = mArrayAdapter
-
-        val dSpinner = findViewById<Spinner>(R.id.spinner1)
-        val dList = arrayOf(
-            "Синдром дефицита внимания и гиперактивности", "Аутизм",
-            "Синдром диссоциации движений и говора", "Синдром Туретта", "Синдром Дауна",
-            "Синдром Аспергера", "ДЦП", "Дислексия", "Синдром Ретта"
-        )
-        val dArrayAdapter = ArrayAdapter(this, R.layout.spinner_list2, dList)
-        dArrayAdapter.setDropDownViewResource(R.layout.spinner_list2)
-        dSpinner.adapter = dArrayAdapter
-
-        binding.button.setOnClickListener {
-            val name = binding.childname.text.toString()
-            val sex = binding.spinner.selectedItem.toString()
-            val birthday = binding.childbirthday.text.toString()
-            val diagnosis = binding.spinner1.selectedItem.toString()
-
-            userUid?.let { uid ->
-                database = FirebaseDatabase.getInstance().getReference("Users")
-                val userChildReference = database.child(uid).child("childInfo")
-
-                val userChild = Users(name, sex, birthday, diagnosis)
-
-                userChildReference.setValue(userChild).addOnSuccessListener {
-                    binding.childname.text.clear()
-                    binding.childbirthday.text.clear()
-                    val intent = Intent(this, MainActivity_confirmation::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this, "Данные успешно сохранены", Toast.LENGTH_SHORT).show()
-
-                }.addOnFailureListener {
-                    Toast.makeText(this, "Произошла ошибка", Toast.LENGTH_SHORT).show()
-                }
-            } ?: run {
-
-                Toast.makeText(this, "User UID is null", Toast.LENGTH_SHORT).show()
-            }
+        btn.setOnClickListener{
+            val data = name.text.toString()
+            val data1 = birthday.text.toString()
+            val data2 = sex.selectedItem.toString()
+            val data3 = diagnos.selectedItem.toString()
+            saveData(data)
+            saveData(data1)
+            saveData(data2)
+            saveData(data3)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        //User is LoggedOut send user to mainActivity to Login
+        if(mAuth.currentUser == null)
+        {
+            val intent = Intent(this,MainActivity_Login::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            }
+            startActivity(intent)
+        }
+    }
+
+    //Function to save data in Realtime Database of Firebase
+    private fun saveData(data: String) {
+        val email = mAuth.currentUser?.email
+        //Here UserInfo is a data class which tells DB that we have these columns
+        val user = email?.let { Users(it,data) }
+
+        //Remember here we use keyword what we used in our Database i.e "Key"
+        //You can put anything at place of Key but same as your DataBase
+        val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
+        dbUsers.child(mAuth.currentUser!!.uid)
+            .setValue(user).addOnCompleteListener(OnCompleteListener { task ->
+                if(task.isSuccessful){
+                    Toast.makeText(this,"Token Saved", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
 }

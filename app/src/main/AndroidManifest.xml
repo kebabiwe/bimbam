@@ -16,6 +16,9 @@
             android:theme="@style/Theme.Bimbam"
             tools:targetApi="31">
         <activity
+                android:name=".MainActivity_game_together"
+                android:exported="false"/>
+        <activity
                 android:name=".MainActivity_you_acc_edit"
                 android:exported="false"/>
         <activity
