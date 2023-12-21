@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sex_array">
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
+
+    <string-array name="diagnos_array">
+        <item>Синдром дефицита внимания и гиперактивности</item>
+        <item>Аутизм</item>
+        <item>Синдром диссоциации движений и говора</item>
+        <item>Синдром Туретта</item>
+        <item>Синдром Дауна</item>
+        <item>Синдром Аспергера</item>
+        <item>ДЦП</item>
+        <item>Дислексия</item>
+        <item>Синдром Ретта</item>
+    </string-array>
+</resources>
