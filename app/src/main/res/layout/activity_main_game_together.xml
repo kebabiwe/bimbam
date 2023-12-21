@@ -181,11 +181,15 @@
                     android:layout_height="wrap_content">
 
                 <RelativeLayout
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center"
+                        android:layout_marginLeft="32dp"
                         android:id="@+id/frame_32"
                         android:layout_width="320dp"
-                        android:layout_height="480dp"
+                        android:layout_height="match_parent"
                         android:layout_centerHorizontal="true"
-                        android:layout_alignParentTop="true"
+
                         android:clipToOutline="true"
                         android:background="@drawable/frame"
                         android:elevation="4dp">
@@ -197,6 +201,43 @@
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
                             android:background="@drawable/rest_8"
+                            android:layout_marginLeft="0dp" android:layout_marginTop="-6dp"/>
+
+                    <TextView
+
+                            android:fontFamily="@font/opensans"
+                            android:textColor="#115931"
+                            android:textSize="24dp"
+                            android:layout_marginLeft="18dp"
+                            android:translationY="-0.27sp"
+                            android:id="@+id/some_id34"
+                            android:layout_width="202dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="173dp"
+                            android:text="Прокати мяч с горки"
+                            android:textAppearance="@style/some_id"
+                            android:lineSpacingExtra="-1sp"
+                            android:gravity="top"
+                    />
+                    <TextView
+
+                            android:fontFamily="@font/opensans"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:id="@+id/some_id35"
+                            android:layout_width="297dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="18dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="212dp"
+                            android:text="Для того, чтобы заняться этой подвижной игрой, нужно скатывать мячик по наклонной плоскости. При этом, один участник должен бросать его сверху, а другой — ловить этот предмет снизу. После таких бросков игроков нужно менять местами. Эта малоподвижная игра хорошо влияет на координацию движений и подвижность суставов"
+                            android:textAppearance="@style/some_id"
+                            android:lineSpacingExtra="1sp"
+                            android:translationY="-0.31sp"
+                            android:gravity="top"
                     />
 
                 </RelativeLayout>

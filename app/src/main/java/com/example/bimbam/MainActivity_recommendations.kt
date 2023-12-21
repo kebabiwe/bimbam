@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.RelativeLayout
 
 class MainActivity_recommendations : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,11 @@ class MainActivity_recommendations : AppCompatActivity() {
         val View1 = findViewById<View>(R.id.icon1)
         View1.setOnClickListener {
             val intent = Intent(this@MainActivity_recommendations, MainActivity_homePage::class.java)
+            startActivity(intent)}
+
+        val RelativeLayout = findViewById<RelativeLayout>(R.id.img_1)
+        RelativeLayout.setOnClickListener {
+            val intent = Intent(this@MainActivity_recommendations, MainActivity_game_together::class.java)
             startActivity(intent)}
     }
     }
