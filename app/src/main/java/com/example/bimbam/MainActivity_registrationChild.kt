@@ -15,8 +15,8 @@ class MainActivity_registrationChild : AppCompatActivity() {
     private lateinit var name : EditText
     private lateinit var btn : RelativeLayout
     private lateinit var birthday : EditText
-    private lateinit var sex : Spinner
-    private lateinit var diagnos : Spinner
+private lateinit var sex : Spinner
+private lateinit var diagnos : Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_registration_child)

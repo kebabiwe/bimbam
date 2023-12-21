@@ -53,3 +53,4 @@ class MainActivity_registrationAcc : AppCompatActivity() {
         startActivity(intent)
     }
 }
+
