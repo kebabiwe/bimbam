@@ -5,8 +5,12 @@ import android.icu.text.RelativeDateTimeFormatter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity_you_acc : AppCompatActivity() {
+    val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
+    val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_you_acc)
@@ -30,5 +34,6 @@ class MainActivity_you_acc : AppCompatActivity() {
         View_edit.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_you_acc_edit::class.java)
             startActivity(intent)}
+
     }
     }
