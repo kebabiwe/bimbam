@@ -9,6 +9,8 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.FirebaseApp
+import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -29,7 +31,6 @@ class MainActivity_registrationChild : AppCompatActivity() {
         sex = findViewById(R.id.spinner)
         diagnos = findViewById(R.id.spinner1)
         btn = findViewById(R.id.button)
-
         // Создайте адаптер для пола
         val sexAdapter = ArrayAdapter.createFromResource(this, R.array.sex_array, android.R.layout.simple_spinner_item)
         sexAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -45,10 +46,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
             val data1 = birthday.text.toString()
             val data2 = sex.selectedItem.toString()
             val data3 = diagnos.selectedItem.toString()
-            saveData(data)
-            saveData(data1)
-            saveData(data2)
-            saveData(data3)
+            saveData(data, data1, data2, data3)
         }
     }
 
@@ -62,15 +60,21 @@ class MainActivity_registrationChild : AppCompatActivity() {
         }
     }
 
-    private fun saveData(data: String) {
+    private fun saveData(name: String, birthday: String, sex: String, diagnos: String) {
         val email = mAuth.currentUser?.email
-        val user = email?.let { Users(it, data) }
+        val user = email?.let { Users(name, birthday, sex, diagnos) }
+
+        // Обновите следующую строку, чтобы она указывала на правильную ссылку
         val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
-        dbUsers.child(mAuth.currentUser!!.uid)
-            .setValue(user).addOnCompleteListener(OnCompleteListener { task ->
+
+        dbUsers.child(mAuth.currentUser!!.uid).setValue(user)
+            .addOnCompleteListener(OnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Token Saved", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Данные сохранены", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Не удалось сохранить данные", Toast.LENGTH_SHORT).show()
                 }
             })
     }
+
 }

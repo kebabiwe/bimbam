@@ -5,11 +5,6 @@ import android.os.Bundle
 import android.content.Intent
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.FirebaseDatabase
-import android.util.Log
-import android.widget.RelativeLayout
-import android.widget.TextView
 import com.example.bimbam.databinding.ActivityMainRegistrationAccBinding
 
 class MainActivity_registrationAcc : AppCompatActivity() {
