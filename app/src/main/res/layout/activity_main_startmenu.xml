@@ -19,8 +19,8 @@
 
   <!-- Auto layout, variables, and unit scale are not yet supported -->
   <ImageView
-          android:id="@+id/image"
-          android:src="@drawable/image"
+          android:id="@+id/image_fox"
+          android:src="@drawable/image_fox"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_centerHorizontal="true"

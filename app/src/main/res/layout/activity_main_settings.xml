@@ -63,8 +63,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="40dp"
                 android:layout_centerVertical="true"
-                app:srcCompat="@drawable/logo1"
-                android:id="@+id/imageView2"
+                app:srcCompat="@drawable/logo"
+                android:id="@+id/image_foxView2"
                 tools:ignore="MissingConstraints"/>
 
         <View
@@ -74,26 +74,30 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="40dp"
                 android:layout_centerVertical="true"
-                android:background="@drawable/profile1"
+                android:background="@drawable/profile"
                 tools:ignore="MissingConstraints"/>
     </RelativeLayout>
     <!-- нет тени! -->
 
 
     <RelativeLayout
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="208dp"
+            android:clipToOutline="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintVertical_bias="0.071"
             android:id="@+id/frame_30"
-            android:layout_width="328dp"
-            android:layout_height="29dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:clipToOutline="true"
             tools:ignore="MissingConstraints">
         <TextView
                 android:id="@+id/some_id"
@@ -117,8 +121,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
-            tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
         <View
                 android:id="@+id/icon1"
@@ -126,7 +132,7 @@
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="17dp"
-                android:background="@drawable/icon1"
+                android:background="@drawable/icon__2"
                 android:alpha="1"
                 android:layout_alignParentStart="true"/>
 
@@ -137,7 +143,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/icon1"
                 android:layout_marginStart="37dp"
-                android:background="@drawable/icon2"
+                android:background="@drawable/icon"
                 android:alpha="1"
                 app:layout_constraintHorizontal_bias="0.5"/>
 
@@ -148,7 +154,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/icon2"
                 android:layout_marginStart="37dp"
-                android:background="@drawable/divider1"
+                android:background="@drawable/icon_3"
                 android:alpha="1"
                 app:layout_constraintHorizontal_bias="0.5"/>
 
@@ -159,7 +165,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/icon3"
                 android:layout_marginStart="37dp"
-                android:background="@drawable/icon3"
+                android:background="@drawable/icon_4"
                 android:alpha="1"
                 app:layout_constraintHorizontal_bias="0.5"/>
 
@@ -171,26 +177,30 @@
                 android:layout_toEndOf="@id/icon4"
                 android:layout_marginStart="37dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/icon4"
+                android:background="@drawable/icon_5"
                 android:alpha="1"
                 app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
     <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="208dp"
+            android:clipToOutline="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:id="@+id/frame_30.2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clipToOutline="true"
-
-            android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493">
+            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.373"
+            app:layout_constraintVertical_bias="0.232">
         <TextView
                 android:id="@+id/some_id3"
                 android:layout_width="106dp"
@@ -211,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/frame281"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="280dp"
+                android:layout_marginLeft="263dp"
                 android:layout_centerVertical="true"
                 android:clipToOutline="true"
         />
@@ -219,22 +229,24 @@
 
     </RelativeLayout>
     <RelativeLayout
+
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="208dp"
+            android:clipToOutline="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-
-
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
             android:id="@+id/frame_30.3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clipToOutline="true"
-            android:elevation="8dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintVertical_bias="0.599">
+            tools:ignore="MissingConstraints"
+            app:layout_constraintVertical_bias="0.391">
         <TextView
                 android:id="@+id/some_id2"
                 android:layout_width="78dp"
@@ -255,7 +267,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/frame281"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="280dp"
+                android:layout_marginLeft="263dp"
                 android:layout_centerVertical="true"
                 android:clipToOutline="true"
         />
@@ -279,23 +291,35 @@
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintVertical_bias="0.713">
     </RelativeLayout>
-    <TextView
+
+    <RelativeLayout
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-
+            android:id="@+id/frame_29"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="10dp"
-            android:id="@+id/some_id1"
-            android:layout_width="328dp"
-            android:layout_height="27dp"
-            android:text="  Выйти из аккаунта"
-            android:fontFamily="@font/opensans"
-            android:textAppearance="@style/some_id1"
-            android:lineSpacingExtra="-1sp"
-            android:gravity="top"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintVertical_bias="0.693"/>
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
+            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.602"
+            app:layout_constraintVertical_bias="0.676">
+        <TextView
+                android:id="@+id/some_id67"
+                android:layout_width="117dp"
+                android:layout_height="22dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:text="Выйти из аккаунта"
+                android:textAppearance="@style/some_id1"
+                android:fontFamily="@font/opensans"
+                android:lineSpacingExtra="1sp"
+                android:translationY="-0.31sp"
+                android:gravity="top"/>
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,7 @@ class MainActivity_you_acc : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)}
 
-        val View_edit = findViewById<View>(R.id.vector_13)
+        val View_edit = findViewById<View>(R.id.edit)
         View_edit.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_you_acc_edit::class.java)
             startActivity(intent)}
