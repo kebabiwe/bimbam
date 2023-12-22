@@ -53,8 +53,8 @@
 
     />
     <ImageView
-            android:id="@+id/image_fox"
-            android:src="@drawable/image_fox"
+            android:id="@+id/image"
+            android:background="@drawable/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -81,7 +81,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
 
             app:layout_constraintHorizontal_bias="0.493" app:layout_constraintVertical_bias="0.445"
-            app:layout_constraintTop_toBottomOf="@+id/image_fox"/>
+            app:layout_constraintTop_toBottomOf="@+id/image"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
