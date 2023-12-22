@@ -44,7 +44,7 @@
                 android:layout_marginLeft="40dp"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/logo"
-                android:id="@+id/image_fox_foxView2"
+                android:id="@+id/image_foxView2"
                 tools:ignore="MissingConstraints"/>
 
         <View
@@ -101,7 +101,7 @@
         <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/image_fox_fox"
+                android:layout_below="@id/image_fox"
                 tools:ignore="NotSibling">
 
             <LinearLayout
@@ -122,11 +122,12 @@
 
 
                 <ImageView
-                        android:id="@+id/image_fox_fox"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_marginLeft="85dp"
+                        android:id="@+id/image_fox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:src="@drawable/image_fox"
+                        android:src="@drawable/image"
                         android:clipToOutline="true"
                         android:contentDescription="@string/todo"
                         app:layout_constraintStart_toStartOf="parent"

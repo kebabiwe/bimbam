@@ -15,8 +15,8 @@
             android:background="#F9F9F9"
             tools:ignore="MissingConstraints"/>
     <ImageView
-            android:id="@+id/image_fox_fox"
-            android:src="@drawable/image_fox"
+            android:id="@+id/image_fox"
+            android:src="@drawable/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
