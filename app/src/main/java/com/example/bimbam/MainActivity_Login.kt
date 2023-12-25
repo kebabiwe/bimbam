@@ -13,22 +13,27 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity_Login : AppCompatActivity() {
     private lateinit var binding: ActivityMainLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private var isInLoginProcess: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
+
         binding.title.setOnClickListener {
+            // Необходимо исправить этот блок кода, чтобы избежать создания новой активности MainActivity_Login
+            // Вместо этого, если пользователь хочет вернуться на экран входа, используйте Intent с текущей активностью
             val intent = Intent(this, MainActivity_Login::class.java)
             startActivity(intent)
         }
+
         binding.button.setOnClickListener {
             val login = binding.login.text.toString()
             val pass = binding.password.text.toString()
             if (login.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(login, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        // Переместите этот блок кода сюда, чтобы избежать ненужного перехода при успешном входе
                         val intent = Intent(this, MainActivity_homePage::class.java)
                         startActivity(intent)
                     } else {
@@ -40,13 +45,13 @@ class MainActivity_Login : AppCompatActivity() {
             }
         }
     }
+
     override fun onStart() {
         super.onStart()
-
-        if (firebaseAuth.currentUser != null && !isInLoginProcess) {
-            val intent = Intent(this, MainActivity_homePage::class.java)
-            startActivity(intent)
+        // Убедитесь, что этот блок кода соответствует вашим требованиям
+        if (firebaseAuth.currentUser != null) {
+            // Если пользователь уже вошел в систему, может потребоваться предпринять другие действия
         }
     }
-
 }
+
