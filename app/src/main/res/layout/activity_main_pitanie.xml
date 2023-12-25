@@ -5,8 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity_game_together">
-
+        tools:context=".MainActivity_pitanie">
     <View
             android:id="@+id/rectangle_5"
             android:layout_width="0dp"
@@ -25,9 +24,6 @@
 
 
     <View
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="144dp"
-            android:layout_marginBottom="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -38,11 +34,11 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-
+            android:layout_alignParentBottom="true"
             android:background="@drawable/arrow"
             tools:ignore="MissingConstraints"
-            app:layout_constraintHorizontal_bias="0.035"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintVertical_bias="0.183"/>
     <TextView
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -180,7 +176,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="80dp"
-            android:text="Играем вместе"
+            android:text="Питание"
             android:textAppearance="@style/title"
             android:lineSpacingExtra="-7sp"
             android:gravity="center_horizontal|top"
@@ -220,14 +216,14 @@
                     android:layout_height="wrap_content">
 
                 <RelativeLayout
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="30dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginRight="16dp"
+
                         android:gravity="center"
+                        android:layout_marginLeft="35dp"
                         android:id="@+id/frame_32"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -239,10 +235,10 @@
                     <View
                             android:id="@+id/rectangle_8"
                             android:layout_width="333dp"
-                            android:layout_height="168dp"
+                            android:layout_height="165dp"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:background="@drawable/rest_8"
+                            android:background="@drawable/restanges_8"
                             android:layout_marginLeft="0dp" android:layout_marginTop="-2dp"
                             tools:ignore="DuplicateIds"/>
                     <TextView
@@ -253,21 +249,21 @@
                             android:fontFamily="@font/opensans"
                             android:textColor="#115931"
                             android:textSize="20dp"
+
                             android:translationY="-0.27sp"
                             android:id="@+id/some_id34"
-                            android:layout_width="202dp"
+                            android:layout_width="291dp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentTop="true"
                             android:layout_marginTop="172dp"
-                            android:text="Прокати мяч с горки"
+
+                            android:text="Обеспечьте полноценное питание ребенка"
                             android:textAppearance="@style/some_id"
                             android:lineSpacingExtra="-1sp"
                             android:gravity="top"
                     />
                     <TextView
 
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="@font/opensans"
                             android:textColor="@color/black"
@@ -276,9 +272,11 @@
                             android:layout_width="297dp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
                             android:layout_alignParentTop="true"
-                            android:layout_marginTop="212dp"
-                            android:text="Для того, чтобы заняться этой подвижной игрой, нужно скатывать мячик по наклонной плоскости. При этом, один участник должен бросать его сверху, а другой — ловить этот предмет снизу. После таких бросков игроков нужно менять местами. Эта малоподвижная игра хорошо влияет на координацию движений и подвижность суставов"
+                            android:layout_marginTop="240dp"
+                            android:text="Питание подчиняется общеизвестным правилам: должно быть сбалансированным, соответствовать возрасту и учитывать особенности основной патологии. Обеспечение достаточного питания и контроль за оптимальным набором веса крайне важны, так как дети-инвалиды часто подвержены большей опасности истощения. У детей с тяжёлыми поражениями ЦНС часто наблюдаются изменения метаболизма, что может привести к различного типа дистрофиям. Трудности с жеванием, глотанием, повышенная потребность в энергии из-за напряжения мышц становятся причиной отклонений в росте и недовеса. Недоедание замедляет физическое и умственное развитие. В то же время, дети с тяжёлыми двигательными нарушениями, особенно находящиеся на зондовом питании, имеют больший индекс массы тела и риск развития ожирения. Поэтому, важно ещё в раннем возрасте определить причины недостаточного набора веса или формирования избыточной массы тела, при необходимости скорректировать питание или подобрать индивидуальную диету"
                             android:textAppearance="@style/some_id"
                             android:lineSpacingExtra="1sp"
                             android:translationY="-0.31sp"
@@ -286,76 +284,6 @@
                     />
 
                 </RelativeLayout>
-
-                <RelativeLayout
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginStart="30dp"
-                        android:gravity="center"
-                        android:id="@+id/frame_33"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clipToOutline="true"
-                        android:background="@drawable/frame"
-                        android:elevation="4dp"
-                        tools:ignore="DuplicateIds">
-                    <View
-                            android:id="@+id/rectangle_10"
-                            android:layout_width="339dp"
-                            android:layout_height="163dp"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:background="@drawable/restenges_10"
-                            android:layout_marginLeft="0dp" android:layout_marginTop="-2dp"
-                            tools:ignore="DuplicateIds"/>
-                    <TextView
-
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="@font/opensans"
-                            android:textColor="#115931"
-                            android:textSize="20dp"
-                            android:translationY="-0.27sp"
-                            android:id="@+id/some_id43"
-                            android:layout_width="294dp"
-                            android:layout_height="43dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="172dp"
-                            android:text="Пройди, не задев ворота"
-                            android:textAppearance="@style/some_id"
-                            android:lineSpacingExtra="-1sp"
-                            android:gravity="top"
-                    />
-                    <TextView
-
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginBottom="16dp"
-                            android:fontFamily="@font/opensans"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            android:id="@+id/some_id98"
-                            android:layout_width="297dp"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="212dp"
-                            android:text="Чтобы приступить к игре, нужно сделать из стульев ворота (четыре штуки), проход в которых будет равняться 50-ти см. Через них детишкам нужно пройти так, чтобы ничего не задеть и не сбить. Сначала участники действуют с открытыми глазами, а потом пробуют осуществить то же самое без задействования органов зрения."
-                            android:textAppearance="@style/some_id"
-                            android:lineSpacingExtra="1sp"
-                            android:translationY="-0.31sp"
-                            android:gravity="top"
-                    />
-
-                </RelativeLayout>
-
-
 
 
 

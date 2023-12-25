@@ -31,5 +31,16 @@ class MainActivity_recommendations : AppCompatActivity() {
         RelativeLayout.setOnClickListener {
             val intent = Intent(this@MainActivity_recommendations, MainActivity_game_together::class.java)
             startActivity(intent)}
+
+
+        val RelativeLayout_2 = findViewById<View>(R.id.frame_2)
+        RelativeLayout_2.setOnClickListener {
+            val intent = Intent(this@MainActivity_recommendations, MainActivity_pitanie::class.java)
+            startActivity(intent)}
+
+        val RelativeLayout_3 = findViewById<View>(R.id.frame_3)
+        RelativeLayout_3.setOnClickListener {
+            val intent = Intent(this@MainActivity_recommendations, MainActivity_emotions::class.java)
+            startActivity(intent)}
     }
     }
