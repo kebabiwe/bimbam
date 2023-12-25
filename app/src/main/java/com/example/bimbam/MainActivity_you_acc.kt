@@ -45,10 +45,10 @@ class MainActivity_you_acc : AppCompatActivity() {
         val diagnos = intent.getStringExtra("DIAGNOS")
 
         // Установите данные в TextView
-        nameTextView.text = " $name"
-        sexTextView.text = " $sex"
-        birthdayTextView.text = " $birthday"
-        diagnosTextView.text = " $diagnos"
+        nameTextView.text = "$name"
+        sexTextView.text = "$sex"
+        birthdayTextView.text = "$birthday"
+        diagnosTextView.text = "$diagnos"
 
     }
 }
