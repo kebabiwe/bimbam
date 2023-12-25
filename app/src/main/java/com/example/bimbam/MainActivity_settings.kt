@@ -32,6 +32,10 @@ class MainActivity_settings : AppCompatActivity() {
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_settings, MainActivity_recommendations::class.java)
             startActivity(intent)}
+        val Logout = findViewById<RelativeLayout>(R.id.frame_29)
+        Logout.setOnClickListener {
+            showLogoutConfirmationDialog()
+        }
     }
     private fun showLogoutConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
