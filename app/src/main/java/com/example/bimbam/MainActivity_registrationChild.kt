@@ -71,6 +71,13 @@ class MainActivity_registrationChild : AppCompatActivity() {
             .addOnCompleteListener(OnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Данные сохранены", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity_you_acc::class.java).apply {
+                        putExtra("NAME", name)
+                        putExtra("BIRTHDAY", birthday)
+                        putExtra("SEX", sex)
+                        putExtra("DIAGNOS", diagnos)
+                    }
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this, "Не удалось сохранить данные", Toast.LENGTH_SHORT).show()
                 }
