@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity_Login : AppCompatActivity() {
     private lateinit var binding: ActivityMainLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private var isInLoginProcess: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainLoginBinding.inflate(layoutInflater)
@@ -39,4 +40,13 @@ class MainActivity_Login : AppCompatActivity() {
             }
         }
     }
+    override fun onStart() {
+        super.onStart()
+
+        if (firebaseAuth.currentUser != null && !isInLoginProcess) {
+            val intent = Intent(this, MainActivity_homePage::class.java)
+            startActivity(intent)
+        }
+    }
+
 }
