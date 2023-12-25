@@ -13,29 +13,25 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity_Login : AppCompatActivity() {
     private lateinit var binding: ActivityMainLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
-
+    private var isInLoginProcess: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-
         binding.title.setOnClickListener {
-            // Необходимо исправить этот блок кода, чтобы избежать создания новой активности MainActivity_Login
-            // Вместо этого, если пользователь хочет вернуться на экран входа, используйте Intent с текущей активностью
             val intent = Intent(this, MainActivity_Login::class.java)
             startActivity(intent)
         }
-
         binding.button.setOnClickListener {
             val login = binding.login.text.toString()
             val pass = binding.password.text.toString()
             if (login.isNotEmpty() && pass.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(login, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        // Переместите этот блок кода сюда, чтобы избежать ненужного перехода при успешном входе
                         val intent = Intent(this, MainActivity_homePage::class.java)
                         startActivity(intent)
+                        saveUserTokenToDevice("уникальный_токен")
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
@@ -45,13 +41,27 @@ class MainActivity_Login : AppCompatActivity() {
             }
         }
     }
-
+    private fun saveUserTokenToDevice(token: String) {
+        val sharedPreferences = getPreferences(MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("user_token", token)
+        editor.apply()
+    }
     override fun onStart() {
         super.onStart()
-        // Убедитесь, что этот блок кода соответствует вашим требованиям
-        if (firebaseAuth.currentUser != null) {
-            // Если пользователь уже вошел в систему, может потребоваться предпринять другие действия
+
+        if (firebaseAuth.currentUser != null && !isInLoginProcess) {
+            val intent = Intent(this, MainActivity_homePage::class.java)
+            startActivity(intent)
+            val sharedPreferences = getPreferences(MODE_PRIVATE)
+            val userToken = sharedPreferences.getString("user_token", null)
+
+            if (firebaseAuth.currentUser != null && !isInLoginProcess && userToken != null) {
+                // Пользователь уже вошел в систему, и токен присутствует
+                val intent = Intent(this, MainActivity_homePage::class.java)
+                startActivity(intent)
+            }
         }
     }
-}
 
+}
