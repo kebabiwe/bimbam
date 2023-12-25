@@ -39,5 +39,4 @@ class MainActivity_Login : AppCompatActivity() {
             }
         }
     }
-
 }
