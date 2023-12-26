@@ -290,7 +290,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:id="@+id/img"
+                            android:id="@+id/img_2"
                             android:background="@drawable/recom_4"
                             android:layout_marginTop="0dp"
                             android:layout_marginLeft="0dp"
@@ -309,7 +309,7 @@
                             android:lineSpacingExtra="1sp"
                             android:textSize="17dp"
                             android:translationY="-0.27sp"
-                            android:gravity="top" android:layout_below="@+id/img"/>
+                            android:gravity="top" android:layout_below="@+id/img_2"/>
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -342,13 +342,13 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:id="@+id/img"
+                            android:id="@+id/img_3"
                             android:background="@drawable/recom_5"
                             android:layout_marginTop="0dp"
                             android:layout_marginLeft="0dp"
                             tools:ignore="DuplicateIds"/>
                     <TextView
-                            android:layout_marginTop="16dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
@@ -362,7 +362,7 @@
                             android:textSize="17dp"
                             android:translationY="-0.27sp"
                             android:gravity="top"
-                            android:layout_below="@+id/img"/>
+                            android:layout_below="@+id/img_3"/>
 
                 </RelativeLayout>
 
@@ -395,13 +395,13 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:id="@+id/img"
+                            android:id="@+id/img_4"
                             android:background="@drawable/recom_6"
                             android:layout_marginTop="0dp"
                             android:layout_marginLeft="0dp"
                             tools:ignore="DuplicateIds"/>
                     <TextView
-                            android:layout_marginTop="16dp"
+                            android:layout_marginTop="14dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
@@ -415,7 +415,7 @@
                             android:textSize="17dp"
                             android:translationY="-0.27sp"
                             android:gravity="top"
-                            android:layout_below="@+id/img"/>
+                            android:layout_below="@+id/img_4"/>
 
                 </RelativeLayout>
 
@@ -448,7 +448,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:id="@+id/img"
+                            android:id="@+id/img_5"
                             android:background="@drawable/recom_7"
                             android:layout_marginTop="0dp"
                             android:layout_marginLeft="0dp"
@@ -469,7 +469,7 @@
                             android:textSize="17dp"
                             android:translationY="-0.27sp"
                             android:gravity="top"
-                            android:layout_below="@+id/img"/>
+                            android:layout_below="@+id/img_5"/>
 
                 </RelativeLayout>
 
