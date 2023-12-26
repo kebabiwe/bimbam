@@ -463,8 +463,7 @@
                             android:layout_height="match_parent"
                             android:fontFamily="@font/opensans"
                             android:textColor="@color/black"
-                            android:text="Copy
-Поощряйте самостоятельность в выполнении задач в пределах возможностей ребенка. Это способствует его развитию и самооценке."
+                            android:text="Copy поощряйте самостоятельность в выполнении задач в пределах возможностей ребенка. Это способствует его развитию и самооценке."
                             android:lineSpacingExtra="1sp"
                             android:textSize="17dp"
                             android:translationY="-0.27sp"
