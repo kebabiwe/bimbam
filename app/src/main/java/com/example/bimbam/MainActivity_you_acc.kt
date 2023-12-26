@@ -35,16 +35,27 @@ class MainActivity_you_acc : AppCompatActivity() {
         // Если данные не были переданы через Intent, попытаемся получить из SharedPreferences
         if (name == null || sex == null || birthday == null || diagnos == null) {
             val sharedPreferences: SharedPreferences = getPreferences(MODE_PRIVATE)
-            nameTextView.text = sharedPreferences.getString("NAME", "")
-            sexTextView.text = sharedPreferences.getString("SEX", "")
-            birthdayTextView.text = sharedPreferences.getString("BIRTHDAY", "")
-            diagnosTextView.text = sharedPreferences.getString("DIAGNOS", "")
+
+            // Если в SharedPreferences есть хотя бы одно значение, используем данные из SharedPreferences
+            if (sharedPreferences.contains("NAME") || sharedPreferences.contains("SEX") ||
+                sharedPreferences.contains("BIRTHDAY") || sharedPreferences.contains("DIAGNOS")
+            ) {
+                nameTextView.text = sharedPreferences.getString("NAME", "")
+                sexTextView.text = sharedPreferences.getString("SEX", "")
+                birthdayTextView.text = sharedPreferences.getString("BIRTHDAY", "")
+                diagnosTextView.text = sharedPreferences.getString("DIAGNOS", "")
+            } else {
+                // Если в SharedPreferences нет данных, оставляем TextView без изменений
+            }
         } else {
-            // Если данные были переданы через Intent, устанавливаем их в TextView
+            // Если данные были переданы через Intent, устанавливаем их в TextView и сохраняем в SharedPreferences
             nameTextView.text = name
             sexTextView.text = sex
             birthdayTextView.text = birthday
             diagnosTextView.text = diagnos
+
+            // Сохранение данных в SharedPreferences
+            saveDataToSharedPreferences(name, sex, birthday, diagnos)
         }
 
         val RelativeDateTimeFormatter = findViewById<View>(R.id.icon5)
@@ -64,5 +75,15 @@ class MainActivity_you_acc : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun saveDataToSharedPreferences(name: String, sex: String, birthday: String, diagnos: String) {
+        val sharedPreferences = getPreferences(MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("NAME", name)
+        editor.putString("SEX", sex)
+        editor.putString("BIRTHDAY", birthday)
+        editor.putString("DIAGNOS", diagnos)
+        editor.apply()
     }
 }
