@@ -24,7 +24,19 @@ class MainActivity_you_acc : AppCompatActivity() {
         sexTextView = findViewById(R.id.SEX)
         birthdayTextView = findViewById(R.id.BIRTHDAY)
         diagnosTextView = findViewById(R.id.DIAGNOS)
-        if (intent != null && intent.extras != null) {
+        if (savedInstanceState != null) {
+            // Восстановление данных из сохраненного состояния
+            val name = savedInstanceState.getString("NAME")
+            val sex = savedInstanceState.getString("SEX")
+            val birthday = savedInstanceState.getString("BIRTHDAY")
+            val diagnos = savedInstanceState.getString("DIAGNOS")
+
+            // Установка данных в TextView
+            nameTextView.text = "$name"
+            sexTextView.text = "$sex"
+            birthdayTextView.text = "$birthday"
+            diagnosTextView.text = "$diagnos"
+        } else if (intent != null && intent.extras != null) {
             // Получение данных из Intent
             val name = intent.getStringExtra("NAME")
             val sex = intent.getStringExtra("SEX")
@@ -53,5 +65,13 @@ class MainActivity_you_acc : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Сохранение данных перед изменением конфигурации активности
+        outState.putString("NAME", nameTextView.text.toString())
+        outState.putString("SEX", sexTextView.text.toString())
+        outState.putString("BIRTHDAY", birthdayTextView.text.toString())
+        outState.putString("DIAGNOS", diagnosTextView.text.toString())
     }
 }
