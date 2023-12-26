@@ -45,7 +45,6 @@ class MainActivity_settings : AppCompatActivity() {
         val inflater = layoutInflater
         val view = inflater.inflate(R.layout.custom_design, null)
         builder.setView(view)
-
         // Находим кнопки в макете
         val btnYes = view.findViewById<RelativeLayout>(R.id.yes)
         val btnNo = view.findViewById<RelativeLayout>(R.id.no)
