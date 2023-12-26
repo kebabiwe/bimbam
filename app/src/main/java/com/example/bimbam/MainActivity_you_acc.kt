@@ -1,20 +1,29 @@
 package com.example.bimbam
 
 import android.content.Intent
-import android.icu.text.RelativeDateTimeFormatter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity_you_acc : AppCompatActivity() {
-    val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
-    val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
+    private val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
+    private val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
+    private lateinit var nameTextView: TextView
+    private lateinit var sexTextView: TextView
+    private lateinit var birthdayTextView: TextView
+    private lateinit var diagnosTextView: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_you_acc)
+
+        nameTextView = findViewById(R.id.NAME)
+        sexTextView = findViewById(R.id.SEX)
+        birthdayTextView = findViewById(R.id.BIRTHDAY)
+        diagnosTextView = findViewById(R.id.DIAGNOS)
 
         val RelativeDateTimeFormatter = findViewById<View>(R.id.icon5)
         RelativeDateTimeFormatter.setOnClickListener {
@@ -33,11 +42,6 @@ class MainActivity_you_acc : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val nameTextView = findViewById<TextView>(R.id.NAME)
-        val sexTextView = findViewById<TextView>(R.id.SEX)
-        val birthdayTextView = findViewById<TextView>(R.id.BIRTHDAY)
-        val diagnosTextView = findViewById<TextView>(R.id.DIAGNOS)
-
         // Получите данные из Intent
         val name = intent.getStringExtra("NAME")
         val sex = intent.getStringExtra("SEX")
@@ -45,10 +49,26 @@ class MainActivity_you_acc : AppCompatActivity() {
         val diagnos = intent.getStringExtra("DIAGNOS")
 
         // Установите данные в TextView
-        nameTextView.text = "$name"
-        sexTextView.text = "$sex"
-        birthdayTextView.text = "$birthday"
-        diagnosTextView.text = "$diagnos"
+        nameTextView.text = name
+        sexTextView.text = sex
+        birthdayTextView.text = birthday
+        diagnosTextView.text = diagnos
 
+        // Загрузите данные из SharedPreferences
+        loadDataFromSharedPreferences()
+    }
+
+    private fun loadDataFromSharedPreferences() {
+        val sharedPreferences = getPreferences(MODE_PRIVATE)
+        val name = sharedPreferences.getString("NAME", "")
+        val birthday = sharedPreferences.getString("BIRTHDAY", "")
+        val sex = sharedPreferences.getString("SEX", "")
+        val diagnos = sharedPreferences.getString("DIAGNOS", "")
+
+        // Установите данные в TextView
+        nameTextView.text = name
+        sexTextView.text = sex
+        birthdayTextView.text = birthday
+        diagnosTextView.text = diagnos
     }
 }

@@ -78,10 +78,11 @@ class MainActivity_settings : AppCompatActivity() {
     private fun logoutUser(){
         clearUserToken()
         firebaseAuth.signOut()
+        // Создаем новый стек задачи для MainActivity_startmenu и убираем его из стека задачи текущей активности
         val intent = Intent(this@MainActivity_settings, MainActivity_startmenu::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-
-        // Finish the current activity to prevent the user from going back to the previous screen
+        // Завершаем текущую активность, чтобы предотвратить возврат к предыдущему экрану
         finish()
     }
 }

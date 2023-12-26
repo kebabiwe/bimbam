@@ -59,7 +59,15 @@ class MainActivity_registrationChild : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    private fun saveDataToSharedPreferences(name: String, birthday: String, sex: String, diagnos: String) {
+        val sharedPreferences = getPreferences(MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("NAME", name)
+        editor.putString("BIRTHDAY", birthday)
+        editor.putString("SEX", sex)
+        editor.putString("DIAGNOS", diagnos)
+        editor.apply()
+    }
     private fun saveData(name: String, birthday: String, sex: String, diagnos: String) {
         val email = mAuth.currentUser?.email
         val user = email?.let { Users(name, birthday, sex, diagnos) }
