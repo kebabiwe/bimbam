@@ -1,6 +1,7 @@
 package com.example.bimbam
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -24,31 +25,28 @@ class MainActivity_you_acc : AppCompatActivity() {
         sexTextView = findViewById(R.id.SEX)
         birthdayTextView = findViewById(R.id.BIRTHDAY)
         diagnosTextView = findViewById(R.id.DIAGNOS)
-        if (savedInstanceState != null) {
-            // Восстановление данных из сохраненного состояния
-            val name = savedInstanceState.getString("NAME")
-            val sex = savedInstanceState.getString("SEX")
-            val birthday = savedInstanceState.getString("BIRTHDAY")
-            val diagnos = savedInstanceState.getString("DIAGNOS")
 
-            // Установка данных в TextView
-            nameTextView.text = "$name"
-            sexTextView.text = "$sex"
-            birthdayTextView.text = "$birthday"
-            diagnosTextView.text = "$diagnos"
-        } else if (intent != null && intent.extras != null) {
-            // Получение данных из Intent
-            val name = intent.getStringExtra("NAME")
-            val sex = intent.getStringExtra("SEX")
-            val birthday = intent.getStringExtra("BIRTHDAY")
-            val diagnos = intent.getStringExtra("DIAGNOS")
+        // Попытка получить данные из Intent
+        val name = intent.getStringExtra("NAME")
+        val sex = intent.getStringExtra("SEX")
+        val birthday = intent.getStringExtra("BIRTHDAY")
+        val diagnos = intent.getStringExtra("DIAGNOS")
 
-            // Установка данных в TextView
-            nameTextView.text = "$name"
-            sexTextView.text = "$sex"
-            birthdayTextView.text = "$birthday"
-            diagnosTextView.text = "$diagnos"
+        // Если данные не были переданы через Intent, попытаемся получить из SharedPreferences
+        if (name == null || sex == null || birthday == null || diagnos == null) {
+            val sharedPreferences: SharedPreferences = getPreferences(MODE_PRIVATE)
+            nameTextView.text = sharedPreferences.getString("NAME", "")
+            sexTextView.text = sharedPreferences.getString("SEX", "")
+            birthdayTextView.text = sharedPreferences.getString("BIRTHDAY", "")
+            diagnosTextView.text = sharedPreferences.getString("DIAGNOS", "")
+        } else {
+            // Если данные были переданы через Intent, устанавливаем их в TextView
+            nameTextView.text = name
+            sexTextView.text = sex
+            birthdayTextView.text = birthday
+            diagnosTextView.text = diagnos
         }
+
         val RelativeDateTimeFormatter = findViewById<View>(R.id.icon5)
         RelativeDateTimeFormatter.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_settings::class.java)
@@ -60,18 +58,11 @@ class MainActivity_you_acc : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_homePage::class.java)
             startActivity(intent)
         }
+
         val View2 = findViewById<View>(R.id.icon2)
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
-    }
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        // Сохранение данных перед изменением конфигурации активности
-        outState.putString("NAME", nameTextView.text.toString())
-        outState.putString("SEX", sexTextView.text.toString())
-        outState.putString("BIRTHDAY", birthdayTextView.text.toString())
-        outState.putString("DIAGNOS", diagnosTextView.text.toString())
     }
 }

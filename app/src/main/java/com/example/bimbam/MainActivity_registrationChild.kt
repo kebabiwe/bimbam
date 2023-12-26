@@ -68,6 +68,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
         editor.putString("DIAGNOS", diagnos)
         editor.apply()
     }
+
     private fun saveData(name: String, birthday: String, sex: String, diagnos: String) {
         val email = mAuth.currentUser?.email
         val user = email?.let { Users(name, birthday, sex, diagnos) }
