@@ -24,7 +24,19 @@ class MainActivity_you_acc : AppCompatActivity() {
         sexTextView = findViewById(R.id.SEX)
         birthdayTextView = findViewById(R.id.BIRTHDAY)
         diagnosTextView = findViewById(R.id.DIAGNOS)
+        if (intent != null && intent.extras != null) {
+            // Получение данных из Intent
+            val name = intent.getStringExtra("NAME")
+            val sex = intent.getStringExtra("SEX")
+            val birthday = intent.getStringExtra("BIRTHDAY")
+            val diagnos = intent.getStringExtra("DIAGNOS")
 
+            // Установка данных в TextView
+            nameTextView.text = "$name"
+            sexTextView.text = "$sex"
+            birthdayTextView.text = "$birthday"
+            diagnosTextView.text = "$diagnos"
+        }
         val RelativeDateTimeFormatter = findViewById<View>(R.id.icon5)
         RelativeDateTimeFormatter.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_settings::class.java)
@@ -41,34 +53,5 @@ class MainActivity_you_acc : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
-
-        // Получите данные из Intent
-        val name = intent.getStringExtra("NAME")
-        val sex = intent.getStringExtra("SEX")
-        val birthday = intent.getStringExtra("BIRTHDAY")
-        val diagnos = intent.getStringExtra("DIAGNOS")
-
-        // Установите данные в TextView
-        nameTextView.text = name ?: ""
-        sexTextView.text = sex ?: ""
-        birthdayTextView.text = birthday ?: ""
-        diagnosTextView.text = diagnos ?: ""
-
-        // Загрузите данные из SharedPreferences
-        loadDataFromSharedPreferences()
-    }
-
-    private fun loadDataFromSharedPreferences() {
-        val sharedPreferences = getPreferences(MODE_PRIVATE)
-        val name = sharedPreferences.getString("NAME", "")
-        val birthday = sharedPreferences.getString("BIRTHDAY", "")
-        val sex = sharedPreferences.getString("SEX", "")
-        val diagnos = sharedPreferences.getString("DIAGNOS", "")
-
-        // Установите данные в TextView
-        nameTextView.text = name ?: ""
-        sexTextView.text = sex ?: ""
-        birthdayTextView.text = birthday ?: ""
-        diagnosTextView.text = diagnos ?: ""
     }
 }
