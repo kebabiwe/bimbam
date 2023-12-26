@@ -6,5 +6,188 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity_list">
+    <View
+            android:id="@+id/rectangle_5"
+            android:layout_width="0dp"
+            android:layout_height="194dp"
+            android:layout_marginTop="-20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rectangle_5"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"/>
+
+
+    <View
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            app:layout_constraintHorizontal_bias="0.041"
+            app:layout_constraintVertical_bias="0.0"
+            android:id="@+id/arrow"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/arrow"
+            tools:ignore="MissingConstraints"/>/>
+    <TextView
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintVertical_bias="0.0"
+            android:fontFamily="@font/opensans"
+            android:textColor="#FFFFFF"
+            android:id="@+id/some_id"
+            android:layout_width="81dp"
+            android:layout_height="22dp"
+            android:text="Вернуться"
+            android:textAppearance="@style/some_id"
+            android:lineSpacingExtra="1sp"
+            android:translationY="-0.31sp"
+            android:gravity="top"
+            android:textSize="16dp"
+            tools:ignore="MissingConstraints"/>
+    <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/navbar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="false"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.023">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="40dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/logo"
+                android:id="@+id/imageView2"
+                tools:ignore="MissingConstraints"/>
+
+        <View
+                android:id="@+id/profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/profile"
+                tools:ignore="MissingConstraints"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/tabbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#FFFFFF"
+            tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+                android:id="@+id/icon1"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/icon__2"
+                android:alpha="1"
+                android:layout_alignParentStart="true"/>
+
+        <View
+                android:id="@+id/icon2"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon1"
+                android:layout_marginStart="37dp"
+                android:background="@drawable/icon"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+        <View
+                android:id="@+id/icon3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon2"
+                android:layout_marginStart="37dp"
+                android:background="@drawable/icon_3"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+        <View
+                android:id="@+id/icon4"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon3"
+                android:layout_marginStart="37dp"
+                android:background="@drawable/icon_4"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="0.5"/>
+
+        <View
+                android:id="@+id/icon5"
+                android:layout_width="40dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/icon4"
+                android:layout_marginStart="37dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/icon_5"
+                android:alpha="1"
+                app:layout_constraintHorizontal_bias="1.0"/>
+
+    </RelativeLayout>
+
+    <TextView
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:textSize="37sp"
+            android:fontFamily="@font/pattaya"
+            tools:ignore="MissingConstraints"
+            android:id="@+id/title"
+            android:layout_width="329dp"
+            android:layout_height="49dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp"
+            android:text="Список дел"
+            android:textAppearance="@style/title"
+            android:lineSpacingExtra="-7sp"
+            android:gravity="center_horizontal|top"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
