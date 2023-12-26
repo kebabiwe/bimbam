@@ -41,7 +41,7 @@
             android:id="@+id/arrow"
             android:layout_alignParentBottom="true"
             android:background="@drawable/arrow"
-            tools:ignore="MissingConstraints"/>/>
+            tools:ignore="MissingConstraints"/>
     <TextView
             android:layout_marginLeft="16dp"
             android:layout_marginTop="144dp"
@@ -60,7 +60,7 @@
             android:id="@+id/some_id"
             android:layout_width="81dp"
             android:layout_height="22dp"
-            android:text="Вернуться"
+            android:text="26.12.2023"
             android:textAppearance="@style/some_id"
             android:lineSpacingExtra="1sp"
             android:translationY="-0.31sp"
@@ -189,5 +189,31 @@
             android:lineSpacingExtra="-7sp"
             android:gravity="center_horizontal|top"
     />
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <RelativeLayout
+                android:layout_marginTop="200dp"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/property_1"
+                android:layout_width="320dp"
+                android:layout_height="56dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:clipToOutline="true"
+                android:background="@drawable/cnt"/>
+        <View
+                android:id="@+id/radio_butto"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/radio_butto"
+        />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
