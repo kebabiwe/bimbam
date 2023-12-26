@@ -203,16 +203,16 @@
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:clipToOutline="true"
-                android:background="@drawable/cnt"/>
-        <View
-                android:id="@+id/radio_butto"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="16dp"
-                android:layout_centerVertical="true"
-                android:background="@drawable/radio_butto"
-        />
+                android:background="@drawable/cnt">
+            <View
+                    android:id="@+id/radio_butto"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="76dp"
+                    android:background="@drawable/radio_butto"
+            />
+        </RelativeLayout>
     </LinearLayout>
 
 
