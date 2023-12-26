@@ -110,6 +110,10 @@
                     android:layout_height="wrap_content">
 
                 <TextView
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -122,6 +126,9 @@
 
 
                 <ImageView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:layout_marginLeft="85dp"
                         android:id="@+id/image_fox"
                         android:layout_width="wrap_content"
@@ -137,10 +144,13 @@
                         app:layout_constraintVertical_bias="0.104"
                 />
                 <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text="Он обеспечивает персонализированный и всесторонний уход за ребёнком, отслеживая важные аспекты его здоровья и развития."
                         android:textAppearance="@style/some_id"
                         android:fontFamily="@font/opensans"
@@ -149,10 +159,13 @@
                         android:gravity="top"/>
 
                 <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text=" 1. Эллай — напомнит вам о медицинских процедурах, приёме лекарств, специальных упражнениях и других важных моментах по уходу за ребёнком."
                         android:textAppearance="@style/some_id"
                         android:fontFamily="@font/opensans"
@@ -160,10 +173,13 @@
                         android:textColor="@color/black"
                         android:gravity="top"/>
                 <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text=" 2. Приложение предлагает календарь событий и задач, где можно отмечать выполненные действия, чтобы обеспечить систематичность и точность ухода."
                         android:textAppearance="@style/some_id"
                         android:fontFamily="@font/opensans"
@@ -172,10 +188,13 @@
                         android:gravity="top"/>
 
                 <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text=" 3. Оно содержит базу знаний о различных состояниях ОВЗ, советы по уходу, а также возможность консультироваться с экспертами в случае необходимости."
                         android:textAppearance="@style/some_id"
                         android:fontFamily="@font/opensans"
@@ -184,10 +203,13 @@
                         android:gravity="top"/>
 
                 <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text=" 4. Эллай адаптируется под индивидуальные потребности ребёнка, предоставляя персонализированные рекомендации и расписание действий."
                         android:textAppearance="@style/some_id"
                         android:fontFamily="@font/opensans"
@@ -196,10 +218,13 @@
                         android:gravity="top"/>
 
                 <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text=" 5. Эллай уведомит о предстоящих визитах к врачу, терапевтических сессиях и других важных событиях, связанных с заботой о здоровье ребёнка."
                         android:textAppearance="@style/some_id"
                         android:fontFamily="@font/opensans"
@@ -208,10 +233,13 @@
                         android:gravity="top"/>
 
                 <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
                         android:id="@+id/some_id_long7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text=" 6. Эллай обладает дружественным интерфейсом, который легко использовать даже для тех, кто не имеет опыта работы с подобными приложениями."
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="1sp"
