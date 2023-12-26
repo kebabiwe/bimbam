@@ -179,9 +179,19 @@
                 tools:ignore="NotSibling">
 
             <LinearLayout
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    app:layout_constraintHorizontal_bias="0.16"
+                    app:layout_constraintVertical_bias="0.0"
+                    android:layout_marginBottom="10dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
 
                 <TextView
                         android:textColor="#115931"
@@ -199,39 +209,267 @@
                         android:gravity="center_horizontal|top"/>
 
                 <RelativeLayout
-                        android:layout_marginTop="10dp"
-                        android:layout_width="321dp"
-                        android:layout_height="264dp"
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:id="@+id/cnt"
-                        android:gravity="center"
-                        android:layout_marginLeft="32dp"
                         android:background="@drawable/cnt"
                         android:elevation="4dp">
                     <View
-                            android:layout_width="320dp"
-                            android:layout_height="178dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
                             android:id="@+id/img"
                             android:background="@drawable/img"
                             android:layout_marginTop="0dp"
-                            android:layout_marginLeft="0dp"/>
+                            android:layout_marginLeft="0dp"
+                            tools:ignore="DuplicateIds"/>
                     <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
                             android:id="@+id/some_id"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="180dp"
                             android:fontFamily="@font/opensans"
                             android:textColor="@color/black"
                             android:text="Ежедневный массаж стимулирует нервную активность, кровоснабжение и поддерживает мышечный тонус"
                             android:lineSpacingExtra="1sp"
                             android:textSize="17dp"
-                            android:layout_marginLeft="18dp"
                             android:translationY="-0.27sp"
-                            android:gravity="top"/>
+                            android:gravity="top" android:layout_below="@+id/img"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/cnt_2"
+                        android:background="@drawable/cnt"
+                        android:elevation="4dp"
+                        tools:ignore="DuplicateIds">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:id="@+id/img"
+                            android:background="@drawable/recom_4"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginLeft="0dp"
+                            tools:ignore="DuplicateIds"/>
+                    <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:id="@+id/some_id49"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/opensans"
+                            android:textColor="@color/black"
+                            android:text="Создайте здоровое и сбалансированное питание, учитывая индивидуальные потребности вашего ребенка. Консультация с диетологом может быть полезной."
+                            android:lineSpacingExtra="1sp"
+                            android:textSize="17dp"
+                            android:translationY="-0.27sp"
+                            android:gravity="top" android:layout_below="@+id/img"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/cnt_3"
+                        android:background="@drawable/cnt"
+                        android:elevation="4dp"
+                        tools:ignore="DuplicateIds">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:id="@+id/img"
+                            android:background="@drawable/recom_5"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginLeft="0dp"
+                            tools:ignore="DuplicateIds"/>
+                    <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:id="@+id/some_id38"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/opensans"
+                            android:textColor="@color/black"
+                            android:text="Развивайте различные способы коммуникации, используя жесты, картинки или специальные устройства для общения."
+                            android:lineSpacingExtra="1sp"
+                            android:textSize="17dp"
+                            android:translationY="-0.27sp"
+                            android:gravity="top"
+                            android:layout_below="@+id/img"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/cnt_4"
+                        android:background="@drawable/cnt"
+                        android:elevation="4dp">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:id="@+id/img"
+                            android:background="@drawable/recom_6"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginLeft="0dp"
+                            tools:ignore="DuplicateIds"/>
+                    <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:id="@+id/some_id_87"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/opensans"
+                            android:textColor="@color/black"
+                            android:text="Помогайте ребенку делать паузы и отдыхать, учитывая, что утомляемость может наступать быстрее из-за ограничений в движении."
+                            android:lineSpacingExtra="1sp"
+                            android:textSize="17dp"
+                            android:translationY="-0.27sp"
+                            android:gravity="top"
+                            android:layout_below="@+id/img"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:gravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:id="@+id/cnt_5"
+                        android:background="@drawable/cnt"
+                        android:elevation="4dp">
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:id="@+id/img"
+                            android:background="@drawable/recom_7"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginLeft="0dp"
+                            tools:ignore="DuplicateIds"/>
+                    <TextView
+                            android:layout_marginTop="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:id="@+id/some_id31"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/opensans"
+                            android:textColor="@color/black"
+                            android:text="Copy
+Поощряйте самостоятельность в выполнении задач в пределах возможностей ребенка. Это способствует его развитию и самооценке."
+                            android:lineSpacingExtra="1sp"
+                            android:textSize="17dp"
+                            android:translationY="-0.27sp"
+                            android:gravity="top"
+                            android:layout_below="@+id/img"/>
 
                 </RelativeLayout>
 
@@ -297,14 +535,15 @@
                     </LinearLayout>
                 </HorizontalScrollView>
                 <TextView
-                        android:layout_marginTop="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
+                        android:gravity="center"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
                         android:layout_marginLeft="55dp"
                         app:layout_constraintVertical_bias="0.102"
                         android:textSize="37sp"
@@ -317,97 +556,98 @@
                         android:text="Полезные ссылки"
                         android:textAppearance="@style/some_id"
                         android:lineSpacingExtra="-7sp"
-                        android:gravity="top"
+
                 />
 
                 <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="152dp"
+                        android:layout_marginBottom="16dp"
                         android:gravity="center"
                         android:layout_marginLeft="32dp"
-                        android:id="@+id/link_2"
-                        android:layout_width="320dp"
-                        android:layout_height="56dp"
+                        android:id="@+id/link_11"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="20dp"
                         android:clipToOutline="true"
                         android:background="@drawable/link"
                         android:elevation="4dp">
+                    <View
 
-                    <TextView
-                            android:textColor="#115931"
+                            android:id="@+id/some_id_11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:fontFamily="@font/opensans"
-                            android:id="@+id/some_id59"
                             android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="Детский правовой сайт"
-                            android:textAppearance="@style/some_id"
-                            android:lineSpacingExtra="1sp"
-                            android:translationY="-0.31sp"
-                            android:gravity="top"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/recom_1"
                     />
+
                 </RelativeLayout>
 
                 <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="152dp"
                         android:gravity="center"
                         android:layout_marginLeft="32dp"
-                        android:id="@+id/link_1"
-                        android:layout_width="320dp"
-                        android:layout_height="56dp"
+                        android:id="@+id/link_67"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="20dp"
                         android:clipToOutline="true"
-                        android:background="@drawable/link"
+                        android:background="@drawable/link_2"
                         android:elevation="4dp">
-
                     <TextView
-                            android:textColor="#115931"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginLeft="196dp"
+                            android:id="@+id/some_id_78"
+                            android:layout_width="121dp"
+                            android:layout_height="66dp"
+                            android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
-                            android:fontFamily="@font/opensans"
-                            android:id="@+id/some_id60"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="Национальный институт развития образования"
+                            android:layout_marginTop="42dp"
+                            android:text="Национальный институт образования"
                             android:textAppearance="@style/some_id"
+                            android:textColor="#F9F9F9"
+                            android:textSize="16sp"
                             android:lineSpacingExtra="1sp"
                             android:translationY="-0.31sp"
                             android:gravity="top"
                     />
+                    <View
+                            android:id="@+id/some_id_40"
+                            android:layout_width="191dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="0dp"
+                            android:background="@drawable/recom_2"
+                            android:layout_marginLeft="0dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="0dp"/>
                 </RelativeLayout>
 
 
                 <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="152dp"
+                        android:layout_marginBottom="16dp"
                         android:gravity="center"
                         android:layout_marginLeft="32dp"
                         android:id="@+id/link"
-                        android:layout_width="320dp"
-                        android:layout_height="56dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginTop="20dp"
                         android:clipToOutline="true"
                         android:background="@drawable/link"
                         android:elevation="4dp">
+                    <View
 
-                    <TextView
-                            android:textColor="#115931"
+                            android:id="@+id/some_id15"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:fontFamily="@font/opensans"
-                            android:id="@+id/some_id61"
                             android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="Детский Фонд ООН (ЮНИСЕФ) в Беларуси"
-                            android:textAppearance="@style/some_id"
-                            android:lineSpacingExtra="1sp"
-                            android:translationY="-0.31sp"
-                            android:gravity="top"
+                            android:layout_alignParentTop="true"
+                            android:background="@drawable/recom_3"
                     />
                 </RelativeLayout>
 

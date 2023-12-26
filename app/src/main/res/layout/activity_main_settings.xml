@@ -81,13 +81,14 @@
 
 
     <RelativeLayout
+            android:layout_marginRight="20dp"
             android:layout_width="320dp"
             android:layout_height="56dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="208dp"
             android:clipToOutline="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="208dp"
             android:background="@drawable/cnt"
             android:elevation="4dp"
             android:layout_centerHorizontal="true"
@@ -183,24 +184,25 @@
 
     </RelativeLayout>
     <RelativeLayout
-
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="208dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="20dp"
             android:clipToOutline="true"
             android:background="@drawable/cnt"
             android:elevation="4dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintVertical_bias="0.016"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
             android:id="@+id/frame_30.2"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.373"
-            app:layout_constraintVertical_bias="0.232">
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/frame_30">
         <TextView
                 android:id="@+id/some_id3"
                 android:layout_width="106dp"
@@ -229,24 +231,24 @@
 
     </RelativeLayout>
     <RelativeLayout
-
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="20dp"
             android:layout_width="320dp"
             android:layout_height="56dp"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="208dp"
             android:clipToOutline="true"
             android:background="@drawable/cnt"
             android:elevation="4dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/frame_30.3"
             tools:ignore="MissingConstraints"
-            app:layout_constraintVertical_bias="0.391">
+            app:layout_constraintVertical_bias="0.018" app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintTop_toBottomOf="@+id/frame_30.2">
         <TextView
                 android:id="@+id/some_id2"
                 android:layout_width="78dp"
@@ -270,7 +272,7 @@
                 android:layout_marginLeft="263dp"
                 android:layout_centerVertical="true"
                 android:clipToOutline="true"
-        />
+                tools:ignore="DuplicateIds"/>
     </RelativeLayout>
     <RelativeLayout
 
@@ -293,10 +295,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/frame_29"
             android:layout_width="320dp"
@@ -306,20 +310,21 @@
             android:clipToOutline="true"
             android:background="@drawable/cnt"
             android:elevation="4dp"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.602"
-            app:layout_constraintVertical_bias="0.676">
+            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/frame_30.3">
         <TextView
-                android:id="@+id/some_id67"
-                android:layout_width="117dp"
-                android:layout_height="22dp"
+                android:textColor="#F2421B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:text="Выйти из аккаунта"
-                android:textAppearance="@style/some_id1"
                 android:fontFamily="@font/opensans"
+                android:textAppearance="@style/some_id"
                 android:lineSpacingExtra="1sp"
                 android:translationY="-0.31sp"
-                android:gravity="top"/>
+                android:gravity="top"
+                android:id="@+id/some_id14"
+                android:text="Выйти из аккаунта"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

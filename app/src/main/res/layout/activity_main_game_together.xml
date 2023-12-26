@@ -233,33 +233,43 @@
                     android:layout_height="wrap_content">
 
                 <RelativeLayout
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_alignParentRight="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
                         android:layout_marginBottom="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginStart="30dp"
                         android:gravity="center"
                         android:id="@+id/frame_32"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clipToOutline="true"
                         android:background="@drawable/frame"
                         android:elevation="4dp" tools:ignore="DuplicateIds" android:layout_marginEnd="16dp">
 
                     <View
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
                             android:id="@+id/rectangle_8"
-                            android:layout_width="333dp"
-                            android:layout_height="168dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
                             android:background="@drawable/rest_8"
-                            android:layout_marginLeft="0dp" android:layout_marginTop="-2dp"
                             tools:ignore="DuplicateIds"/>
                     <TextView
-
+                            android:layout_marginTop="16dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
@@ -268,17 +278,15 @@
                             android:textSize="20dp"
                             android:translationY="-0.27sp"
                             android:id="@+id/some_id34"
-                            android:layout_width="202dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="172dp"
                             android:text="Прокати мяч с горки"
                             android:textAppearance="@style/some_id"
                             android:lineSpacingExtra="-1sp"
                             android:gravity="top"
-                    />
+                            android:layout_below="@+id/rectangle_8"/>
                     <TextView
-
+                            android:layout_marginTop="16dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
@@ -286,48 +294,57 @@
                             android:textColor="@color/black"
                             android:textSize="16dp"
                             android:id="@+id/some_id35"
-                            android:layout_width="297dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="212dp"
                             android:text="Для того, чтобы заняться этой подвижной игрой, нужно скатывать мячик по наклонной плоскости. При этом, один участник должен бросать его сверху, а другой — ловить этот предмет снизу. После таких бросков игроков нужно менять местами. Эта малоподвижная игра хорошо влияет на координацию движений и подвижность суставов"
                             android:textAppearance="@style/some_id"
                             android:lineSpacingExtra="1sp"
                             android:translationY="-0.31sp"
                             android:gravity="top"
-                    />
+                            android:layout_below="@+id/some_id34"/>
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_alignParentRight="true"
+                        app:layout_constraintHorizontal_bias="0.16"
+                        app:layout_constraintVertical_bias="0.0"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:clipToOutline="true"
                         android:layout_marginBottom="16dp"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginStart="30dp"
                         android:gravity="center"
-                        android:id="@+id/frame_33"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clipToOutline="true"
-                        android:background="@drawable/frame"
                         android:elevation="4dp"
-                        tools:ignore="DuplicateIds">
+                        tools:ignore="DuplicateIds"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/frame"
+                        android:id="@+id/frame_33">
                     <View
-                            android:id="@+id/rectangle_10"
-                            android:layout_width="339dp"
-                            android:layout_height="163dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginBottom="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentTop="true"
+                            android:id="@+id/rectangle_10"
                             android:background="@drawable/restenges_10"
-                            android:layout_marginLeft="0dp" android:layout_marginTop="-2dp"
                             tools:ignore="DuplicateIds"/>
                     <TextView
-
+                            android:layout_marginTop="16dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
@@ -336,17 +353,15 @@
                             android:textSize="20dp"
                             android:translationY="-0.27sp"
                             android:id="@+id/some_id43"
-                            android:layout_width="294dp"
-                            android:layout_height="43dp"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="172dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="Пройди, не задев ворота"
                             android:textAppearance="@style/some_id"
                             android:lineSpacingExtra="-1sp"
                             android:gravity="top"
-                    />
+                            android:layout_below="@+id/rectangle_10"/>
                     <TextView
-
+                            android:layout_marginTop="16dp"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="16dp"
                             android:layout_marginBottom="16dp"
@@ -354,22 +369,17 @@
                             android:textColor="@color/black"
                             android:textSize="16dp"
                             android:id="@+id/some_id98"
-                            android:layout_width="297dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:layout_alignParentTop="true"
-                            android:layout_marginTop="212dp"
                             android:text="Чтобы приступить к игре, нужно сделать из стульев ворота (четыре штуки), проход в которых будет равняться 50-ти см. Через них детишкам нужно пройти так, чтобы ничего не задеть и не сбить. Сначала участники действуют с открытыми глазами, а потом пробуют осуществить то же самое без задействования органов зрения."
                             android:textAppearance="@style/some_id"
                             android:lineSpacingExtra="1sp"
                             android:translationY="-0.31sp"
                             android:gravity="top"
-                    />
+                            android:layout_below="@+id/some_id43"/>
 
                 </RelativeLayout>
-
-
-
 
 
             </LinearLayout>

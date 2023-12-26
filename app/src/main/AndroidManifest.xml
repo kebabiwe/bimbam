@@ -16,6 +16,9 @@
             android:theme="@style/Theme.Bimbam"
             tools:targetApi="31">
         <activity
+                android:name=".MainActivity_list"
+                android:exported="false"/>
+        <activity
                 android:name=".MainActivity_emotions"
                 android:exported="false"/>
         <activity
