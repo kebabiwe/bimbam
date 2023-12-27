@@ -14,6 +14,7 @@ class MainActivity_confirmation : AppCompatActivity() {
         RelativeLayout.setOnClickListener {
             val intent = Intent(this@MainActivity_confirmation, MainActivity_homePage::class.java)
             startActivity(intent)
+
         }
     }
 }

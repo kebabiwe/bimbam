@@ -32,6 +32,10 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc_edit, MainActivity_you_acc::class.java)
             startActivity(intent)
         }
+        val View4 = findViewById<View>(R.id.icon4)
+        View4.setOnClickListener {
+            val intent = Intent(this@MainActivity_you_acc_edit, MainActivity_list::class.java)
+            startActivity(intent) }
 
 
         // Declaring and initializing the Spinner from the layout file

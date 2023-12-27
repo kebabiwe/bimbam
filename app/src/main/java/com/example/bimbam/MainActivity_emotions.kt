@@ -34,5 +34,9 @@ class MainActivity_emotions : AppCompatActivity() {
         View_back.setOnClickListener {
             val intent = Intent(this@MainActivity_emotions, MainActivity_recommendations::class.java)
             startActivity(intent)}
+        val View4 = findViewById<View>(R.id.icon4)
+        View4.setOnClickListener {
+            val intent = Intent(this@MainActivity_emotions, MainActivity_list::class.java)
+            startActivity(intent) }
     }
 }

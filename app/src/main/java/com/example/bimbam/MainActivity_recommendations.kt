@@ -47,5 +47,9 @@ class MainActivity_recommendations : AppCompatActivity() {
             val intent = Intent(this@MainActivity_recommendations, MainActivity_emotions::class.java)
             startActivity(intent)
         }
+        val View4 = findViewById<View>(R.id.icon4)
+        View4.setOnClickListener {
+            val intent = Intent(this@MainActivity_recommendations, MainActivity_list::class.java)
+            startActivity(intent) }
     }}
 

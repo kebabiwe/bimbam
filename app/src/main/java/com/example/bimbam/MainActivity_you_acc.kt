@@ -75,6 +75,10 @@ class MainActivity_you_acc : AppCompatActivity() {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
+        val View4 = findViewById<View>(R.id.icon4)
+        View4.setOnClickListener {
+            val intent = Intent(this@MainActivity_you_acc, MainActivity_list::class.java)
+            startActivity(intent) }
     }
 
     private fun saveDataToSharedPreferences(name: String, sex: String, birthday: String, diagnos: String) {
