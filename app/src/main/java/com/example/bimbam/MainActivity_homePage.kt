@@ -26,6 +26,11 @@ class MainActivity_homePage : AppCompatActivity() {
         val View2 = findViewById<View>(R.id.icon2)
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_homePage, MainActivity_recommendations::class.java)
-            startActivity(intent)}
+            startActivity(intent)
+        }
+        val View4 = findViewById<View>(R.id.icon4)
+        View4.setOnClickListener {
+            val intent = Intent(this@MainActivity_homePage, MainActivity_list::class.java)
+            startActivity(intent) }
     }
-    }
+}
