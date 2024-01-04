@@ -29,10 +29,5 @@ class MainActivity_list : AppCompatActivity() {
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_recommendations::class.java)
             startActivity(intent)}
-
-        val View_back = findViewById<View>(R.id.arrow)
-        View_back.setOnClickListener {
-            val intent = Intent(this@MainActivity_list, MainActivity_recommendations::class.java)
-            startActivity(intent)}
     }
     }
