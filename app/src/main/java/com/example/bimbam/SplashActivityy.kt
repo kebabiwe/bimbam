@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 
-
 class SplashActivityy : AppCompatActivity() {
-    var iv_note = findViewById<RelativeLayout>(R.id.welcomescreen1)
+
+    lateinit var iv_note: RelativeLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_activityy)
+
+        iv_note = findViewById(R.id.welcomescreen1)
+
         iv_note.alpha = 0f
         iv_note.animate().setDuration(1500).alpha(1f).withEndAction {
             val i = Intent(this, SplashActivity1::class.java)
