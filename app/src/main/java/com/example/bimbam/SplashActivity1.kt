@@ -11,9 +11,9 @@ class SplashActivity1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_activityy)
+        setContentView(R.layout.activity_splash1)
 
-        iv_note = findViewById(R.id.welcomescreen)
+        iv_note = findViewById(R.id.welcomescreen1)
 
         iv_note.alpha = 0f
         iv_note.animate().setDuration(1500).alpha(1f).withEndAction {

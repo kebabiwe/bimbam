@@ -13,7 +13,7 @@ class SplashActivityy : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_activityy)
 
-        iv_note = findViewById(R.id.welcomescreen1)
+        iv_note = findViewById(R.id.welcomescreen)
 
         iv_note.alpha = 0f
         iv_note.animate().setDuration(1500).alpha(1f).withEndAction {
