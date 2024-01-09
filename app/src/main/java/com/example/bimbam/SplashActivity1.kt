@@ -16,7 +16,7 @@ class SplashActivity1 : AppCompatActivity() {
         iv_note = findViewById(R.id.welcomescreen1)
 
         iv_note.alpha = 0f
-        iv_note.animate().setDuration(3000).alpha(1f).withEndAction {
+        iv_note.animate().setDuration(2450).alpha(1f).withEndAction {
             val i = Intent(this, MainActivity_privetctvie::class.java)
             startActivity(i)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
