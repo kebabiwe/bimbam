@@ -247,7 +247,7 @@
             android:layout_marginTop="35dp"
             android:gravity="center_vertical"
             android:textAlignment="gravity"
-            android:layout_below="@+id/text1"
+
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
             android:background="@drawable/form"

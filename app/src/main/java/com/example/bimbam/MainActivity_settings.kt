@@ -64,15 +64,10 @@ class MainActivity_settings : AppCompatActivity() {
             // Закрываем диалог
             builder.create().dismiss()
         }
-
-        // Создаем AlertDialog
         val dialog = builder.create()
-
-        // Отображаем AlertDialog
         dialog.show()
     }
     private fun clearUserToken() {
-        // Clear the user token from SharedPreferences
         val sharedPreferences = getPreferences(MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.remove("user_token")
@@ -81,10 +76,21 @@ class MainActivity_settings : AppCompatActivity() {
     private fun logoutUser(){
         clearUserToken()
         firebaseAuth.signOut()
-        // Создаем новый стек задачи для MainActivity_startmenu и убираем его из стека задачи текущей активности
-        val intent = Intent(this@MainActivity_settings, MainActivity_startmenu::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+        // Заменяем данные в активности MainActivity_you_acc на "Гость" или "Неизвестно"
+        val intent = Intent(this@MainActivity_settings, MainActivity_you_acc::class.java).apply {
+            putExtra("NAME", "Гость")  // Или "Неизвестно", в зависимости от вашего выбора
+            putExtra("SEX", "")
+            putExtra("BIRTHDAY", "")
+            putExtra("DIAGNOS", "")
+        }
         startActivity(intent)
+
+        // Создаем новый стек задачи для MainActivity_startmenu и убираем его из стека задачи текущей активности
+        val startMenuIntent = Intent(this@MainActivity_settings, MainActivity_startmenu::class.java)
+        startMenuIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(startMenuIntent)
+
         // Завершаем текущую активность, чтобы предотвратить возврат к предыдущему экрану
         finish()
     }
