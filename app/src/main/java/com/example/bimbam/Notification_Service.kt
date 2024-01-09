@@ -1,5 +1,6 @@
 package com.example.bimbam
 
+import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 
@@ -11,7 +12,7 @@ class Notification_Service:FirebaseMessagingService() {
                 return@addOnCompleteListener
             }
             val token = task.result
-             
+             Log.e("TAG","Toke -> $token")
         }
 
     }
