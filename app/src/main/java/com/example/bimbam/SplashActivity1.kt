@@ -9,14 +9,16 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 class SplashActivity1 : AppCompatActivity() {
+    var iv_note = findViewById<RelativeLayout>(R.id.welcomescreen1)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash1)
-
-        val imageButton3 = findViewById<RelativeLayout>(R.id.welcomescreen1)
-        imageButton3.setOnClickListener {
-            val intent = Intent(this@SplashActivity1, MainActivity_privetctvie::class.java)
-            startActivity(intent)
+        setContentView(R.layout.activity_splash_activityy)
+        iv_note.alpha = 0f
+        iv_note.animate().setDuration(1500).alpha(1f).withEndAction {
+            val i = Intent(this, SplashActivity1::class.java)
+            startActivity(i)
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 }
