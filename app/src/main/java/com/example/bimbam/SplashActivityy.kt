@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bimbam.MainActivity_privetctvie
 import com.example.bimbam.SplashActivity1
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivityy : AppCompatActivity() {
 
     private val PREFS_NAME = "MyPrefsFile"
     private val PREF_FIRST_RUN = "firstRun"
@@ -18,23 +18,29 @@ class SplashActivity : AppCompatActivity() {
         val isFirstRun: Boolean = prefs.getBoolean(PREF_FIRST_RUN, true)
 
         if (isFirstRun) {
-            // Если приложение запускается впервые, показываем SplashActivity1
-            val splashIntent = Intent(this, SplashActivity1::class.java)
-            startActivity(splashIntent)
-            finish()
-
-            // Дополнительные действия, если нужны
-
-            // После выполнения необходимых действий обновляем флаг
-            with(prefs.edit()) {
-                putBoolean(PREF_FIRST_RUN, false)
-                apply()
-            }
+            showSplashActivity1()
         } else {
-            // Если приложение запускается не впервые, переходим к MainActivity_privetctvie
-            val mainIntent = Intent(this, MainActivity_privetctvie::class.java)
-            startActivity(mainIntent)
-            finish()
+            showMainActivity()
+        }
+
+        finish()
+        updateFirstRunFlag(prefs)
+    }
+
+    private fun showSplashActivity1() {
+        val splashIntent = Intent(this, SplashActivity1::class.java)
+        startActivity(splashIntent)
+    }
+
+    private fun showMainActivity() {
+        val mainIntent = Intent(this, MainActivity_privetctvie::class.java)
+        startActivity(mainIntent)
+    }
+
+    private fun updateFirstRunFlag(prefs: SharedPreferences) {
+        with(prefs.edit()) {
+            putBoolean(PREF_FIRST_RUN, false)
+            apply()
         }
     }
 }

@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 
-class Notification_Service:FirebaseMessagingService() {
+class MyFirebaseMessagingService:FirebaseMessagingService() {
     override fun onNewToken(newToken: String) {
         super.onNewToken(newToken)
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
