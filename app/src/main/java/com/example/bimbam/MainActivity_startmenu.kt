@@ -26,38 +26,5 @@ class MainActivity_startmenu : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val myButton: RelativeLayout = findViewById(R.id.button)
-
-// Создание ColorStateList для текста
-        val textColors = ColorStateList(
-            arrayOf(
-                intArrayOf(android.R.attr.state_pressed),
-                intArrayOf()
-            ),
-            intArrayOf(
-                Color.GREEN, // Зеленый цвет для нажатого состояния
-                Color.BLACK // Черный цвет для всех остальных состояний (включая отпущенное)
-            )
-        )
-
-// Применение ColorStateList к тексту кнопки
-        myButton.findViewById<TextView>(R.id.textView).setTextColor(textColors)
-
-// Создание StateListDrawable
-        val states = StateListDrawable()
-
-// Добавление состояний (нажато и отпущено)
-        states.addState(intArrayOf(android.R.attr.state_pressed), ColorDrawable(Color.GREEN)) // Зеленый цвет для нажатого состояния
-        states.addState(intArrayOf(), ColorDrawable(Color.WHITE)) // Белый цвет для всех остальных состояний (включая отпущенное)
-
-// Применение StateListDrawable к кнопке
-        myButton.background = states
-
-
-
-
-
-
-
     }
 }
