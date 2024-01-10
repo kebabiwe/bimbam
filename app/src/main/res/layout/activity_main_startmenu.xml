@@ -74,7 +74,7 @@
             android:textSize="20dp"
             android:layout_width="143dp"
             android:layout_height="27dp"
-            android:text="Начать работу"
+            android:text="Вход"
             android:gravity="center_horizontal|top"
             android:fontFamily="@font/opensans"
             android:textAppearance="@style/some_id"
