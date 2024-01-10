@@ -5,11 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
+import android.widget.TextView
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity_list : AppCompatActivity() {
+    private lateinit var calendar: TextView
+    private lateinit var currentDate: Calendar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
+        calendar = findViewById<TextView>(R.id.some_id)
+        currentDate = Calendar.getInstance()
+        updateDate()
         val View5 = findViewById<View>(R.id.icon5)
         View5.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_settings::class.java)
@@ -29,5 +37,23 @@ class MainActivity_list : AppCompatActivity() {
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_recommendations::class.java)
             startActivity(intent)}
+        val arrowView = findViewById<View>(R.id.arrow)
+        arrowView.setOnClickListener {
+            // Перейти на предыдущую дату
+            currentDate.add(Calendar.DAY_OF_MONTH, -1)
+            updateDate()
+        }
+
+        val arrow2View = findViewById<View>(R.id.arrow2)
+        arrow2View.setOnClickListener {
+            // Перейти на следующую дату
+            currentDate.add(Calendar.DAY_OF_MONTH, 1)
+            updateDate()
+        }
+    }
+    private fun updateDate() {
+        val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
+        val formattedDate = dateFormat.format(currentDate.time)
+        calendar.text = formattedDate
     }
     }
