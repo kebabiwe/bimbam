@@ -73,35 +73,40 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <TextView
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id98"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Дата рождения"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
-            <TextView
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="125dp"
-                    android:layout_marginRight="16dp"
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/BIRTHDAY"
-                    android:layout_width="84dp"
-                    android:layout_height="22dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="01.09.2019"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id98"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Дата рождения"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+                <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="125dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/BIRTHDAY"
+                        android:layout_width="84dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="01.09.2019"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -116,35 +121,40 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <TextView
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Пол"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
-            <TextView
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="195dp"
-                    android:layout_marginRight="16dp"
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/SEX"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Мужской"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Пол"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+                <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="195dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/SEX"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Мужской"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -159,35 +169,40 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <TextView
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Индивидуальная особенность"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
-            <TextView
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="16dp"
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/DIAGNOS"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="ДЦП"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Индивидуальная особенность"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+                <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/DIAGNOS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="ДЦП"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -201,35 +216,40 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <TextView
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Рост"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
-            <TextView
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="200dp"
-                    android:layout_marginRight="16dp"
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="--"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Рост"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+                <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="200dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="--"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -245,35 +265,40 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <TextView
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="Вес"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
-            <TextView
-                    android:layout_marginTop="0dp"
-                    android:layout_marginLeft="210dp"
-                    android:layout_marginRight="16dp"
-                    android:fontFamily="@font/opensans"
-                    android:id="@+id/some_id"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="--"
-                    android:textAppearance="@style/some_id"
-                    android:lineSpacingExtra="1sp"
-                    android:translationY="-0.31sp"
-                    android:gravity="top"
-            />
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="Вес"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+                <TextView
+                        android:layout_marginTop="0dp"
+                        android:layout_marginLeft="210dp"
+                        android:layout_marginRight="16dp"
+                        android:fontFamily="@font/opensans"
+                        android:id="@+id/some_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:text="--"
+                        android:textAppearance="@style/some_id"
+                        android:lineSpacingExtra="1sp"
+                        android:translationY="-0.31sp"
+                        android:gravity="top"
+                />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
     <View
@@ -390,7 +415,7 @@
             android:lineSpacingExtra="0sp"
             android:fontFamily="@font/pattaya"
             android:layout_centerHorizontal="true"
-            android:textSize="44sp"
+            android:textSize="38sp"
             android:id="@+id/NAME"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
