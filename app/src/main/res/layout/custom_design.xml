@@ -82,7 +82,7 @@
                     android:text="Выход"
                     android:fontFamily="@font/opensans"
                     android:textSize="22sp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/white1"
                     android:lineSpacingExtra="1sp"
                     android:translationY="-0.31sp"
                     android:gravity="center_horizontal|top"
