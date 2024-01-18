@@ -2,6 +2,7 @@ package com.example.bimbam
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class MainActivity_list : AppCompatActivity() {
         View5.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_settings::class.java)
             startActivity(intent)
+
         }
 
         val profileView = findViewById<View>(R.id.profile)
