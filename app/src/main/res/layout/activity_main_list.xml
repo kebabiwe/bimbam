@@ -37,8 +37,11 @@
             android:id="@+id/arrow"
             android:layout_alignParentBottom="true"
             android:background="@drawable/arrow"
-            tools:ignore="MissingConstraints" android:layout_marginStart="21dp" android:layout_marginBottom="14dp"
-            app:layout_constraintEnd_toStartOf="@+id/some_id" android:layout_marginEnd="84dp"/>
+            tools:ignore="MissingConstraints"
+            android:layout_marginStart="21dp"
+            android:layout_marginBottom="14dp"
+            app:layout_constraintEnd_toStartOf="@+id/some_id"
+            android:layout_marginEnd="84dp"/>
 
     <View
             android:layout_width="22dp"
@@ -50,10 +53,13 @@
             android:background="@drawable/arrow2"
             tools:ignore="MissingConstraints"
             android:layout_marginEnd="21dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/rectangle_5"
-            android:layout_marginTop="146dp" android:layout_marginBottom="14dp"
-            app:layout_constraintVertical_bias="0.45" app:layout_constraintStart_toEndOf="@+id/some_id"
+            android:layout_marginTop="146dp"
+            android:layout_marginBottom="14dp"
+            app:layout_constraintVertical_bias="0.45"
+            app:layout_constraintStart_toEndOf="@+id/some_id"
             android:layout_marginStart="84dp"/>
     <TextView
             android:layout_marginTop="144dp"
@@ -76,8 +82,10 @@
             android:translationY="-0.31sp"
             android:gravity="top"
             android:textSize="16dp"
-            tools:ignore="MissingConstraints" android:layout_marginStart="140dp"
-            app:layout_constraintVertical_bias="0.0" android:layout_marginBottom="14dp"/>
+            tools:ignore="MissingConstraints"
+            android:layout_marginStart="140dp"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginBottom="14dp"/>
     <RelativeLayout
             android:layout_marginTop="10dp"
             android:id="@+id/navbar"
@@ -90,7 +98,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.023">
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.023">
 
         <ImageView
                 android:layout_width="wrap_content"
@@ -186,12 +195,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            android:textSize="37sp"
+            android:textSize="32sp"
             android:fontFamily="@font/pattaya"
             tools:ignore="MissingConstraints"
             android:id="@+id/title"
-            android:layout_width="329dp"
-            android:layout_height="49dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="80dp"
@@ -211,14 +220,21 @@
                 tools:layout_editor_absoluteX="0dp" android:id="@+id/linearLayout">
 
             <RelativeLayout
-                    android:id="@+id/task"
+                    android:layout_centerHorizontal="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintVertical_bias="0.376"
                     android:layout_width="320dp"
                     android:layout_height="56dp"
-                    android:layout_centerHorizontal="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="200dp"
-                    android:layout_marginLeft="20dp"
                     android:clipToOutline="true"
+                    android:layout_marginLeft="40dp"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="216dp"
+                    android:id="@+id/task"
                     android:background="@drawable/list_presssed">
 
                 <View
@@ -243,7 +259,7 @@
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="16dp"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/radio_button"
+                        android:background="@drawable/radio_button1"
                 />
 
 

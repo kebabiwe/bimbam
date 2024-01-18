@@ -90,6 +90,7 @@
           android:layout_centerHorizontal="true"
           android:layout_centerVertical="true"
           android:text="Регистрация"
+          android:textSize="20dp"
           android:fontFamily="@font/opensans"
           android:textAppearance="@style/button"
           android:lineSpacingExtra="-1sp"

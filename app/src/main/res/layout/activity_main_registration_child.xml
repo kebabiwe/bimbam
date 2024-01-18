@@ -47,6 +47,7 @@ tools:context=".MainActivity_registrationChild">
                     android:layout_alignParentTop="true"/>
         </RelativeLayout>
         <TextView
+                android:textSize="16dp"
                 android:id="@+id/text3"
                 android:layout_width="119dp"
                 android:layout_height="22dp"
@@ -64,6 +65,7 @@ tools:context=".MainActivity_registrationChild">
                 android:id="@+id/text2"
                 android:layout_width="102dp"
                 android:layout_height="22dp"
+                android:textSize="16dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:text="Имя ребенка"
@@ -73,6 +75,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginLeft="38dp" android:layout_marginTop="189dp"
         />
         <TextView
+                android:textSize="16dp"
                 android:layout_width="31dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
@@ -85,6 +88,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginLeft="48dp" android:layout_marginTop="287dp"
         />
         <RelativeLayout
+
                 android:layout_width="320dp"
                 android:layout_height="56dp"
                 android:layout_marginLeft="35dp"
@@ -115,8 +119,10 @@ tools:context=".MainActivity_registrationChild">
                     android:layout_marginStart="20dp" android:layout_alignParentEnd="true"
                     android:layout_marginEnd="90dp"/>
         </RelativeLayout>
+
         <TextView
-                android:layout_width="match_parent"
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="67dp"
                 android:layout_alignParentTop="true"
                 android:text="Введите данные"
@@ -124,10 +130,10 @@ tools:context=".MainActivity_registrationChild">
                 android:lineSpacingExtra="0sp"
                 android:gravity="center_vertical|center_horizontal"
                 android:fontFamily="@font/pattaya"
-                android:layout_marginTop="106dp"
+                android:layout_marginTop="112dp"
                 app:layout_constraintTop_toTopOf="parent"/>
-
         <TextView
+                android:textSize="16dp"
                 android:id="@+id/text5"
                 android:layout_width="238dp"
                 android:layout_height="22dp"
@@ -158,20 +164,30 @@ tools:context=".MainActivity_registrationChild">
                 android:background="@drawable/button0">
         </RelativeLayout>
         <Spinner
+                android:layout_centerHorizontal="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintVertical_bias="0.376"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
+                android:layout_alignParentTop="true"
+                android:clipToOutline="true"
+                tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
                 android:layout_marginTop="313dp"
                 android:id="@+id/spinner"
                 style="@style/SpinnerStyle"
                 android:layout_marginEnd="47dp"
                 android:layout_marginBottom="-133dp"
-                android:layout_marginStart="47dp"
+                android:layout_marginStart="37dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
                 android:background="@drawable/form"
                 android:spinnerMode="dropdown"
-                android:popupBackground="@drawable/sex" android:layout_alignParentTop="true"/>
+                android:popupBackground="@drawable/sex"/>
         <Spinner
                 android:layout_width="320dp"
                 android:layout_height="56dp"
@@ -179,7 +195,7 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginLeft="35dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="47dp"
-                android:layout_marginStart="47dp"
+                android:layout_marginStart="37dp"
                 android:id="@+id/spinner1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
