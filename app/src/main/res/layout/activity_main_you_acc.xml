@@ -329,8 +329,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp">
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="0dp">
 
         <View
                 android:id="@+id/icon1"
