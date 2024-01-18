@@ -216,15 +216,19 @@
                 android:gravity="top"
         />
         <Switch
+                android:layout_width="57dp"
+                android:layout_height="48dp"
                 android:id="@+id/switch1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/frame281"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="263dp"
-                android:layout_centerVertical="true"
-                android:clipToOutline="true"
-        />
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="13dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="17dp"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/some_id3"
+                android:layout_marginStart="145dp"
+                app:track="@drawable/custom_track"
+                android:thumb="@drawable/custom_thumb" android:trackTint="#08930D"/>
 
 
     </RelativeLayout>
@@ -262,15 +266,19 @@
                 android:gravity="top"
         />
         <Switch
+                android:layout_width="49dp"
+                android:layout_height="27dp"
                 android:id="@+id/switch2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/frame281"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="263dp"
-                android:layout_centerVertical="true"
-                android:clipToOutline="true"
-        />
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="13dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="17dp"
+                android:layout_marginTop="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/some_id2"
+                android:layout_marginStart="170dp"
+                app:track="@drawable/custom_track"
+                android:thumb="@drawable/custom_thumb" android:trackTint="#08930D"/>
     </RelativeLayout>
     <RelativeLayout
 
