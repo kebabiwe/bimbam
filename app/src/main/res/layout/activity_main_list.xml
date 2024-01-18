@@ -128,18 +128,21 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="#FFFFFF"
-            tools:ignore="MissingConstraints" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp">
 
         <View
                 android:id="@+id/icon1"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="17dp"
                 android:background="@drawable/icon__2"
                 android:alpha="1"
-                android:layout_alignParentStart="true"/>
+        />
 
         <View
                 android:id="@+id/icon2"
@@ -187,7 +190,6 @@
                 app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
-
     <TextView
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
