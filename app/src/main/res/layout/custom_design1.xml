@@ -10,7 +10,6 @@
             android:background="@drawable/edit_task"
             tools:ignore="MissingConstraints">
         <RelativeLayout
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/form"
                 android:layout_width="288dp"
                 android:layout_height="56dp"
@@ -20,21 +19,23 @@
                 android:clipToOutline="true"
                 android:background="@drawable/form"
                 android:elevation="4dp">
-            <TextView
-                    android:id="@+id/name"
-                    android:layout_width="76dp"
-                    android:layout_height="22dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_centerVertical="true"
-                    android:text="Название"
-                    android:fontFamily="@font/opensans"
-                    android:textAppearance="@style/some_id"
+            <EditText
                     android:lineSpacingExtra="1sp"
                     android:translationY="-0.31sp"
                     android:gravity="top"
-                    android:alpha="0.5"
-            />
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Название"
+                    android:fontFamily="@font/opensans"
+                    android:ems="10"
+                    android:textColor="@color/black"
+                    android:background="@android:color/transparent"
+                    android:text="Название"
+                    android:id="@+id/editTextText"/>
         </RelativeLayout>
         <RelativeLayout
                 android:id="@+id/date"
@@ -115,20 +116,23 @@
                 android:background="@drawable/form"
                 android:elevation="4dp"
                 android:layout_alignParentEnd="true" android:layout_marginEnd="12dp">
-            <TextView
-                    android:id="@+id/some_id12"
-                    android:layout_width="79dp"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="33dp"
-                    android:text="Описание"
-                    android:textAppearance="@style/some_id"
+            <EditText
                     android:lineSpacingExtra="1sp"
                     android:translationY="-0.31sp"
                     android:gravity="top"
-                    android:alpha="0.5"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Название"
                     android:fontFamily="@font/opensans"
-                    android:layout_marginTop="18dp" android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true" android:layout_marginStart="17dp"/>
+                    android:ems="10"
+                    android:textColor="@color/black"
+                    android:background="@android:color/transparent"
+                    android:text="Описание"
+                    android:id="@+id/editTextText2"/>
         </RelativeLayout>
         <RelativeLayout
                 android:id="@+id/save"
@@ -153,7 +157,9 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="9dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="12dp"/>
+                    android:layout_marginEnd="12dp" android:layout_marginTop="10dp"
+                    android:layout_alignParentTop="true" android:layout_alignParentStart="true"
+                    android:layout_marginStart="12dp"/>
 
         </RelativeLayout>
         <RelativeLayout
@@ -170,16 +176,19 @@
                     android:layout_width="81dp"
                     android:layout_height="wrap_content"
                     android:text="Удалить"
+                    android:gravity="center"
                     android:textAppearance="@style/some_id"
                     android:textColor="@color/white1"
                     android:fontFamily="@font/opensans"
                     android:lineSpacingExtra="1sp"
                     android:translationY="-0.31sp"
-                    android:gravity="center_vertical|top"
+
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="10dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="-2dp"/>
+                    android:layout_marginEnd="12dp" android:layout_marginTop="9dp"
+                    android:layout_alignParentTop="true" android:layout_alignParentStart="true"
+                    android:layout_marginStart="12dp"/>
 
         </RelativeLayout>
     </RelativeLayout>
