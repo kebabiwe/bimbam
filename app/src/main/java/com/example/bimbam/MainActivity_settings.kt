@@ -45,28 +45,28 @@ class MainActivity_settings : AppCompatActivity() {
     private fun showLogoutConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
 
-        // Устанавливаем собственный макет для AlertDialog
         val inflater = layoutInflater
         val view = inflater.inflate(R.layout.custom_design, null)
         builder.setView(view)
-        // Находим кнопки в макете
-        val btnYes = view.findViewById<RelativeLayout>(R.id.yes)
-        val btnNo = view.findViewById<RelativeLayout>(R.id.no)
 
-        // Устанавливаем обработчики для кнопок
+        val btnYes = view.findViewById<RelativeLayout>(R.id.frame_25)
+        val btnNo = view.findViewById<RelativeLayout>(R.id.frame_26)
+
+        val dialog = builder.create()
+
         btnYes.setOnClickListener {
             logoutUser()
-            // Закрываем диалог
-            builder.create().dismiss()
+            dialog.dismiss()
         }
 
         btnNo.setOnClickListener {
-            // Закрываем диалог
-            builder.create().dismiss()
+            dialog.dismiss()
         }
-        val dialog = builder.create()
+
+        // Переносим вызов show() за пределы метода
         dialog.show()
     }
+
     private fun clearUserToken() {
         val sharedPreferences = getPreferences(MODE_PRIVATE)
         val editor = sharedPreferences.edit()
