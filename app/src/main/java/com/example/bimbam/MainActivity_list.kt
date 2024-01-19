@@ -2,7 +2,6 @@ package com.example.bimbam
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +14,7 @@ class MainActivity_list : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
-        calendar = findViewById<TextView>(R.id.some_id)
+        calendar = findViewById(R.id.some_id)
         currentDate = Calendar.getInstance()
         updateDate()
         val View5 = findViewById<View>(R.id.icon5)
