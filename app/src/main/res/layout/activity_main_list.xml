@@ -212,5 +212,49 @@
             android:gravity="center_horizontal|top"
     />
 
+    <RelativeLayout
+            android:layout_centerHorizontal="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.175"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:layout_marginLeft="40dp"
+            tools:ignore="MissingConstraints"
+            android:layout_marginTop="216dp"
+            android:id="@+id/task"
+            android:background="@drawable/list_presssed">
+
+        <View
+                android:width="18dp"
+                android:height="18dp"
+                android:viewportWidth="18"
+                android:viewportHeight="18"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/edit"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/edit"
+                android:alpha="0.5"/>
+
+        <View
+                android:id="@+id/radio_butto"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/radio_button1"/>
+
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
