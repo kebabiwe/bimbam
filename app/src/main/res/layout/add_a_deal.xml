@@ -7,8 +7,10 @@
             android:layout_width="320dp"
             android:layout_height="363dp"
             android:clipToOutline="true"
-            android:background="@drawable/frame_11"
+
+            android:background="@drawable/frame__11"
             tools:ignore="MissingConstraints"
+            android:elevation="4dp"
     >
         <TextView
                 android:id="@+id/vizit"
