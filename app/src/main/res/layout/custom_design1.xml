@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="320dp"
+        android:layout_height="363dp">
     <RelativeLayout
             android:id="@+id/edit_task"
             android:layout_width="320dp"
-            android:layout_height="352dp"
+            android:layout_height="363dp"
             android:clipToOutline="true"
-            android:background="@drawable/edit_task"
+            android:background="@drawable/frame__11"
+            android:elevation="500dp"
             tools:ignore="MissingConstraints">
         <RelativeLayout
                 android:id="@+id/form"
