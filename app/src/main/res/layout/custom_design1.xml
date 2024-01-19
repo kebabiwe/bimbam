@@ -34,7 +34,7 @@
                     android:ems="10"
                     android:textColor="@color/black"
                     android:background="@android:color/transparent"
-                    android:text="Название"
+
                     android:id="@+id/editTextText"/>
         </RelativeLayout>
         <RelativeLayout
@@ -131,7 +131,7 @@
                     android:ems="10"
                     android:textColor="@color/black"
                     android:background="@android:color/transparent"
-                    android:text="Описание"
+
                     android:id="@+id/editTextText2"/>
         </RelativeLayout>
         <RelativeLayout
