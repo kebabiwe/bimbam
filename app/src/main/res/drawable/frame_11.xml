@@ -6,10 +6,12 @@
         android:height="363dp"
         android:viewportWidth="320"
         android:viewportHeight="363"
+
 >
     <group>
         <clip-path
                 android:pathData="M32 0H288C305.673 0 320 14.3269 320 32V331C320 348.673 305.673 363 288 363H32C14.3269 363 0 348.673 0 331V32C0 14.3269 14.3269 0 32 0Z"
+
         />
         <path
                 android:pathData="M0 0V363H320V0"

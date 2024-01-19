@@ -41,6 +41,10 @@ class MainActivity_settings : AppCompatActivity() {
         Logout.setOnClickListener {
             showLogoutConfirmationDialog()
         }
+        val AddADeal = findViewById<View>(R.id.icon3)
+        AddADeal.setOnClickListener{
+            addDeal()
+        }
     }
     private fun showLogoutConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
@@ -93,5 +97,37 @@ class MainActivity_settings : AppCompatActivity() {
 
         // Завершаем текущую активность, чтобы предотвратить возврат к предыдущему экрану
         finish()
+    }
+    private fun addDeal(){
+        val builder = AlertDialog.Builder(this)
+
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.add_a_deal, null)
+        builder.setView(view)
+        val add = view.findViewById<View>(R.id.vector1)
+        val add1 = view.findViewById<View>(R.id.vector2)
+        val add2 = view.findViewById<View>(R.id.vector3)
+        val add3 = view.findViewById<View>(R.id.vector4)
+        val add4 = view.findViewById<View>(R.id.vector5)
+        val dialog = builder.create()
+    add.setOnClickListener{
+    saveDeal()
+    }
+        add1.setOnClickListener{
+            saveDeal()
+        }
+        add2.setOnClickListener{
+            saveDeal()
+        }
+        add3.setOnClickListener{
+            saveDeal()
+        }
+        add4.setOnClickListener{
+            saveDeal()
+        }
+        dialog.show()
+    }
+    private fun saveDeal(){
+
     }
 }
