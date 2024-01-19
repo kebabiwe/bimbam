@@ -1,12 +1,16 @@
 package com.example.bimbam
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
+import java.util.*
 
 class MainActivity_settings : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
@@ -127,7 +131,69 @@ class MainActivity_settings : AppCompatActivity() {
         }
         dialog.show()
     }
-    private fun saveDeal(){
+    private fun saveDeal() {
+        val builder = AlertDialog.Builder(this)
 
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.custom_design1, null)
+        builder.setView(view)
+
+        val nazv = view.findViewById<EditText>(R.id.editTextText)
+        val desription = view.findViewById<EditText>(R.id.editTextText2)
+        val date = view.findViewById<RelativeLayout>(R.id.date)
+        val time = view.findViewById<RelativeLayout>(R.id.time)
+        val delete = view.findViewById<RelativeLayout>(R.id.no)
+        val save = view.findViewById<RelativeLayout>(R.id.save)
+        val dialog = builder.create()
+        date.setOnClickListener {
+            showDatePicker()
+        }
+
+        time.setOnClickListener {
+            showTimePicker()
+        }
+
+        // Остальной код...
+        dialog.show()
     }
+
+    private fun showDatePicker() {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, selectedYear, selectedMonth, selectedDay ->
+                // Обработка выбранной даты
+                // Например, можно использовать выбранную дату для чего-то
+                val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
+                // TODO: Используйте выбранную дату по вашему усмотрению
+            },
+            year, month, day
+        )
+
+        datePickerDialog.show()
+    }
+
+    private fun showTimePicker() {
+        val calendar = Calendar.getInstance()
+        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val minute = calendar.get(Calendar.MINUTE)
+
+        val timePickerDialog = TimePickerDialog(
+            this,
+            { _, selectedHour, selectedMinute ->
+                // Обработка выбранного времени
+                // Например, можно использовать выбранное время для чего-то
+                val selectedTime = "$selectedHour:$selectedMinute"
+                // TODO: Используйте выбранное время по вашему усмотрению
+            },
+            hour, minute, true
+        )
+
+        timePickerDialog.show()
+    }
+
 }
