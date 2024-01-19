@@ -25,6 +25,61 @@
                 android:fontFamily="@font/opensans"
         />
         <View
+                android:id="@+id/vector1"
+                android:layout_width="27dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/vector__1_"
+                android:layout_marginTop="30dp" android:layout_marginLeft="268dp" android:layout_marginRight="25dp"
+                android:layout_marginBottom="308dp"/>
+        <View
+                android:id="@+id/vector2"
+                android:layout_width="27dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/vector__1_"
+                android:layout_marginTop="98dp" android:layout_marginLeft="271dp" android:layout_marginRight="22dp"
+                android:layout_marginBottom="240dp"/>
+        <View
+                android:id="@+id/vector3"
+                android:layout_width="27dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/vector__1_"
+                android:layout_marginTop="166dp" android:layout_marginLeft="270dp" android:layout_marginRight="23dp"
+                android:layout_marginBottom="172dp"/>
+        <View
+                android:id="@+id/vector4"
+                android:layout_width="27dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/vector__1_"
+                android:layout_marginTop="230dp" android:layout_marginLeft="270dp" android:layout_marginRight="23dp"
+                android:layout_marginBottom="108dp"/>
+        <View
+                android:id="@+id/vector5"
+                android:layout_width="27dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/vector__1_"
+                android:layout_marginTop="301dp" android:layout_marginLeft="269dp" android:layout_marginRight="24dp"
+                android:layout_marginBottom="37dp"/>
+        <View
                 android:id="@+id/vector_6"
                 android:layout_width="276dp"
                 android:layout_height="2dp"
@@ -84,5 +139,45 @@
                 android:alpha="0.5"
                 android:layout_alignParentEnd="true" android:layout_marginEnd="19dp"
                 android:layout_alignParentStart="true" android:layout_marginStart="25dp"/>
+        <TextView
+                android:id="@+id/zanyatie"
+                android:layout_width="136dp"
+                android:layout_height="26dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="231dp"
+                android:text="Занятие"
+                android:textAppearance="@style/some_id"
+                android:lineSpacingExtra="-1sp"
+                android:gravity="top"
+                android:textColor="#115931"
+                android:fontFamily="@font/opensans"
+        />
+        <View
+                android:id="@+id/vector_8"
+                android:layout_width="276dp"
+                android:layout_height="2dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="277dp"
+                android:background="@drawable/vector_5"
+                android:alpha="0.5"
+                android:layout_alignParentEnd="true" android:layout_marginEnd="17dp"
+                android:layout_alignParentStart="true" android:layout_marginStart="27dp"/>
+        <TextView
+                android:id="@+id/drugoe"
+                android:layout_width="136dp"
+                android:layout_height="26dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="301dp"
+                android:text="Другое"
+                android:textAppearance="@style/some_id"
+                android:lineSpacingExtra="-1sp"
+                android:gravity="top"
+                android:textColor="#115931"
+                android:fontFamily="@font/opensans"
+        />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
