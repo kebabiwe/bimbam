@@ -6,8 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.RelativeLayout
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
@@ -145,54 +144,77 @@ class MainActivity_settings : AppCompatActivity() {
         val delete = view.findViewById<RelativeLayout>(R.id.no)
         val save = view.findViewById<RelativeLayout>(R.id.save)
         val dialog = builder.create()
+        val selectedDateText = view.findViewById<TextView>(R.id.some_id)
+        // Найдите TextView внутри макета custom_design1
+        val selectedTimeText = view.findViewById<TextView>(R.id.some_id1)
+
         date.setOnClickListener {
-            showDatePicker()
+            showDatePicker(selectedDateText)
         }
 
         time.setOnClickListener {
-            showTimePicker()
+            showTimePicker(selectedTimeText)
         }
 
-        // Остальной код...
         dialog.show()
     }
 
-    private fun showDatePicker() {
+    private fun showDatePicker(selectedDateText: TextView) {
+        val customDatePickerView = layoutInflater.inflate(R.layout.datepickertime, null)
+        val datePicker = customDatePickerView.findViewById<DatePicker>(R.id.datePicker1)
+
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        val datePickerDialog = DatePickerDialog(
-            this,
-            { _, selectedYear, selectedMonth, selectedDay ->
-                // Обработка выбранной даты
-                // Например, можно использовать выбранную дату для чего-то
-                val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
-                // TODO: Используйте выбранную дату по вашему усмотрению
-            },
-            year, month, day
-        )
+        datePicker.init(year, month, day, null)
 
+        // Создать диалог выбора даты
+        val datePickerDialog = AlertDialog.Builder(this)
+            .setTitle("Выберите дату")
+            .setView(customDatePickerView)
+            .setPositiveButton("OK") { _, _ ->
+                // Обработать нажатие кнопки "OK", установить выбранную дату в TextView
+                val selectedDate = "${datePicker.dayOfMonth}/${datePicker.month + 1}/${datePicker.year}"
+                selectedDateText.text = selectedDate
+            }
+            .create()
+
+        // Показать диалог выбора даты
         datePickerDialog.show()
     }
+    private fun showTimePicker(selectedTimeText: TextView) {
+        // Надуть макет пользовательского выбора времени
+        val customTimePickerView = layoutInflater.inflate(R.layout.timepicker, null)
 
-    private fun showTimePicker() {
+        // Найти NumberPickers в пользовательском макете
+        val hoursPicker = customTimePickerView.findViewById<NumberPicker>(R.id.hoursPicker)
+        val minutesPicker = customTimePickerView.findViewById<NumberPicker>(R.id.minutesPicker)
+
+        // Инициализировать текущее время в выборах
         val calendar = Calendar.getInstance()
-        val hour = calendar.get(Calendar.HOUR_OF_DAY)
-        val minute = calendar.get(Calendar.MINUTE)
+        val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
+        val currentMinute = calendar.get(Calendar.MINUTE)
+        hoursPicker.minValue = 0
+        hoursPicker.maxValue = 23
+        hoursPicker.value = currentHour
+        minutesPicker.minValue = 0
+        minutesPicker.maxValue = 59
+        minutesPicker.value = currentMinute
 
-        val timePickerDialog = TimePickerDialog(
-            this,
-            { _, selectedHour, selectedMinute ->
-                // Обработка выбранного времени
-                // Например, можно использовать выбранное время для чего-то
-                val selectedTime = "$selectedHour:$selectedMinute"
-                // TODO: Используйте выбранное время по вашему усмотрению
-            },
-            hour, minute, true
-        )
+        // Создать диалог выбора времени
+        val timePickerDialog = AlertDialog.Builder(this)
+            .setTitle("Выберите время")
+            .setView(customTimePickerView)
+            .setPositiveButton("OK") { _, _ ->
+                // Обработать нажатие кнопки "OK", установить выбранное время в TextView
+                val selectedTime = "${hoursPicker.value}:${String.format("%02d", minutesPicker.value)}"
+                selectedTimeText.text = selectedTime
+            }
+            .create()
 
+        // Показать диалог выбора времени
         timePickerDialog.show()
     }
 
