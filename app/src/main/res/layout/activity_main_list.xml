@@ -253,6 +253,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_centerVertical="true"
                 android:background="@drawable/list_unpressed"
+                android:textColorLink="@drawable/list_unpressed"
                 android:elevation="4dp"/>
 
     </RelativeLayout>
