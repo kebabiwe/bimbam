@@ -535,13 +535,13 @@
                     </LinearLayout>
                 </HorizontalScrollView>
                 <TextView
-                        android:gravity="center"
+                        android:gravity="center_horizontal|top"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         android:layout_marginTop="20dp"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_marginLeft="55dp"

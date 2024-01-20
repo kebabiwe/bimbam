@@ -245,14 +245,15 @@
                 android:background="@drawable/edit"
                 android:alpha="0.5"/>
 
-        <View
+        <RadioButton
                 android:id="@+id/radio_butto"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="16dp"
                 android:layout_centerVertical="true"
-                android:background="@drawable/radio_button1"/>
+                android:background="@drawable/list_unpressed"
+                android:elevation="4dp"/>
 
     </RelativeLayout>
 
