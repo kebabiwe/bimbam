@@ -15,6 +15,7 @@ class MainActivity_list : AppCompatActivity() {
     private lateinit var calendar: TextView
     private lateinit var currentDate: Calendar
     private var nazvText: String? = null
+    private var selectedDate:String?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,8 @@ class MainActivity_list : AppCompatActivity() {
         updateDate()
         val textView = findViewById<TextView>(R.id.textView2)
         textView.text = nazvText
+        val textView1 = findViewById<TextView>(R.id.textView3)
+        textView1.text= selectedDate
 
         val View5 = findViewById<View>(R.id.icon5)
         View5.setOnClickListener {
@@ -58,6 +61,7 @@ class MainActivity_list : AppCompatActivity() {
             currentDate.add(Calendar.DAY_OF_MONTH, 1)
             updateDate()
         }
+        selectedDate = intent.getStringExtra("SELECTEDDATE")
         nazvText = intent.getStringExtra("NAZV_TEXT") // Move this line here
         val icon3View = findViewById<View>(R.id.icon3)
         icon3View.setOnClickListener {
@@ -154,6 +158,8 @@ class MainActivity_list : AppCompatActivity() {
                         // Update textView2 with the name of the saved deal
                         val textView2 = findViewById<TextView>(R.id.textView2)
                         textView2.text = nazvText
+                        val textView3 = findViewById<TextView>(R.id.textView3)
+                        textView3.text = selectedDate
                     } else {
                         Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
                     }
