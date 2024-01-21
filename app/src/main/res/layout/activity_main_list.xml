@@ -190,13 +190,14 @@
                 app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
+
     <TextView
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="1.0"
             android:textSize="32sp"
             android:fontFamily="@font/pattaya"
             tools:ignore="MissingConstraints"
@@ -210,8 +211,7 @@
             android:textAppearance="@style/title"
             android:lineSpacingExtra="-7sp"
             android:gravity="center_horizontal|top"
-    />
-
+            app:layout_constraintHorizontal_bias="0.0"/>
     <RelativeLayout
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
@@ -255,6 +255,31 @@
                 android:background="@drawable/list_unpressed"
                 android:textColorLink="@drawable/list_unpressed"
                 android:elevation="4dp"/>
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="14dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="57dp"
+                android:fontFamily="@font/opensans"
+                android:textSize="20dp"
+        />
+        <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="14dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="211dp"
+                android:fontFamily="@font/opensans"
+                android:textSize="20dp"
+                android:alpha="0.5"
+        />
 
     </RelativeLayout>
 
