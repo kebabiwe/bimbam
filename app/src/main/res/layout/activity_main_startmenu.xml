@@ -60,7 +60,8 @@
           android:layout_marginTop="20dp"
           android:layout_centerHorizontal="true"
           android:clipToOutline="true"
-          android:background="@drawable/button_pressed"
+          android:elevation="4dp"
+          android:background="@drawable/button_together1"
           tools:ignore="MissingConstraints"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +71,7 @@
 
     <TextView
             android:id="@+id/some_id"
-            android:textColor="#F9F9F9"
+            android:textColor="#b1fcb7"
             android:textSize="20dp"
             android:layout_width="143dp"
             android:layout_height="27dp"

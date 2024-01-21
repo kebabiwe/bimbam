@@ -69,21 +69,43 @@
             app:layout_constraintBottom_toBottomOf="parent"
 
     />
+
+
+
     <RelativeLayout
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_marginLeft="10dp"
             android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:layout_centerHorizontal="true"
             android:clipToOutline="true"
-            android:background="@drawable/button0"
+            android:elevation="4dp"
+            android:background="@drawable/button_together1"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.772"
+            android:id="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/image">
 
-            app:layout_constraintHorizontal_bias="0.493" app:layout_constraintVertical_bias="0.445"
-            app:layout_constraintTop_toBottomOf="@+id/image"/>
+        <TextView
+                android:id="@+id/some_id"
+                android:textColor="#b1fcb7"
+                android:textSize="20dp"
+                android:layout_width="143dp"
+                android:layout_height="27dp"
+                android:text="Начать работу"
+                android:gravity="center_horizontal|top"
+                android:fontFamily="@font/opensans"
+                android:textAppearance="@style/some_id"
+                android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
