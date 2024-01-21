@@ -14,6 +14,7 @@
             android:background="#F9F9F9"
             tools:ignore="MissingConstraints">
 
+
         <RelativeLayout
                 android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +31,7 @@
                 android:background="@drawable/form"
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="410dp">
+                android:layout_marginTop="363dp">
 
             <EditText
                     android:layout_width="wrap_content"
@@ -48,9 +49,6 @@
             />
 
         </RelativeLayout>
-
-
-
         <RelativeLayout
                 android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +65,7 @@
                 android:background="@drawable/form"
                 tools:ignore="MissingConstraints"
                 android:layout_marginLeft="35dp"
-                android:layout_marginTop="313dp">
+                android:layout_marginTop="282dp">
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -83,7 +81,6 @@
 
 
         </RelativeLayout>
-
         <RelativeLayout
                 android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +97,7 @@
                 android:background="@drawable/form"
                 android:layout_marginLeft="35dp"
                 tools:ignore="MissingConstraints"
-                android:layout_marginTop="216dp">
+                android:layout_marginTop="205dp">
 
             <EditText
                     android:layout_width="wrap_content"
@@ -116,8 +113,6 @@
                     android:background="@android:color/transparent"/>
 
         </RelativeLayout>
-
-
         <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
@@ -128,7 +123,7 @@
                 android:lineSpacingExtra="0sp"
                 android:gravity="center_vertical|center_horizontal"
                 android:fontFamily="@font/pattaya"
-                android:layout_marginTop="106dp"
+                android:layout_marginTop="103dp"
                 app:layout_constraintTop_toTopOf="parent"/>
 
         <RelativeLayout
@@ -143,7 +138,7 @@
                 android:id="@+id/form3"
                 android:layout_width="320dp"
                 android:layout_height="56dp"
-                android:layout_marginTop="506dp"
+                android:layout_marginTop="444dp"
                 android:layout_marginLeft="35dp"
                 android:layout_alignParentTop="true"
                 android:clipToOutline="true"
@@ -162,21 +157,37 @@
                     android:id="@+id/repeatpass"
                     android:background="@android:color/transparent"/>
         </RelativeLayout>
-
         <RelativeLayout
-                android:layout_width="320dp"
-                android:layout_height="56dp"
                 android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true"
-                android:clipToOutline="true"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
-                app:layout_constraintVertical_bias="0.623"
+                app:layout_constraintVertical_bias="0.376"
+                android:layout_width="320dp"
+                android:layout_height="56dp"
+                android:layout_alignParentTop="true"
+                android:clipToOutline="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="531dp"
+                tools:ignore="MissingConstraints"
                 android:id="@+id/buttonreg"
-                android:layout_marginTop="607dp"
-                android:background="@drawable/button4"/>
+                android:elevation="4dp"
+                android:background="@drawable/button_together1">
+
+            <TextView
+                    android:id="@+id/some_id"
+                    android:textColor="#b1fcb7"
+                    android:textSize="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Зарегистрироваться"
+                    android:gravity="center"
+                    android:fontFamily="@font/opensans"
+                    android:textAppearance="@style/some_id"
+                    android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

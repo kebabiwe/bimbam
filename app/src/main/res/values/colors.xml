@@ -11,6 +11,6 @@
     <color name="green">#03BF46</color>
     <color name="switch_track_color">#FF0000</color> <!-- Цвет трека -->
     <color name="switch_thumb_color">#00FF00</color>
-    <color name="_4082a4">#4082a4</color> <!-- Цвет ползунка -->
-    
+    <color name="_4082a4">#4082a4</color>
+
 </resources>

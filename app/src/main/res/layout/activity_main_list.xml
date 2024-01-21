@@ -213,20 +213,22 @@
     />
 
     <RelativeLayout
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="208dp"
+            android:elevation="4dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.175"
-            app:layout_constraintVertical_bias="0.0"
-            android:layout_width="320dp"
-            android:layout_height="56dp"
-            android:layout_alignParentTop="true"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintVertical_bias="0.019"
             android:clipToOutline="true"
-            android:layout_marginLeft="40dp"
             tools:ignore="MissingConstraints"
-            android:layout_marginTop="216dp"
             android:id="@+id/task"
             android:background="@drawable/list_presssed">
 
