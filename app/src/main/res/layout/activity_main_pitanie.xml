@@ -172,6 +172,13 @@
     </RelativeLayout>
 
     <TextView
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="0dp"
+            android:scaleType="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_centerInParent="true"
             android:textColor="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -182,11 +189,8 @@
             android:fontFamily="@font/pattaya"
             tools:ignore="MissingConstraints"
             android:id="@+id/title"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="80dp"
             android:text="Питание"
             android:textAppearance="@style/title"
             android:lineSpacingExtra="-7sp"

@@ -19,13 +19,12 @@
                 android:layout_height="match_parent">
 
             <TextView
+                    android:textSize="42.5dp"
                     android:id="@+id/myTextView"
-
-                    android:gravity="center"
                     android:text="Добро пожаловать!"
                     android:layout_marginLeft="32.5dp"
                     android:layout_marginTop="350dp"
-                    android:textSize="42.5dp"
+                    android:gravity="center"
                     android:scaleType="center"
                     android:layout_width="800dp"
                     android:layout_height="wrap_content"
@@ -33,7 +32,6 @@
                     android:fontFamily="@font/pattaya"
                     android:outlineSpotShadowColor="#F9F9F9"
                     android:textColor="#FFFF"
-
                     android:layout_centerInParent="true"/>
         </RelativeLayout>
 

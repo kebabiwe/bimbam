@@ -129,6 +129,12 @@
 
     </RelativeLayout>
     <TextView
+            android:layout_marginLeft="0dp"
+            android:scaleType="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_centerInParent="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -140,8 +146,6 @@
             tools:ignore="MissingConstraints"
             android:gravity="center_horizontal|top"
             android:id="@+id/title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:text="Рекомендации специалистов"

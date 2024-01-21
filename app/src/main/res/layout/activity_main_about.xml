@@ -59,15 +59,18 @@
     </RelativeLayout>
 
     <TextView
-
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:outlineSpotShadowColor="#F9F9F9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.12"
             android:id="@+id/title2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             android:textSize="32sp"
@@ -126,14 +129,21 @@
 
 
                 <ImageView
+                        android:gravity="center"
+                        android:textSize="42.5dp"
+                        android:scaleType="center"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#00FFFFFF"
+                        android:fontFamily="@font/pattaya"
+                        android:outlineSpotShadowColor="#F9F9F9"
+                        android:textColor="#FFFF"
+                        android:layout_centerInParent="true"
                         android:layout_marginTop="0dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="20dp"
                         android:layout_marginLeft="85dp"
                         android:id="@+id/image_fox"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
                         android:src="@drawable/image"
                         android:clipToOutline="true"
                         android:contentDescription="@string/todo"
