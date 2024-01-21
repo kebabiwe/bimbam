@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 
@@ -155,7 +157,26 @@ class MainActivity_settings : AppCompatActivity() {
         time.setOnClickListener {
             showTimePicker(selectedTimeText)
         }
+        delete.setOnClickListener {
+            // Просто закрываем AlertDialog
+            dialog.dismiss()
+        }
+        save.setOnClickListener {
+            // Получите текст из EditText
+            val nazvText = nazv.text.toString()
 
+            // Создайте Intent
+            val intent = Intent(this@MainActivity_settings, MainActivity_list::class.java)
+
+            // Передайте текст в другую активность
+            intent.putExtra("NAZV_TEXT", nazvText)
+
+            // Запустите другую активность
+            startActivity(intent)
+
+            // Закройте текущую активность, если это необходимо
+            finish()
+        }
         dialog.show()
     }
 
