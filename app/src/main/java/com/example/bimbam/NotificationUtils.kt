@@ -5,8 +5,8 @@ import android.os.Build
 
 object NotificationUtils {
 
-    const val CHANNEL_ID = "your_channel_id"
-    const val CHANNEL_NAME = "Звук и вибрация"
+    const val CHANNEL_ID = "1"
+    const val CHANNEL_NAME = "Default"
     const val CHANNEL_DESCRIPTION = "Разрешите присылать уведомления"
 
     fun createNotificationChannel(context: Context) {

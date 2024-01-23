@@ -1,13 +1,15 @@
 package com.example.bimbam
 
-import android.content.Intent
-import android.content.SharedPreferences
+import android.content.*
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity_you_acc : AppCompatActivity() {
     private val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
@@ -16,7 +18,12 @@ class MainActivity_you_acc : AppCompatActivity() {
     private lateinit var sexTextView: TextView
     private lateinit var birthdayTextView: TextView
     private lateinit var diagnosTextView: TextView
-
+    private val updateReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            // Обновление данных в MainActivity_you_acc при получении широковещательного сообщения
+            updateUserData()
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_you_acc)
@@ -79,6 +86,11 @@ class MainActivity_you_acc : AppCompatActivity() {
         View4.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_list::class.java)
             startActivity(intent) }
+        val View5 = findViewById<View>(R.id.edit)
+        View5.setOnClickListener{
+            val intent = Intent(this@MainActivity_you_acc,MainActivity_you_acc_edit::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun saveDataToSharedPreferences(name: String, sex: String, birthday: String, diagnos: String) {
@@ -89,5 +101,43 @@ class MainActivity_you_acc : AppCompatActivity() {
         editor.putString("BIRTHDAY", birthday)
         editor.putString("DIAGNOS", diagnos)
         editor.apply()
+    }
+    override fun onResume() {
+        super.onResume()
+        // Регистрация приемника для обновления данных
+        registerReceiver(updateReceiver, IntentFilter("updateUserData"))
+
+        // Обновление данных в MainActivity_you_acc
+        updateUserData()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Отмена регистрации приемника при уходе из активности
+        unregisterReceiver(updateReceiver)
+    }
+
+    private fun updateUserData() {
+        currentUserUid?.let { uid ->
+            dbUsers.child(uid).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        val user = dataSnapshot.getValue(Users::class.java)
+                        user?.let {
+                            // Обновление отображаемых данных
+                            nameTextView.text = " ${it.name ?: ""}"
+                            sexTextView.text = " ${it.sex ?: ""}"
+                            birthdayTextView.text = " ${it.birthday ?: ""}"
+
+
+                        }
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Обработка ошибок при чтении данных из Firebase
+                }
+            })
+        }
     }
 }

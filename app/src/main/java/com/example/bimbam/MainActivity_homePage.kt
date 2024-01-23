@@ -5,12 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.RelativeLayout
+import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity_homePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_home_page)
-
+        FirebaseMessaging.getInstance().token
         val profileView = findViewById<View>(R.id.profile)
         profileView.setOnClickListener {
             val intent = Intent(this@MainActivity_homePage, MainActivity_you_acc::class.java)
@@ -32,5 +33,6 @@ class MainActivity_homePage : AppCompatActivity() {
         View4.setOnClickListener {
             val intent = Intent(this@MainActivity_homePage, MainActivity_list::class.java)
             startActivity(intent) }
+
     }
 }
