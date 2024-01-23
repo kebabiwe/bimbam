@@ -24,9 +24,14 @@
     />
 
     <TextView
-            app:layout_constraintVertical_bias="0.12"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="0dp"
+            android:scaleType="center"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:layout_centerInParent="true"
+            app:layout_constraintVertical_bias="0.0"
             android:layout_centerHorizontal="true"
             android:layout_alignParentTop="true"
             tools:ignore="MissingConstraints"
@@ -80,24 +85,24 @@
 
 
     <RelativeLayout
-            android:layout_width="320dp"
-            android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="208dp"
-            android:clipToOutline="true"
-            android:background="@drawable/cnt"
-            android:elevation="4dp"
+            tools:ignore="MissingConstraints"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintVertical_bias="0.019"
-            android:id="@+id/frame_30"
-            tools:ignore="MissingConstraints">
+            app:layout_constraintHorizontal_bias="0.285"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:clipToOutline="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
+            android:id="@+id/frame_30">
         <TextView
                 android:id="@+id/some_id"
                 android:layout_width="117dp"
@@ -183,24 +188,24 @@
 
     </RelativeLayout>
     <RelativeLayout
-
-            android:layout_width="322dp"
-            android:layout_height="53dp"
-            android:layout_alignParentLeft="true"
             android:layout_marginLeft="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="208dp"
-            android:clipToOutline="true"
-            android:background="@drawable/cnt"
-            android:elevation="4dp"
+            android:layout_marginTop="288dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
             android:id="@+id/frame_30.2"
-            tools:ignore="MissingConstraints" app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintVertical_bias="0.17">
+            tools:ignore="MissingConstraints"
+            app:layout_constraintHorizontal_bias="0.285"
+            app:layout_constraintVertical_bias="0.0">
         <TextView
                 android:id="@+id/some_id3"
                 android:layout_width="106dp"
@@ -233,24 +238,24 @@
 
     </RelativeLayout>
     <RelativeLayout
-
-            android:layout_width="320dp"
-            android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="208dp"
-            android:clipToOutline="true"
-            android:background="@drawable/cnt"
-            android:elevation="4dp"
+            android:layout_marginTop="368dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.285"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
             android:id="@+id/frame_30.3"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintVertical_bias="0.316" app:layout_constraintHorizontal_bias="0.494">
+            tools:ignore="MissingConstraints">
         <TextView
                 android:id="@+id/some_id2"
                 android:layout_width="78dp"
@@ -301,22 +306,22 @@
     </RelativeLayout>
 
     <RelativeLayout
-            android:layout_width="320dp"
-            android:layout_height="56dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="208dp"
-            android:clipToOutline="true"
-            android:background="@drawable/cnt"
-            android:elevation="4dp"
+            android:layout_marginTop="448dp"
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintVertical_bias="0.464"
+            app:layout_constraintHorizontal_bias="0.285"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="320dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:clipToOutline="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/cnt"
+            android:elevation="4dp"
             android:id="@+id/frame_29"
             tools:ignore="MissingConstraints">
         <TextView
