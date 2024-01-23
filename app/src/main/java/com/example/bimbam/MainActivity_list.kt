@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
@@ -23,10 +25,7 @@ class MainActivity_list : AppCompatActivity() {
         calendar = findViewById(R.id.some_id)
         currentDate = Calendar.getInstance()
         updateDate()
-        val textView = findViewById<TextView>(R.id.textView2)
-        textView.text = nazvText
-        val textView1 = findViewById<TextView>(R.id.textView3)
-        textView1.text= selectedDate
+
 
         val View5 = findViewById<View>(R.id.icon5)
         View5.setOnClickListener {
@@ -68,8 +67,7 @@ class MainActivity_list : AppCompatActivity() {
             addDeal()
         }
         // Найдите TextView в макете MainActivity_list и установите текст
-        val textView2 = findViewById<TextView>(R.id.textView2)
-        textView2.text = nazvText
+
     }
 
     private fun updateDate() {
@@ -152,24 +150,21 @@ class MainActivity_list : AppCompatActivity() {
             val newDealRef = dbDeals.push()
             newDealRef.setValue(deal)
                 .addOnCompleteListener(OnCompleteListener { task ->
-                    if (task.isSuccessful) {
+                    if(nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()){
+                        if (task.isSuccessful) {
                         Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show()
+                        val newRelativeLayout = createNewDealRelativeLayout(nazvText, selectedDate)
 
-                        // Update textView2 with the name of the saved deal
-                        val textView2 = findViewById<TextView>(R.id.textView2)
-                        textView2.text = nazvText
-                        val textView3 = findViewById<TextView>(R.id.textView3)
-                        textView3.text = selectedDate
+                        val dealsContainer = findViewById<LinearLayout>(R.id.dealsContainer)
+                        dealsContainer.addView(newRelativeLayout)
                     } else {
                         Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
                     }
-                })
-
+                }})
             dialog.dismiss()
         }
         dialog.show()
     }
-
     private fun showDatePicker(selectedDateText: TextView) {
         val customDatePickerView = layoutInflater.inflate(R.layout.datepickertime, null)
         val datePicker = customDatePickerView.findViewById<DatePicker>(R.id.datePicker1)
@@ -181,7 +176,6 @@ class MainActivity_list : AppCompatActivity() {
 
         datePicker.init(year, month, day, null)
 
-        // Create a date selection dialog
         val datePickerDialog = AlertDialog.Builder(this)
             .setTitle("Выберите дату")
             .setView(customDatePickerView)
@@ -191,20 +185,13 @@ class MainActivity_list : AppCompatActivity() {
                 selectedDateText.text = selectedDate
             }
             .create()
-
-        // Show the date selection dialog
         datePickerDialog.show()
     }
 
     private fun showTimePicker(selectedTimeText: TextView) {
-        // Inflate the custom time selection layout
         val customTimePickerView = layoutInflater.inflate(R.layout.timepicker, null)
-
-        // Find NumberPickers in the custom layout
         val hoursPicker = customTimePickerView.findViewById<NumberPicker>(R.id.hoursPicker)
         val minutesPicker = customTimePickerView.findViewById<NumberPicker>(R.id.minutesPicker)
-
-        // Initialize the current time in the pickers
         val calendar = Calendar.getInstance()
         val currentHour = calendar.get(Calendar.HOUR_OF_DAY)
         val currentMinute = calendar.get(Calendar.MINUTE)
@@ -214,8 +201,6 @@ class MainActivity_list : AppCompatActivity() {
         minutesPicker.minValue = 0
         minutesPicker.maxValue = 59
         minutesPicker.value = currentMinute
-
-        // Create a time selection dialog
         val timePickerDialog = AlertDialog.Builder(this)
             .setTitle("Выберите время")
             .setView(customTimePickerView)
@@ -225,8 +210,93 @@ class MainActivity_list : AppCompatActivity() {
                 selectedTimeText.text = selectedTime
             }
             .create()
-
-        // Show the time selection dialog
         timePickerDialog.show()
     }
+
+    private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
+        val relativeLayout = RelativeLayout(this)
+        val layoutParams = RelativeLayout.LayoutParams(
+            320.dpToPx(),
+            56.dpToPx()
+        )
+        layoutParams.setMargins(16, 0, 0, 16) // Отступ между RelativeLayout
+        relativeLayout.layoutParams = layoutParams
+        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Фон RelativeLayout
+
+        // TextView для отображения nazvText
+        val textViewNazv = TextView(this)
+        textViewNazv.text = nazvText
+        textViewNazv.id = View.generateViewId()
+        textViewNazv.textSize = 15f
+        textViewNazv.alpha = 0.5f
+        textViewNazv.typeface = ResourcesCompat.getFont(this, R.font.opensans)
+        textViewNazv.setTextColor(ContextCompat.getColor(this, android.R.color.black))
+
+        // TextView для отображения selectedDate
+        val textViewDate = TextView(this)
+        textViewDate.text = selectedDate
+        textViewDate.id = View.generateViewId()
+        textViewDate.textSize = 13f
+        textViewDate.alpha = 0.2f
+        textViewDate.typeface = ResourcesCompat.getFont(this, R.font.opensans)
+        textViewDate.setTextColor(ContextCompat.getColor(this, android.R.color.black))
+
+        // RadioButton
+        val radioButton = RadioButton(this)
+        radioButton.id = View.generateViewId()
+        radioButton.layoutParams = RelativeLayout.LayoutParams(
+            32.dpToPx(), 32.dpToPx()
+        )
+        radioButton.background = ContextCompat.getDrawable(this, R.drawable.list_unpressed)
+
+        // ImageView для кнопки "Edit"
+        val editImageView = ImageView(this)
+        editImageView.id = View.generateViewId()
+        editImageView.layoutParams = RelativeLayout.LayoutParams(
+            18.dpToPx(), 18.dpToPx()
+        )
+        editImageView.setImageResource(R.drawable.edit)
+        editImageView.alpha = 0.5f
+
+        // Добавьте все представления к RelativeLayout
+        relativeLayout.addView(textViewNazv)
+        relativeLayout.addView(textViewDate)
+        relativeLayout.addView(radioButton)
+        relativeLayout.addView(editImageView)
+
+        // Установите параметры макета для каждого элемента в RelativeLayout
+        val paramsNazv = textViewNazv.layoutParams as RelativeLayout.LayoutParams
+        paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_START)
+        paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_TOP)
+        paramsNazv.setMargins(20.dpToPx(), 30, 0, 0)
+        textViewNazv.layoutParams = paramsNazv
+
+        val paramsDate = textViewDate.layoutParams as RelativeLayout.LayoutParams
+        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_START)
+        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+        paramsDate.setMargins(380, 20, 0, 30.dpToPx())
+        textViewDate.layoutParams = paramsDate
+
+        val paramsRadioButton = radioButton.layoutParams as RelativeLayout.LayoutParams
+        paramsRadioButton.addRule(RelativeLayout.ALIGN_PARENT_START)
+        paramsRadioButton.addRule(RelativeLayout.CENTER_VERTICAL)
+        paramsRadioButton.setMargins(-30.dpToPx(), 11.dpToPx(), 0, 0)
+        radioButton.layoutParams = paramsRadioButton
+
+        val paramsEdit = editImageView.layoutParams as RelativeLayout.LayoutParams
+        paramsEdit.addRule(RelativeLayout.ALIGN_PARENT_END)
+        paramsEdit.addRule(RelativeLayout.CENTER_VERTICAL)
+        paramsEdit.setMargins(0, 20.dpToPx(), 20.dpToPx(), 20.dpToPx())
+        editImageView.layoutParams = paramsEdit
+
+        return relativeLayout
+    }
+
+
+    // Расширение для преобразования dp в px
+    fun Int.dpToPx(): Int {
+        val density = resources.displayMetrics.density
+        return (this * density).toInt()
+    }
+
 }

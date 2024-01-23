@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="edit" type="id"/>
-    <item name="edit_1" type="id"/>
+    <item name="dealsContainer" type="id"/>
 </resources>
