@@ -308,7 +308,7 @@
                 android:textSize="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Начать работу"
+                android:text="Сохранить"
                 android:gravity="center"
                 android:fontFamily="@font/opensans"
                 android:textAppearance="@style/some_id"
