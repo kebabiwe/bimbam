@@ -49,6 +49,8 @@ tools:context=".MainActivity_registrationChild">
                     android:layout_alignParentTop="true"/>
         </RelativeLayout>
         <TextView
+                app:layout_constraintBottom_toTopOf="@+id/form5"
+                app:layout_constraintStart_toStartOf="@+id/form5"
                 android:textSize="16dp"
                 android:id="@+id/text3"
                 android:layout_width="119dp"
@@ -64,8 +66,10 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginBottom="57dp"
                 android:layout_alignBottom="@+id/form5"
                 android:layout_marginStart="37dp"
-                android:layout_alignStart="@+id/form5"/>
+                android:layout_alignStart="@+id/form5" tools:ignore="UnknownIdInLayout"/>
         <TextView
+                app:layout_constraintStart_toStartOf="@+id/form1"
+                app:layout_constraintBottom_toTopOf="@+id/form1"
                 android:id="@+id/text2"
                 android:layout_width="102dp"
                 android:layout_height="22dp"
@@ -83,6 +87,8 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginStart="37dp"
                 android:layout_alignStart="@+id/form1"/>
         <TextView
+                app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+                app:layout_constraintStart_toStartOf="@+id/relativeLayout"
                 android:textSize="16dp"
                 android:layout_width="31dp"
                 android:layout_height="22dp"
@@ -148,6 +154,8 @@ tools:context=".MainActivity_registrationChild">
                 android:fontFamily="@font/pattaya"
                 app:layout_constraintTop_toTopOf="parent"/>
         <TextView
+                app:layout_constraintBottom_toTopOf="@+id/form3"
+                app:layout_constraintStart_toStartOf="@+id/form3"
                 android:textSize="16dp"
                 android:id="@+id/text5"
                 android:layout_width="238dp"

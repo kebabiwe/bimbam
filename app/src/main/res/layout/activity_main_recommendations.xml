@@ -564,16 +564,24 @@
                 />
 
                 <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.494"
+                        app:layout_constraintVertical_bias="0.376"
+                        android:layout_alignParentTop="true"
+                        android:clipToOutline="true"
+                        android:layout_marginLeft="35dp"
+                        tools:ignore="MissingConstraints"
                         android:layout_width="320dp"
                         android:layout_height="152dp"
                         android:layout_marginBottom="16dp"
                         android:gravity="center"
-                        android:layout_marginLeft="32dp"
                         android:id="@+id/link_11"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
                         android:layout_marginTop="20dp"
-                        android:clipToOutline="true"
                         android:background="@drawable/link"
                         android:elevation="4dp">
                     <View
