@@ -343,7 +343,7 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:textColor="@color/black"
-                android:id="@+id/childname1"
+                android:id="@+id/childname"
                 android:background="@android:color/transparent"
                 tools:ignore="DuplicateIds"/>
     </RelativeLayout>

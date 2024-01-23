@@ -1,5 +1,6 @@
 package com.example.bimbam
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,7 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
     private lateinit var btn: RelativeLayout
     private lateinit var birthday: EditText
     private lateinit var sex: Spinner
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_you_acc_edit)
@@ -52,8 +54,8 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
         mSpinner.adapter = mArrayAdapter
 
         mAuth = FirebaseAuth.getInstance()
-        name = findViewById(R.id.childname1)
-        birthday = findViewById(R.id.childbird)
+        name = findViewById(R.id.childname)
+        birthday = findViewById(R.id.childbirthday)
         sex = findViewById(R.id.spinner)
         btn = findViewById(R.id.frame_36)
         btn.setOnClickListener {
