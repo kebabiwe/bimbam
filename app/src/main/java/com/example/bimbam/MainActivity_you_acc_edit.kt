@@ -57,7 +57,7 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
         name = findViewById(R.id.childname)
         birthday = findViewById(R.id.childbirthday)
         sex = findViewById(R.id.spinner)
-        btn = findViewById(R.id.some_id)
+        btn = findViewById(R.id.button)
         btn.setOnClickListener {
             val data = name.text.toString()
             val data1 = birthday.text.toString()
