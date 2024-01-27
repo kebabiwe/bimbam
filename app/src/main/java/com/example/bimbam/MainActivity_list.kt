@@ -33,6 +33,7 @@ class MainActivity_list : AppCompatActivity() {
         calendar = findViewById(R.id.some_id)
         dealsContainer = findViewById(R.id.dealsContainer)
         currentDate = Calendar.getInstance()
+
         updateDate()
 
 
