@@ -64,7 +64,7 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" android:id="@+id/linearLayout">
         <LinearLayout
                 android:layout_marginTop="350dp"
                 android:layout_marginLeft="16dp"
@@ -409,8 +409,8 @@
     <TextView
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="-80dp"
             android:scaleType="center"
             android:translationY="-0.25sp"
             tools:ignore="MissingConstraints"
@@ -425,7 +425,8 @@
             android:text="Арсений"
             android:textAppearance="@style/name"
             android:gravity="top"
-            app:layout_constraintHorizontal_bias="0.514" app:layout_constraintVertical_bias="0.338"/>
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintVertical_bias="0.338" app:layout_constraintTop_toBottomOf="@+id/navbar"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
