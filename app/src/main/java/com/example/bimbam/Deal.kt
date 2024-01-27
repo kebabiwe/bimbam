@@ -1,11 +1,9 @@
-package com.example.bimbam
+import com.google.firebase.database.IgnoreExtraProperties
+
+@IgnoreExtraProperties
 data class Deal(
-    val nazvText: String,
-    val descriptionText: String,
-    val selectedDate: String,
-    val selectedTime: String
+    var nazvText: String? = null,
+    var descriptionText: String? = null,
+    var selectedDate: String? = null,
+    var selectedTime: String? = null
 )
-
-
-
-

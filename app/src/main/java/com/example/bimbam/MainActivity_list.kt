@@ -1,7 +1,10 @@
 package com.example.bimbam
 
+import Deal
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -9,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,12 +23,15 @@ class MainActivity_list : AppCompatActivity() {
     private lateinit var calendar: TextView
     private lateinit var currentDate: Calendar
     private var nazvText: String? = null
-    private var selectedDate:String?=null
+    private var selectedDate: String? = null
+    private lateinit var dealsContainer: LinearLayout
+    private val addedDealIds = HashSet<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
         calendar = findViewById(R.id.some_id)
+        dealsContainer = findViewById(R.id.dealsContainer)
         currentDate = Calendar.getInstance()
         updateDate()
 
@@ -42,11 +51,13 @@ class MainActivity_list : AppCompatActivity() {
         val View1 = findViewById<View>(R.id.icon1)
         View1.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_homePage::class.java)
-            startActivity(intent)}
+            startActivity(intent)
+        }
         val View2 = findViewById<View>(R.id.icon2)
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_recommendations::class.java)
-            startActivity(intent)}
+            startActivity(intent)
+        }
         val arrowView = findViewById<View>(R.id.arrow)
         arrowView.setOnClickListener {
             // Перейти на предыдущую дату
@@ -60,16 +71,39 @@ class MainActivity_list : AppCompatActivity() {
             currentDate.add(Calendar.DAY_OF_MONTH, 1)
             updateDate()
         }
-        selectedDate = intent.getStringExtra("SELECTEDDATE")
-        nazvText = intent.getStringExtra("NAZV_TEXT") // Move this line here
+        // Move this line here
         val icon3View = findViewById<View>(R.id.icon3)
         icon3View.setOnClickListener {
             addDeal()
         }
         // Найдите TextView в макете MainActivity_list и установите текст
 
-    }
+        val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+        selectedDate = intent.getStringExtra("SELECTEDDATE")
+        nazvText = intent.getStringExtra("NAZV_TEXT")
+        // Прочтите данные из базы данных и добавьте слушатель для обновлений
+        dbDeals.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // Пройдите по всем данным в базе данных и создайте представление для каждого дела,
+                // если его еще нет на экране
+                for (dealSnapshot in dataSnapshot.children) {
+                    val deal = dealSnapshot.getValue(Deal::class.java)
+                    if (deal != null && !addedDealIds.contains(dealSnapshot.key)) {
+                        val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
+                        dealsContainer.addView(newRelativeLayout)
 
+                        // Добавьте идентификатор добавленного дела в список
+                        addedDealIds.add(dealSnapshot.key!!)
+                    }
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Обработка ошибки при чтении из базы данных
+                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
+            }
+        })
+    }
     private fun updateDate() {
         val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
         val formattedDate = dateFormat.format(currentDate.time)
@@ -156,7 +190,7 @@ class MainActivity_list : AppCompatActivity() {
                         val newRelativeLayout = createNewDealRelativeLayout(nazvText, selectedDate)
 
                         val dealsContainer = findViewById<LinearLayout>(R.id.dealsContainer)
-                        dealsContainer.addView(newRelativeLayout)
+
                     } else {
                         Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
                     }
@@ -215,15 +249,11 @@ class MainActivity_list : AppCompatActivity() {
 
     private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
-        val layoutParams = RelativeLayout.LayoutParams(
-            320.dpToPx(),
-            56.dpToPx()
-        )
+        val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
         layoutParams.setMargins(16, 0, 0, 16) // Отступ между RelativeLayout
         relativeLayout.layoutParams = layoutParams
         relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Фон RelativeLayout
 
-        // TextView для отображения nazvText
         val textViewNazv = TextView(this)
         textViewNazv.text = nazvText
         textViewNazv.id = View.generateViewId()
@@ -232,7 +262,6 @@ class MainActivity_list : AppCompatActivity() {
         textViewNazv.typeface = ResourcesCompat.getFont(this, R.font.opensans)
         textViewNazv.setTextColor(ContextCompat.getColor(this, android.R.color.black))
 
-        // TextView для отображения selectedDate
         val textViewDate = TextView(this)
         textViewDate.text = selectedDate
         textViewDate.id = View.generateViewId()
@@ -241,7 +270,6 @@ class MainActivity_list : AppCompatActivity() {
         textViewDate.typeface = ResourcesCompat.getFont(this, R.font.opensans)
         textViewDate.setTextColor(ContextCompat.getColor(this, android.R.color.black))
 
-        // RadioButton
         val radioButton = RadioButton(this)
         radioButton.id = View.generateViewId()
         radioButton.layoutParams = RelativeLayout.LayoutParams(
@@ -249,7 +277,6 @@ class MainActivity_list : AppCompatActivity() {
         )
         radioButton.background = ContextCompat.getDrawable(this, R.drawable.list_unpressed)
 
-        // ImageView для кнопки "Edit"
         val editImageView = ImageView(this)
         editImageView.id = View.generateViewId()
         editImageView.layoutParams = RelativeLayout.LayoutParams(
@@ -258,29 +285,27 @@ class MainActivity_list : AppCompatActivity() {
         editImageView.setImageResource(R.drawable.edit)
         editImageView.alpha = 0.5f
 
-        // Добавьте все представления к RelativeLayout
         relativeLayout.addView(textViewNazv)
         relativeLayout.addView(textViewDate)
         relativeLayout.addView(radioButton)
         relativeLayout.addView(editImageView)
 
-        // Установите параметры макета для каждого элемента в RelativeLayout
         val paramsNazv = textViewNazv.layoutParams as RelativeLayout.LayoutParams
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_TOP)
-        paramsNazv.setMargins(20.dpToPx(), 30, 0, 0)
+        paramsNazv.setMargins(43.dpToPx(), 27, 0, 0)
         textViewNazv.layoutParams = paramsNazv
 
         val paramsDate = textViewDate.layoutParams as RelativeLayout.LayoutParams
         paramsDate.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsDate.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
-        paramsDate.setMargins(380, 20, 0, 30.dpToPx())
+        paramsDate.setMargins(370, 0, 0, 17.dpToPx())
         textViewDate.layoutParams = paramsDate
 
         val paramsRadioButton = radioButton.layoutParams as RelativeLayout.LayoutParams
         paramsRadioButton.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsRadioButton.addRule(RelativeLayout.CENTER_VERTICAL)
-        paramsRadioButton.setMargins(-30.dpToPx(), 11.dpToPx(), 0, 0)
+        paramsRadioButton.setMargins(5.dpToPx(), 11.dpToPx(), 0, 0)
         radioButton.layoutParams = paramsRadioButton
 
         val paramsEdit = editImageView.layoutParams as RelativeLayout.LayoutParams
@@ -288,12 +313,8 @@ class MainActivity_list : AppCompatActivity() {
         paramsEdit.addRule(RelativeLayout.CENTER_VERTICAL)
         paramsEdit.setMargins(0, 20.dpToPx(), 20.dpToPx(), 20.dpToPx())
         editImageView.layoutParams = paramsEdit
-
         return relativeLayout
     }
-
-
-    // Расширение для преобразования dp в px
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
