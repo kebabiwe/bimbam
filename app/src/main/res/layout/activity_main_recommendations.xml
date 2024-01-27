@@ -575,9 +575,10 @@
                         android:layout_alignParentTop="true"
                         android:clipToOutline="true"
                         android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
                         tools:ignore="MissingConstraints"
-                        android:layout_width="320dp"
-                        android:layout_height="152dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="16dp"
                         android:gravity="center"
                         android:id="@+id/link_11"
@@ -599,10 +600,11 @@
                 </RelativeLayout>
 
                 <RelativeLayout
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
                         android:layout_width="320dp"
                         android:layout_height="152dp"
                         android:gravity="center"
-                        android:layout_marginLeft="32dp"
                         android:id="@+id/link_67"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
@@ -643,11 +645,12 @@
 
 
                 <RelativeLayout
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginRight="35dp"
                         android:layout_width="320dp"
                         android:layout_height="152dp"
                         android:layout_marginBottom="16dp"
                         android:gravity="center"
-                        android:layout_marginLeft="32dp"
                         android:id="@+id/link"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentTop="true"
