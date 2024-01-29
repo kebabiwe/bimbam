@@ -163,14 +163,16 @@
 
     </RelativeLayout>
     <LinearLayout
-            android:layout_width="379dp"
-            android:layout_height="168dp"
+            android:layout_width="376dp"
+            android:layout_height="167dp"
             tools:ignore="MissingConstraints"
             android:orientation="vertical"
             android:id="@+id/dealsContainer"
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/tabbar"
-            app:layout_constraintVertical_bias="0.671">
+            app:layout_constraintVertical_bias="0.671"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="65dp">
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

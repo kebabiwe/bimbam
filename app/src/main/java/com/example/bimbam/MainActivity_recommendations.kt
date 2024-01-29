@@ -67,6 +67,44 @@ class MainActivity_recommendations : AppCompatActivity() {
         AddADeal.setOnClickListener{
             addDeal()
         }
+        val imageView = findViewById<RelativeLayout>(R.id.link_11)
+        imageView.setOnClickListener {
+            val url = "https://mir.pravo.by/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Нет приложения для открытия URL", Toast.LENGTH_SHORT).show()
+            }
+        }
+        val imageView1 = findViewById<RelativeLayout>(R.id.link_67)
+
+        imageView1.setOnClickListener {
+            val url = "https://www.adu.by/ru/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Нет приложения для открытия URL", Toast.LENGTH_SHORT).show()
+            }
+        }
+        val imageView2 = findViewById<RelativeLayout>(R.id.link)
+
+        imageView2.setOnClickListener {
+            val url = "https://www.unicef.org/belarus/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Нет приложения для открытия URL", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
 
         dbDeals.addValueEventListener(object : ValueEventListener {
@@ -76,11 +114,9 @@ class MainActivity_recommendations : AppCompatActivity() {
                     val deal = dealSnapshot.getValue(Deal::class.java)
                     if (deal != null) {
                         val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
-
                     }
                 }
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 Log.w(ContentValues.TAG, "loadPost:onCancelled", databaseError.toException())
             }
@@ -88,11 +124,9 @@ class MainActivity_recommendations : AppCompatActivity() {
     }
     private fun addDeal() {
         val builder = AlertDialog.Builder(this)
-
         val inflater = layoutInflater
         val view = inflater.inflate(R.layout.add_a_deal, null)
         builder.setView(view)
-
         val add = view.findViewById<View>(R.id.vector1)
         val add1 = view.findViewById<View>(R.id.vector2)
         val add2 = view.findViewById<View>(R.id.vector3)
@@ -149,14 +183,8 @@ class MainActivity_recommendations : AppCompatActivity() {
             val descriptionText = description.text.toString()
             val selectedDate = "${selectedDateText.text}"
             val selectedTime = "${selectedTimeText.text}"
-
-            // Create a data object
             val deal = Deal(nazvText, descriptionText, selectedDate, selectedTime)
-
-            // Get reference to your Firebase database
             val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
-
-            // Push the deal to the database
             val newDealRef = dbDeals.push()
             newDealRef.setValue(deal)
                 .addOnCompleteListener(OnCompleteListener { task ->
@@ -177,14 +205,11 @@ class MainActivity_recommendations : AppCompatActivity() {
     private fun showDatePicker(selectedDateText: TextView) {
         val customDatePickerView = layoutInflater.inflate(R.layout.datepickertime, null)
         val datePicker = customDatePickerView.findViewById<DatePicker>(R.id.datePicker1)
-
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
-
         datePicker.init(year, month, day, null)
-
         val datePickerDialog = AlertDialog.Builder(this)
             .setTitle("Выберите дату")
             .setView(customDatePickerView)
@@ -196,7 +221,6 @@ class MainActivity_recommendations : AppCompatActivity() {
             .create()
         datePickerDialog.show()
     }
-
     private fun showTimePicker(selectedTimeText: TextView) {
         val customTimePickerView = layoutInflater.inflate(R.layout.timepicker, null)
         val hoursPicker = customTimePickerView.findViewById<NumberPicker>(R.id.hoursPicker)
@@ -221,14 +245,12 @@ class MainActivity_recommendations : AppCompatActivity() {
             .create()
         timePickerDialog.show()
     }
-
     private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
         val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
         layoutParams.setMargins(16, 0, 0, 16) // Отступ между RelativeLayout
         relativeLayout.layoutParams = layoutParams
         relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Фон RelativeLayout
-
         val textViewNazv = TextView(this)
         textViewNazv.text = nazvText
         textViewNazv.id = View.generateViewId()
@@ -236,7 +258,6 @@ class MainActivity_recommendations : AppCompatActivity() {
         textViewNazv.alpha = 0.5f
         textViewNazv.typeface = ResourcesCompat.getFont(this, R.font.opensans)
         textViewNazv.setTextColor(ContextCompat.getColor(this, android.R.color.black))
-
         val textViewDate = TextView(this)
         textViewDate.text = selectedDate
         textViewDate.id = View.generateViewId()
@@ -244,14 +265,12 @@ class MainActivity_recommendations : AppCompatActivity() {
         textViewDate.alpha = 0.2f
         textViewDate.typeface = ResourcesCompat.getFont(this, R.font.opensans)
         textViewDate.setTextColor(ContextCompat.getColor(this, android.R.color.black))
-
         val radioButton = RadioButton(this)
         radioButton.id = View.generateViewId()
         radioButton.layoutParams = RelativeLayout.LayoutParams(
             32.dpToPx(), 32.dpToPx()
         )
         radioButton.background = ContextCompat.getDrawable(this, R.drawable.list_unpressed)
-
         val editImageView = ImageView(this)
         editImageView.id = View.generateViewId()
         editImageView.layoutParams = RelativeLayout.LayoutParams(
@@ -259,30 +278,25 @@ class MainActivity_recommendations : AppCompatActivity() {
         )
         editImageView.setImageResource(R.drawable.edit)
         editImageView.alpha = 0.5f
-
         relativeLayout.addView(textViewNazv)
         relativeLayout.addView(textViewDate)
         relativeLayout.addView(radioButton)
         relativeLayout.addView(editImageView)
-
         val paramsNazv = textViewNazv.layoutParams as RelativeLayout.LayoutParams
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_TOP)
         paramsNazv.setMargins(43.dpToPx(), 27, 0, 0)
         textViewNazv.layoutParams = paramsNazv
-
         val paramsDate = textViewDate.layoutParams as RelativeLayout.LayoutParams
         paramsDate.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsDate.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
         paramsDate.setMargins(370, 0, 0, 17.dpToPx())
         textViewDate.layoutParams = paramsDate
-
         val paramsRadioButton = radioButton.layoutParams as RelativeLayout.LayoutParams
         paramsRadioButton.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsRadioButton.addRule(RelativeLayout.CENTER_VERTICAL)
         paramsRadioButton.setMargins(5.dpToPx(), 11.dpToPx(), 0, 0)
         radioButton.layoutParams = paramsRadioButton
-
         val paramsEdit = editImageView.layoutParams as RelativeLayout.LayoutParams
         paramsEdit.addRule(RelativeLayout.ALIGN_PARENT_END)
         paramsEdit.addRule(RelativeLayout.CENTER_VERTICAL)

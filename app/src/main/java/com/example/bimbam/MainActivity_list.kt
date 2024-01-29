@@ -1,17 +1,17 @@
 package com.example.bimbam
 
-import Deal
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import Deal
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -22,10 +22,9 @@ import java.util.*
 class MainActivity_list : AppCompatActivity() {
     private lateinit var calendar: TextView
     private lateinit var currentDate: Calendar
-    private var nazvText: String? = null
-    private var selectedDate: String? = null
     private lateinit var dealsContainer: LinearLayout
     private val addedDealIds = HashSet<String>()
+    private var currentUser: FirebaseUser? = null // Declare currentUser here
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,15 +32,18 @@ class MainActivity_list : AppCompatActivity() {
         calendar = findViewById(R.id.some_id)
         dealsContainer = findViewById(R.id.dealsContainer)
         currentDate = Calendar.getInstance()
+        currentUser = FirebaseAuth.getInstance().currentUser
+        loadDealsFromDatabase()
 
-        updateDate()
+        setOnClickListeners()
+    }
 
-
+    private fun setOnClickListeners() {
+        // Set onClickListeners for navigation
         val View5 = findViewById<View>(R.id.icon5)
         View5.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_settings::class.java)
             startActivity(intent)
-
         }
 
         val profileView = findViewById<View>(R.id.profile)
@@ -49,16 +51,19 @@ class MainActivity_list : AppCompatActivity() {
             val intent = Intent(this@MainActivity_list, MainActivity_you_acc::class.java)
             startActivity(intent)
         }
+
         val View1 = findViewById<View>(R.id.icon1)
         View1.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_homePage::class.java)
             startActivity(intent)
         }
+
         val View2 = findViewById<View>(R.id.icon2)
         View2.setOnClickListener {
             val intent = Intent(this@MainActivity_list, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
+
         val arrowView = findViewById<View>(R.id.arrow)
         arrowView.setOnClickListener {
             // Перейти на предыдущую дату
@@ -72,39 +77,42 @@ class MainActivity_list : AppCompatActivity() {
             currentDate.add(Calendar.DAY_OF_MONTH, 1)
             updateDate()
         }
-        // Move this line here
+
+        // Set onClickListener for adding new deal
         val icon3View = findViewById<View>(R.id.icon3)
         icon3View.setOnClickListener {
             addDeal()
         }
-        // Найдите TextView в макете MainActivity_list и установите текст
+    }
 
+    private fun loadDealsFromDatabase() {
         val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
-        selectedDate = intent.getStringExtra("SELECTEDDATE")
-        nazvText = intent.getStringExtra("NAZV_TEXT")
-        // Прочтите данные из базы данных и добавьте слушатель для обновлений
         dbDeals.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // Пройдите по всем данным в базе данных и создайте представление для каждого дела,
-                // если его еще нет на экране
-                for (dealSnapshot in dataSnapshot.children) {
-                    val deal = dealSnapshot.getValue(Deal::class.java)
-                    if (deal != null && !addedDealIds.contains(dealSnapshot.key)) {
-                        val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
-                        dealsContainer.addView(newRelativeLayout)
+                // Пройдемся по всем сделкам в базе данных
+                dataSnapshot.children.forEach { userSnapshot ->
+                    val userId = userSnapshot.key
+                    userSnapshot.children.forEach { dealSnapshot ->
+                        val deal = dealSnapshot.getValue(Deal::class.java)
+                        if (deal != null && userId == currentUser?.uid && !addedDealIds.contains(dealSnapshot.key)) {
+                            // Создаем новый RelativeLayout только для новой сделки
+                            val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
+                            dealsContainer.addView(newRelativeLayout)
 
-                        // Добавьте идентификатор добавленного дела в список
-                        addedDealIds.add(dealSnapshot.key!!)
+                            // Добавляем идентификатор сделки в HashSet
+                            addedDealIds.add(dealSnapshot.key!!)
+                        }
                     }
                 }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                // Обработка ошибки при чтении из базы данных
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
             }
         })
     }
+
+
     private fun updateDate() {
         val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
         val formattedDate = dateFormat.format(currentDate.time)
@@ -174,32 +182,26 @@ class MainActivity_list : AppCompatActivity() {
             val descriptionText = description.text.toString()
             val selectedDate = "${selectedDateText.text}"
             val selectedTime = "${selectedTimeText.text}"
-
-            // Create a data object
+            val userId = currentUser?.uid
             val deal = Deal(nazvText, descriptionText, selectedDate, selectedTime)
-
-            // Get reference to your Firebase database
             val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
-
-            // Push the deal to the database
-            val newDealRef = dbDeals.push()
+            val newDealRef = dbDeals.child(userId!!).push()
             newDealRef.setValue(deal)
-                .addOnCompleteListener(OnCompleteListener { task ->
-                    if(nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()){
+                .addOnCompleteListener { task ->
+                    if (nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()) {
                         if (task.isSuccessful) {
-                        Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show()
-                        val newRelativeLayout = createNewDealRelativeLayout(nazvText, selectedDate)
-
-                        val dealsContainer = findViewById<LinearLayout>(R.id.dealsContainer)
-
-                    } else {
-                        Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
+                        }
                     }
-                }})
+                }
             dialog.dismiss()
         }
+
         dialog.show()
     }
+
     private fun showDatePicker(selectedDateText: TextView) {
         val customDatePickerView = layoutInflater.inflate(R.layout.datepickertime, null)
         val datePicker = customDatePickerView.findViewById<DatePicker>(R.id.datePicker1)
@@ -251,9 +253,9 @@ class MainActivity_list : AppCompatActivity() {
     private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
         val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
-        layoutParams.setMargins(16, 0, 0, 16) // Отступ между RelativeLayout
+        layoutParams.setMargins(16, 0, 0, 16) // Margin between RelativeLayouts
         relativeLayout.layoutParams = layoutParams
-        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Фон RelativeLayout
+        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Background of RelativeLayout
 
         val textViewNazv = TextView(this)
         textViewNazv.text = nazvText
@@ -316,9 +318,13 @@ class MainActivity_list : AppCompatActivity() {
         editImageView.layoutParams = paramsEdit
         return relativeLayout
     }
+
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
     }
 
+    companion object {
+        const val TAG = "MainActivity_list"
+    }
 }
