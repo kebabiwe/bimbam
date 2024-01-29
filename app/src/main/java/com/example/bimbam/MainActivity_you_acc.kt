@@ -3,6 +3,7 @@ package com.example.bimbam
 import Deal
 import android.content.*
 import android.content.ContentValues.TAG
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,14 +12,22 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import co.yml.charts.axis.AxisData
+import co.yml.charts.common.model.Point
+import co.yml.charts.ui.linechart.LineChart
+import co.yml.charts.ui.linechart.model.*
 import com.google.android.gms.tasks.OnCompleteListener
+import com.google.errorprone.annotations.Modifier
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.random.Random
 
+const val steps=10
 class MainActivity_you_acc : AppCompatActivity() {
     private val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
     private val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
@@ -35,6 +44,37 @@ class MainActivity_you_acc : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_you_acc)
+
+
+        SingleLineChartTheme{
+            val lineChartData = LineChartData(
+                linePlotData = LinePlotData(
+                    lines = listOf(
+                        Line(
+                            dataPoints = pointsList,
+                            LineStyle(),
+                            IntersectionPoint(),
+                            SelectionHighlightPoint(),
+                            ShadowUnderLine(),
+                            SelectionHighlightPopUp()
+                        )
+                    ),
+                ),
+                xAxisData = xAxisData,
+                yAxisData = yAxisData,
+                gridLines = GridLines(),
+                backgroundColor = Color.RED
+            )
+
+            LineChart(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(300.dp),
+                lineChartData = lineChartData
+            )
+
+        }
+
 
         nameTextView = findViewById(R.id.NAME)
         sexTextView = findViewById(R.id.SEX)
@@ -121,6 +161,10 @@ class MainActivity_you_acc : AppCompatActivity() {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
             }
         })
+    }
+
+    private fun SingleLineChartTheme(function: () -> Unit) {
+        TODO("Not yet implemented")
     }
 
     private fun saveDataToSharedPreferences(name: String, sex: String, birthday: String, diagnos: String) {
@@ -378,4 +422,37 @@ class MainActivity_you_acc : AppCompatActivity() {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
     }
+
+
+    val  pointsList = getPointsList()
+    val xAxisData = AxisData.Builder()
+        .axisStepSize(100.dp)
+        .backgroundColor(Color.BLACK)
+        .steps(pointsList.size - 1)
+        .labelData { i -> i.toString() + "day" }
+        .labelAndAxisLinePadding(15.dp)
+        .build()
+
+    val yAxisData = AxisData.Builder()
+        .steps(steps)
+        .backgroundColor(Color.BLACK)
+        .labelAndAxisLinePadding(20.dp)
+        .labelData {
+            i -> i.toString()
+        }.build()
+
+
+    fun getPointsList(): ArrayList<Point> {
+        val list = ArrayList<Point>()
+        for (i in 0..31) {
+            list.add(
+                Point(
+                    i.toFloat(),
+                    Random.nextInt(50, 90).toFloat().toFloat()
+                )
+            )
+        }
+        return list
+    }
 }
+
