@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             tools:ignore="MissingConstraints">
         <LinearLayout
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="350dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
             <TextView
                     android:fontFamily="@font/opensans"
                     android:id="@+id/some_id2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -89,7 +89,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/opensans"
                     android:id="@+id/some_id98"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -103,7 +103,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/opensans"
                     android:id="@+id/some_id3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -117,7 +117,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/opensans"
                     android:id="@+id/some_id4"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -131,7 +131,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/opensans"
                     android:id="@+id/some_id5"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
@@ -144,9 +144,9 @@
         </LinearLayout>
         <LinearLayout
                 android:layout_marginTop="350dp"
-                android:layout_marginLeft="70dp"
+                android:layout_marginLeft="50dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
                     android:layout_marginTop="0dp"
