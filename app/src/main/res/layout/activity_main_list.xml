@@ -62,7 +62,7 @@
             app:layout_constraintStart_toEndOf="@+id/some_id"
             android:layout_marginStart="84dp"/>
     <TextView
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="138dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

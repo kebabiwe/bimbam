@@ -170,7 +170,8 @@
             android:id="@+id/dealsContainer"
             app:layout_constraintTop_toBottomOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/tabbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tabbar"
             app:layout_constraintVertical_bias="0.671">
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
