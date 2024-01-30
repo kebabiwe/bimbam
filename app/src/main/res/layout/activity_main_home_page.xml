@@ -95,6 +95,25 @@
             app:layout_constraintTop_toBottomOf="@+id/cardView"/>
 
 
+    <TextView
+            android:text="Ваш список дел пока пуст"
+            android:textColor="#115931"
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/opensans"
+            android:textAppearance="@style/title"
+            android:textSize="20dp"
+            android:alpha="0.5"
+            android:lineSpacingExtra="-1sp"
+            android:gravity="center_horizontal|top"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintBottom_toTopOf="@+id/dealsContainer"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/dealsContainer"
+            app:layout_constraintVertical_bias="0.963"/>
     <RelativeLayout
             android:id="@+id/tabbar"
             android:layout_width="wrap_content"
