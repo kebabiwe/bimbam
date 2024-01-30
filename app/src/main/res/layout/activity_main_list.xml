@@ -160,6 +160,7 @@
             android:fontFamily="@font/opensans"
             android:textAppearance="@style/title"
             android:textSize="20dp"
+            android:alpha="0.5"
             android:lineSpacingExtra="-1sp"
             android:gravity="center_horizontal|top"
             tools:ignore="MissingConstraints"

@@ -79,6 +79,7 @@ class MainActivity_list : AppCompatActivity() {
         dbDeals.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // Пройдемся по всем сделкам в базе данных
+                var dealsCount = 0
                 dataSnapshot.children.forEach { userSnapshot ->
                     val userId = userSnapshot.key
                     userSnapshot.children.forEach { dealSnapshot ->
@@ -91,8 +92,18 @@ class MainActivity_list : AppCompatActivity() {
 
                             // Добавляем идентификатор сделки в HashSet
                             addedDealIds.add(dealId)
+
+                            // Увеличиваем счетчик дел
+                            dealsCount++
                         }
                     }
+                }
+
+                // Проверяем количество дел и показываем/скрываем TextView
+                if (dealsCount == 0) {
+                    findViewById<TextView>(R.id.title1).visibility = View.VISIBLE
+                } else {
+                    findViewById<TextView>(R.id.title1).visibility = View.GONE
                 }
             }
 
