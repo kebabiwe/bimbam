@@ -1,8 +1,6 @@
 package com.example.bimbam
 
 import Deal
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -33,7 +31,7 @@ class MainActivity_settings : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         currentUser = FirebaseAuth.getInstance().currentUser
 
-        val RelativeLayout = findViewById<RelativeLayout>(R.id.frame_30)
+        val RelativeLayout = findViewById<RelativeLayout>(R.id.frame_31)
         RelativeLayout.setOnClickListener {
             val intent = Intent(this@MainActivity_settings, MainActivity_about::class.java)
             startActivity(intent)

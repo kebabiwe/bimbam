@@ -102,13 +102,13 @@
             android:layout_alignParentLeft="true"
             android:background="@drawable/cnt"
             android:elevation="4dp"
-            android:id="@+id/frame_30">
+            android:id="@+id/frame_31">
         <TextView
                 android:id="@+id/some_id"
                 android:layout_width="117dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
                 android:text="О приложении"
                 android:fontFamily="@font/opensans"
@@ -207,11 +207,11 @@
             app:layout_constraintHorizontal_bias="0.285"
             app:layout_constraintVertical_bias="0.0">
         <TextView
+                android:layout_marginLeft="15dp"
                 android:id="@+id/some_id3"
                 android:layout_width="106dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:text="Уведомления"
                 android:fontFamily="@font/opensans"
@@ -233,7 +233,8 @@
                 android:layout_toEndOf="@+id/some_id3"
                 android:layout_marginStart="145dp"
                 app:track="@drawable/custom_track"
-                android:thumb="@drawable/custom_thumb" android:trackTint="#08930D"/>
+                android:thumb="@drawable/custom_thumb"
+                android:trackTint="#08930D"/>
 
 
     </RelativeLayout>
@@ -257,11 +258,11 @@
             android:id="@+id/frame_30.3"
             tools:ignore="MissingConstraints">
         <TextView
+                android:layout_marginLeft="15dp"
                 android:id="@+id/some_id2"
                 android:layout_width="78dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:text="Вибрация"
                 android:fontFamily="@font/opensans"
@@ -283,7 +284,8 @@
                 android:layout_toEndOf="@+id/some_id2"
                 android:layout_marginStart="170dp"
                 app:track="@drawable/custom_track"
-                android:thumb="@drawable/custom_thumb" android:trackTint="#08930D"/>
+                android:thumb="@drawable/custom_thumb"
+                android:trackTint="#08930D"/>
     </RelativeLayout>
     <RelativeLayout
 
@@ -326,16 +328,18 @@
             tools:ignore="MissingConstraints">
         <TextView
                 android:id="@+id/some_id67"
-                android:layout_width="117dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="0dp"
                 android:layout_centerVertical="true"
                 android:text="Выйти из аккаунта"
                 android:textAppearance="@style/some_id1"
                 android:fontFamily="@font/opensans"
                 android:lineSpacingExtra="1sp"
                 android:translationY="-0.31sp"
-                android:gravity="top" android:layout_alignParentEnd="true" android:layout_marginEnd="193dp"/>
+                android:gravity="top"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="205dp"/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
