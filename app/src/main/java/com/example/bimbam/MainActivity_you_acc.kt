@@ -46,35 +46,6 @@ class MainActivity_you_acc : AppCompatActivity() {
         setContentView(R.layout.activity_main_you_acc)
 
 
-        SingleLineChartTheme{
-            val lineChartData = LineChartData(
-                linePlotData = LinePlotData(
-                    lines = listOf(
-                        Line(
-                            dataPoints = pointsList,
-                            LineStyle(),
-                            IntersectionPoint(),
-                            SelectionHighlightPoint(),
-                            ShadowUnderLine(),
-                            SelectionHighlightPopUp()
-                        )
-                    ),
-                ),
-                xAxisData = xAxisData,
-                yAxisData = yAxisData,
-                gridLines = GridLines(),
-                backgroundColor = Color.RED
-            )
-
-            LineChart(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(300.dp),
-                lineChartData = lineChartData
-            )
-
-        }
-
 
         nameTextView = findViewById(R.id.NAME)
         sexTextView = findViewById(R.id.SEX)
@@ -423,36 +394,5 @@ class MainActivity_you_acc : AppCompatActivity() {
         return (this * density).toInt()
     }
 
-
-    val  pointsList = getPointsList()
-    val xAxisData = AxisData.Builder()
-        .axisStepSize(100.dp)
-        .backgroundColor(Color.BLACK)
-        .steps(pointsList.size - 1)
-        .labelData { i -> i.toString() + "day" }
-        .labelAndAxisLinePadding(15.dp)
-        .build()
-
-    val yAxisData = AxisData.Builder()
-        .steps(steps)
-        .backgroundColor(Color.BLACK)
-        .labelAndAxisLinePadding(20.dp)
-        .labelData {
-            i -> i.toString()
-        }.build()
-
-
-    fun getPointsList(): ArrayList<Point> {
-        val list = ArrayList<Point>()
-        for (i in 0..31) {
-            list.add(
-                Point(
-                    i.toFloat(),
-                    Random.nextInt(50, 90).toFloat().toFloat()
-                )
-            )
-        }
-        return list
-    }
 }
 
