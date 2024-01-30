@@ -108,7 +108,22 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:text="Индивидуальная особенность"
+                    android:text="Индивидуальная "
+                    android:textAppearance="@style/some_id"
+                    android:lineSpacingExtra="1sp"
+                    android:translationY="-0.31sp"
+                    android:gravity="top"
+                    android:layout_weight="1"/>
+            <TextView
+                    android:layout_marginTop="-20dp"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/opensans"
+                    android:id="@+id/some_id10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="особенность"
                     android:textAppearance="@style/some_id"
                     android:lineSpacingExtra="1sp"
                     android:translationY="-0.31sp"
@@ -117,7 +132,7 @@
         </LinearLayout>
         <LinearLayout
                 android:layout_marginTop="315dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:orientation="vertical"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content">
@@ -181,6 +196,7 @@
 
         <ScrollView
                 tools:ignore="NotSibling"
+                android:layout_marginTop="435dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="55dp">
@@ -196,7 +212,7 @@
                         android:layout_weight="1">
                     <TextView
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="440dp"
+                            android:layout_marginTop="10dp"
                             android:fontFamily="@font/opensans"
                             android:id="@+id/some_id4"
                             android:layout_width="wrap_content"
@@ -218,7 +234,7 @@
                             android:translationY="-0.31sp"
                             android:gravity="top"
                             android:layout_marginLeft="100dp"
-                            android:layout_marginTop="440dp"
+                            android:layout_marginTop="10dp"
                             android:text="103см"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -226,7 +242,7 @@
                             android:layout_weight="1"/>
                     <View
                             android:layout_marginEnd="20dp"
-                            android:layout_marginTop="440dp"
+                            android:layout_marginTop="10dp"
                             android:layout_width="18dp"
                             android:layout_height="18dp"
                             android:layout_alignParentLeft="true"
