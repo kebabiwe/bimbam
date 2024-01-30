@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -23,10 +24,14 @@ import java.util.*
 
 class MainActivity_settings : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
+    private var currentUser: FirebaseUser? = null
+    private var nazvText: String? = null
+    private var selectedDate: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_settings)
         firebaseAuth = FirebaseAuth.getInstance()
+        currentUser = FirebaseAuth.getInstance().currentUser
 
         val RelativeLayout = findViewById<RelativeLayout>(R.id.frame_30)
         RelativeLayout.setOnClickListener {
@@ -55,27 +60,12 @@ class MainActivity_settings : AppCompatActivity() {
             showLogoutConfirmationDialog()
         }
         val AddADeal = findViewById<View>(R.id.icon3)
-        AddADeal.setOnClickListener{
+        AddADeal.setOnClickListener {
             addDeal()
         }
         val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
-
-        dbDeals.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                for (dealSnapshot in dataSnapshot.children) {
-                    val deal = dealSnapshot.getValue(Deal::class.java)
-                    if (deal != null) {
-                        val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
-
-                    }
-                }
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.w(ContentValues.TAG, "loadPost:onCancelled", databaseError.toException())
-            }
-        })
+        selectedDate = intent.getStringExtra("SELECTEDDATE")
+        nazvText = intent.getStringExtra("NAZV_TEXT")
     }
     private fun showLogoutConfirmationDialog() {
         val builder = AlertDialog.Builder(this)
@@ -187,31 +177,26 @@ class MainActivity_settings : AppCompatActivity() {
             val descriptionText = description.text.toString()
             val selectedDate = "${selectedDateText.text}"
             val selectedTime = "${selectedTimeText.text}"
-
-            // Create a data object
+            val userId = currentUser?.uid
             val deal = Deal(nazvText, descriptionText, selectedDate, selectedTime)
-
-            // Get reference to your Firebase database
             val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
-
-            // Push the deal to the database
-            val newDealRef = dbDeals.push()
+            val newDealRef = dbDeals.child(userId!!).push()
             newDealRef.setValue(deal)
-                .addOnCompleteListener(OnCompleteListener { task ->
-                    if(nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()){
+                .addOnCompleteListener { task ->
+                    if (nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()) {
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show()
-                            val newRelativeLayout = createNewDealRelativeLayout(nazvText, selectedDate)
-
-                            val dealsContainer = findViewById<LinearLayout>(R.id.dealsContainer)
-                            dialog.dismiss()
                         } else {
                             Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
                         }
                     }
-                })}
+                }
+            dialog.dismiss()
+        }
+
         dialog.show()
     }
+
     private fun showDatePicker(selectedDateText: TextView) {
         val customDatePickerView = layoutInflater.inflate(R.layout.datepickertime, null)
         val datePicker = customDatePickerView.findViewById<DatePicker>(R.id.datePicker1)
@@ -263,9 +248,9 @@ class MainActivity_settings : AppCompatActivity() {
     private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
         val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
-        layoutParams.setMargins(16, 0, 0, 16) // Отступ между RelativeLayout
+        layoutParams.setMargins(16, 0, 0, 16) // Margin between RelativeLayouts
         relativeLayout.layoutParams = layoutParams
-        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Фон RelativeLayout
+        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Background of RelativeLayout
 
         val textViewNazv = TextView(this)
         textViewNazv.text = nazvText
@@ -328,9 +313,11 @@ class MainActivity_settings : AppCompatActivity() {
         editImageView.layoutParams = paramsEdit
         return relativeLayout
     }
+
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
     }
+
 
 }

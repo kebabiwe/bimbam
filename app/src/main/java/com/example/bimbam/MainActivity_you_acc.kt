@@ -2,149 +2,130 @@ package com.example.bimbam
 
 import Deal
 import android.content.*
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.app.Activity
+import android.graphics.Outline
+import android.graphics.drawable.BitmapDrawable
+import android.view.ViewOutlineProvider
+import android.view.ViewTreeObserver
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.google.android.gms.tasks.OnCompleteListener
+import androidx.core.graphics.drawable.RoundedBitmapDrawable
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import java.util.*
 
+
 class MainActivity_you_acc : AppCompatActivity() {
+    private val REQUEST_CODE_EDIT_PROFILE = 101
+    private lateinit var avatarImageView: ImageView
     private val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
     private val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
+    private var currentUser: FirebaseUser? = null
+    // Views
     private lateinit var nameTextView: TextView
     private lateinit var sexTextView: TextView
     private lateinit var birthdayTextView: TextView
     private lateinit var diagnosTextView: TextView
+    private var nazvText: String? = null
+    private var selectedDate: String? = null
+
+
+    // BroadcastReceiver for updating data
     private val updateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            // Обновление данных в MainActivity_you_acc при получении широковещательного сообщения
             updateUserData()
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_you_acc)
-
+        currentUser = FirebaseAuth.getInstance().currentUser
+        avatarImageView = findViewById(R.id.avatar)
         nameTextView = findViewById(R.id.NAME)
         sexTextView = findViewById(R.id.SEX)
         birthdayTextView = findViewById(R.id.BIRTHDAY)
         diagnosTextView = findViewById(R.id.DIAGNOS)
-
-        // Попытка получить данные из Intent
-        val name = intent.getStringExtra("NAME")
-        val sex = intent.getStringExtra("SEX")
-        val birthday = intent.getStringExtra("BIRTHDAY")
-        val diagnos = intent.getStringExtra("DIAGNOS")
-
-        // Если данные не были переданы через Intent, попытаемся получить из SharedPreferences
-        if (name == null || sex == null || birthday == null || diagnos == null) {
-            val sharedPreferences: SharedPreferences = getPreferences(MODE_PRIVATE)
-
-            // Если в SharedPreferences есть хотя бы одно значение, используем данные из SharedPreferences
-            if (sharedPreferences.contains("NAME") || sharedPreferences.contains("SEX") ||
-                sharedPreferences.contains("BIRTHDAY") || sharedPreferences.contains("DIAGNOS")
-            ) {
-                nameTextView.text = sharedPreferences.getString("NAME", "")
-                sexTextView.text = sharedPreferences.getString("SEX", "")
-                birthdayTextView.text = sharedPreferences.getString("BIRTHDAY", "")
-                diagnosTextView.text = sharedPreferences.getString("DIAGNOS", "")
-            } else {
-                // Если в SharedPreferences нет данных, оставляем TextView без изменений
-            }
-        } else {
-            // Если данные были переданы через Intent, устанавливаем их в TextView и сохраняем в SharedPreferences
-            nameTextView.text = name
-            sexTextView.text = sex
-            birthdayTextView.text = birthday
-            diagnosTextView.text = diagnos
-
-            // Сохранение данных в SharedPreferences
-            saveDataToSharedPreferences(name, sex, birthday, diagnos)
-        }
-
-        val RelativeDateTimeFormatter = findViewById<View>(R.id.icon5)
-        RelativeDateTimeFormatter.setOnClickListener {
+        val size = resources.getDimensionPixelSize(R.dimen.avatar_size)
+        avatarImageView.layoutParams.width = size
+        avatarImageView.layoutParams.height = size
+        val icon5View = findViewById<View>(R.id.icon5)
+        icon5View.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_settings::class.java)
             startActivity(intent)
         }
 
-        val View1 = findViewById<View>(R.id.icon1)
-        View1.setOnClickListener {
+        val icon1View = findViewById<View>(R.id.icon1)
+        icon1View.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_homePage::class.java)
             startActivity(intent)
         }
-
-        val View2 = findViewById<View>(R.id.icon2)
-        View2.setOnClickListener {
+        val icon2View = findViewById<View>(R.id.icon2)
+        icon2View.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_recommendations::class.java)
             startActivity(intent)
         }
-        val View4 = findViewById<View>(R.id.icon4)
-        View4.setOnClickListener {
+
+        val icon4View = findViewById<View>(R.id.icon4)
+        icon4View.setOnClickListener {
             val intent = Intent(this@MainActivity_you_acc, MainActivity_list::class.java)
-            startActivity(intent) }
-        val View5 = findViewById<View>(R.id.edit)
-        View5.setOnClickListener{
-            val intent = Intent(this@MainActivity_you_acc,MainActivity_you_acc_edit::class.java)
             startActivity(intent)
         }
-        val icon3View = findViewById<View>(R.id.icon3)
-        icon3View.setOnClickListener {
+
+        val editView = findViewById<View>(R.id.edit)
+        editView.setOnClickListener {
+            val intent = Intent(this@MainActivity_you_acc, MainActivity_you_acc_edit::class.java)
+            intent.putExtra("NAME", nameTextView.text.toString())
+            intent.putExtra("SEX", sexTextView.text.toString())
+            intent.putExtra("BIRTHDAY", birthdayTextView.text.toString())
+            intent.putExtra("DIAGNOS", diagnosTextView.text.toString())
+            startActivityForResult(intent, REQUEST_CODE_EDIT_PROFILE)
+        }
+        val AddADeal = findViewById<View>(R.id.icon3)
+        AddADeal.setOnClickListener {
             addDeal()
         }
         val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+        selectedDate = intent.getStringExtra("SELECTEDDATE")
+        nazvText = intent.getStringExtra("NAZV_TEXT")
 
-        dbDeals.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                for (dealSnapshot in dataSnapshot.children) {
-                    val deal = dealSnapshot.getValue(Deal::class.java)
-                    if (deal != null) {
-                        val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
-
-                    }
-                }
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.w(TAG, "loadPost:onCancelled", databaseError.toException())
-            }
-        })
     }
 
-    private fun saveDataToSharedPreferences(name: String, sex: String, birthday: String, diagnos: String) {
-        val sharedPreferences = getPreferences(MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("NAME", name)
-        editor.putString("SEX", sex)
-        editor.putString("BIRTHDAY", birthday)
-        editor.putString("DIAGNOS", diagnos)
-        editor.apply()
-    }
     override fun onResume() {
         super.onResume()
-        // Регистрация приемника для обновления данных
+
         registerReceiver(updateReceiver, IntentFilter("updateUserData"))
 
-        // Обновление данных в MainActivity_you_acc
         updateUserData()
     }
 
     override fun onPause() {
         super.onPause()
-        // Отмена регистрации приемника при уходе из активности
+
         unregisterReceiver(updateReceiver)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE_EDIT_PROFILE && resultCode == Activity.RESULT_OK) {
+            data?.let {
+                nameTextView.text = it.getStringExtra("NAME")
+                sexTextView.text = it.getStringExtra("SEX")
+                birthdayTextView.text = it.getStringExtra("BIRTHDAY")
+                diagnosTextView.text = it.getStringExtra("DIAGNOS")
+            }
+        }
     }
 
     private fun updateUserData() {
@@ -154,18 +135,35 @@ class MainActivity_you_acc : AppCompatActivity() {
                     if (dataSnapshot.exists()) {
                         val user = dataSnapshot.getValue(Users::class.java)
                         user?.let {
-                            // Обновление отображаемых данных
                             nameTextView.text = " ${it.name ?: ""}"
                             sexTextView.text = " ${it.sex ?: ""}"
                             birthdayTextView.text = " ${it.birthday ?: ""}"
 
+                            val imageUrl = it.imageUrl
+                            if (!imageUrl.isNullOrEmpty()) {
+                                Picasso.get().load(imageUrl).into(avatarImageView, object : com.squareup.picasso.Callback {
+                                    override fun onSuccess() {
+                                        val radius = resources.getDimension(R.dimen.corner_radius) // Corner radius
+                                        avatarImageView.background = null // Clear any previous background
+                                        avatarImageView.scaleType = ImageView.ScaleType.CENTER_CROP // Maintain aspect ratio
+                                        avatarImageView.clipToOutline = true // Clip the image to the rounded corners
 
+                                        // Set the corner radius
+                                        avatarImageView.outlineProvider = object : ViewOutlineProvider() {
+                                            override fun getOutline(view: View, outline: Outline) {
+                                                outline.setRoundRect(0, 0, view.width, view.height, radius)
+                                            }
+                                        }
+                                    }
+
+                                    override fun onError(e: Exception?) {}
+                                })
+                            }
                         }
                     }
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
-                    // Обработка ошибок при чтении данных из Firebase
                 }
             })
         }
@@ -233,31 +231,26 @@ class MainActivity_you_acc : AppCompatActivity() {
             val descriptionText = description.text.toString()
             val selectedDate = "${selectedDateText.text}"
             val selectedTime = "${selectedTimeText.text}"
-
-            // Create a data object
+            val userId = currentUser?.uid
             val deal = Deal(nazvText, descriptionText, selectedDate, selectedTime)
-
-            // Get reference to your Firebase database
             val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
-
-            // Push the deal to the database
-            val newDealRef = dbDeals.push()
+            val newDealRef = dbDeals.child(userId!!).push()
             newDealRef.setValue(deal)
-                .addOnCompleteListener(OnCompleteListener { task ->
-                    if(nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()){
+                .addOnCompleteListener { task ->
+                    if (nazvText.isNotEmpty() && descriptionText.isNotEmpty() && selectedDate.isNotEmpty() && selectedTime.isNotEmpty()) {
                         if (task.isSuccessful) {
                             Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show()
-                            val newRelativeLayout = createNewDealRelativeLayout(nazvText, selectedDate)
-
-                            val dealsContainer = findViewById<LinearLayout>(R.id.dealsContainer)
-                            dialog.dismiss()
                         } else {
                             Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
                         }
                     }
-                })}
+                }
+            dialog.dismiss()
+        }
+
         dialog.show()
     }
+
     private fun showDatePicker(selectedDateText: TextView) {
         val customDatePickerView = layoutInflater.inflate(R.layout.datepickertime, null)
         val datePicker = customDatePickerView.findViewById<DatePicker>(R.id.datePicker1)
@@ -309,9 +302,9 @@ class MainActivity_you_acc : AppCompatActivity() {
     private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
         val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
-        layoutParams.setMargins(16, 0, 0, 16) // Отступ между RelativeLayout
+        layoutParams.setMargins(16, 0, 0, 16) // Margin between RelativeLayouts
         relativeLayout.layoutParams = layoutParams
-        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Фон RelativeLayout
+        relativeLayout.setBackgroundResource(R.drawable.list_presssed) // Background of RelativeLayout
 
         val textViewNazv = TextView(this)
         textViewNazv.text = nazvText
@@ -374,8 +367,12 @@ class MainActivity_you_acc : AppCompatActivity() {
         editImageView.layoutParams = paramsEdit
         return relativeLayout
     }
+
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
     }
+
+
+
 }

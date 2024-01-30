@@ -56,7 +56,8 @@ dependencies {
     implementation ("androidx.core:core-ktx:1.12.0")
     implementation ("androidx.work:work-runtime-ktx:2.9.0")
     implementation ("com.google.firebase:firebase-messaging:23.4.0")
-
+    implementation("com.google.firebase:firebase-storage")
+    implementation ("com.squareup.picasso:picasso:2.71828")
 
 
 
