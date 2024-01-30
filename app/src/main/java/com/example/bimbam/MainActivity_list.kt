@@ -306,6 +306,8 @@ class MainActivity_list : AppCompatActivity() {
                 // Remove deal from Firebase Realtime Database
                 val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
                 dbDeals.child(currentUser?.uid ?: "").child(dealId).removeValue()
+
+                // Animate removal of RelativeLayout from dealsContainer
                 val animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out)
                 relativeLayout.startAnimation(animation)
                 animation.setAnimationListener(object : Animation.AnimationListener {
