@@ -8,9 +8,7 @@
             android:layout_height="363dp"
             android:clipToOutline="true"
             android:background="@drawable/frame__11"
-            tools:ignore="MissingConstraints"
-            android:elevation="4dp"
-    >
+            tools:ignore="MissingConstraints">
         <TextView
                 android:id="@+id/vizit"
                 android:layout_width="136dp"

@@ -116,7 +116,7 @@
                     android:layout_weight="1"/>
             <TextView
                     android:layout_marginTop="-20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="0dp"
                     android:fontFamily="@font/opensans"
                     android:id="@+id/some_id10"
                     android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
         </LinearLayout>
         <LinearLayout
                 android:layout_marginTop="315dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="40dp"
                 android:orientation="vertical"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content">
@@ -196,7 +196,7 @@
 
         <ScrollView
                 tools:ignore="NotSibling"
-                android:layout_marginTop="435dp"
+                android:layout_marginTop="450dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="55dp">

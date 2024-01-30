@@ -107,6 +107,7 @@
                 android:id="@+id/some_id"
                 android:layout_width="117dp"
                 android:layout_height="25dp"
+                android:layout_marginTop="5dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
@@ -117,7 +118,8 @@
                 android:translationY="-0.31sp"
                 android:gravity="top"
 
-        />
+                android:layout_alignParentStart="true" android:layout_marginStart="15dp"
+                android:layout_alignParentEnd="true" android:layout_marginEnd="188dp"/>
     </RelativeLayout>
     <RelativeLayout
             android:id="@+id/tabbar"

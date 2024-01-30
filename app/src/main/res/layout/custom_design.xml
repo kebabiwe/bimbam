@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/frame__11">
+
     <RelativeLayout
-            android:id="@+id/log_out"
-            android:layout_width="320dp"
+            android:gravity="center_horizontal|top"
+            android:layout_width="340dp"
             android:layout_height="203dp"
+            android:layout_gravity=""
             android:clipToOutline="true"
-            android:background="@drawable/frame__11"
             android:elevation="4dp"
+            android:id="@+id/log_out"
+            android:background="@drawable/frame__11"
             tools:ignore="MissingConstraints">
         <TextView
                 android:layout_centerHorizontal="true"
@@ -23,7 +28,7 @@
                 android:clipToOutline="true"
                 android:layout_marginLeft="35dp"
                 android:id="@+id/some_id"
-                android:layout_width="99dp"
+                android:layout_width="102dp"
                 android:layout_height="44dp"
                 android:layout_alignParentTop="true"
                 android:text="Выход"
@@ -49,7 +54,7 @@
                 android:layout_width="247dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="39dp"
+                android:layout_marginLeft="40dp"
                 android:text="Вы действительно хотите выйти?"
                 android:textAppearance="@style/some_id"
                 android:fontFamily="@font/opensans"
@@ -57,19 +62,20 @@
                 android:lineSpacingExtra="1sp"
                 android:translationY="-0.27sp"
                 android:gravity="center_horizontal|top"
-                android:layout_marginBottom="93dp"
+                android:layout_marginBottom="92dp"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="34dp"
+                android:layout_marginEnd="53dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="88dp"/>
+                android:layout_marginTop="89dp"/>
+
         <RelativeLayout
                 android:id="@+id/frame_25"
                 android:layout_width="125dp"
                 android:layout_height="56dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="22dp"
+                android:layout_marginLeft="38dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="136dp"
+                android:layout_marginTop="135dp"
                 android:clipToOutline="true"
                 android:elevation="4dp"
                 android:background="@drawable/list_presssed"
@@ -88,13 +94,12 @@
                     android:textSize="22sp"
                     android:layout_centerInParent="true"/>
         </RelativeLayout>
-
         <RelativeLayout
                 android:id="@+id/frame_26"
                 android:layout_width="126dp"
                 android:layout_height="56dp"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="174dp"
+                android:layout_marginLeft="189dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="136dp"
                 android:clipToOutline="true"
