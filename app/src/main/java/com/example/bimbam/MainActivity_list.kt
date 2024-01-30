@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import Deal
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +31,7 @@ class MainActivity_list : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_list)
-        calendar = findViewById(R.id.some_id)
+
         dealsContainer = findViewById(R.id.dealsContainer)
         currentDate = Calendar.getInstance()
         currentUser = FirebaseAuth.getInstance().currentUser
@@ -64,19 +66,6 @@ class MainActivity_list : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val arrowView = findViewById<View>(R.id.arrow)
-        arrowView.setOnClickListener {
-            // Перейти на предыдущую дату
-            currentDate.add(Calendar.DAY_OF_MONTH, -1)
-            updateDate()
-        }
-
-        val arrow2View = findViewById<View>(R.id.arrow2)
-        arrow2View.setOnClickListener {
-            // Перейти на следующую дату
-            currentDate.add(Calendar.DAY_OF_MONTH, 1)
-            updateDate()
-        }
 
         // Set onClickListener for adding new deal
         val icon3View = findViewById<View>(R.id.icon3)
@@ -93,14 +82,15 @@ class MainActivity_list : AppCompatActivity() {
                 dataSnapshot.children.forEach { userSnapshot ->
                     val userId = userSnapshot.key
                     userSnapshot.children.forEach { dealSnapshot ->
+                        val dealId = dealSnapshot.key!! // Получаем идентификатор сделки
                         val deal = dealSnapshot.getValue(Deal::class.java)
-                        if (deal != null && userId == currentUser?.uid && !addedDealIds.contains(dealSnapshot.key)) {
+                        if (deal != null && userId == currentUser?.uid && !addedDealIds.contains(dealId)) {
                             // Создаем новый RelativeLayout только для новой сделки
-                            val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
+                            val newRelativeLayout = createNewDealRelativeLayout(dealId, deal.nazvText!!, deal.selectedDate!!)
                             dealsContainer.addView(newRelativeLayout)
 
                             // Добавляем идентификатор сделки в HashSet
-                            addedDealIds.add(dealSnapshot.key!!)
+                            addedDealIds.add(dealId)
                         }
                     }
                 }
@@ -113,11 +103,6 @@ class MainActivity_list : AppCompatActivity() {
     }
 
 
-    private fun updateDate() {
-        val dateFormat = SimpleDateFormat("dd.MM.yyyy", Locale.getDefault())
-        val formattedDate = dateFormat.format(currentDate.time)
-        calendar.text = formattedDate
-    }
 
     private fun addDeal() {
         val builder = AlertDialog.Builder(this)
@@ -250,7 +235,7 @@ class MainActivity_list : AppCompatActivity() {
         timePickerDialog.show()
     }
 
-    private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
+    private fun createNewDealRelativeLayout(dealId: String, nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
         val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
         layoutParams.setMargins(16, 0, 0, 16) // Margin between RelativeLayouts
@@ -316,6 +301,21 @@ class MainActivity_list : AppCompatActivity() {
         paramsEdit.addRule(RelativeLayout.CENTER_VERTICAL)
         paramsEdit.setMargins(0, 20.dpToPx(), 20.dpToPx(), 20.dpToPx())
         editImageView.layoutParams = paramsEdit
+        radioButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // Remove deal from Firebase Realtime Database
+                val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+                dbDeals.child(currentUser?.uid ?: "").child(dealId).removeValue()
+                val animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out)
+                relativeLayout.startAnimation(animation)
+                animation.setAnimationListener(object : Animation.AnimationListener {
+                    override fun onAnimationStart(animation: Animation?) {}
+                    override fun onAnimationRepeat(animation: Animation?) {}
+                    override fun onAnimationEnd(animation: Animation?) {
+                        dealsContainer.removeView(relativeLayout)
+                    }
+                })
+            }}
         return relativeLayout
     }
 

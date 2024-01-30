@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -74,21 +76,22 @@ class MainActivity_homePage : AppCompatActivity() {
                 dataSnapshot.children.forEach { userSnapshot ->
                     val userId = userSnapshot.key
                     userSnapshot.children.forEach { dealSnapshot ->
+                        val dealId = dealSnapshot.key!! // Получаем идентификатор сделки
                         val deal = dealSnapshot.getValue(Deal::class.java)
-                        if (deal != null && userId == currentUser?.uid && !addedDealIds.contains(dealSnapshot.key)) {
+                        if (deal != null && userId == currentUser?.uid && !addedDealIds.contains(dealId)) {
                             // Создаем новый RelativeLayout только для новой сделки
-                            val newRelativeLayout = createNewDealRelativeLayout(deal.nazvText ?: "", deal.selectedDate ?: "")
+                            val newRelativeLayout = createNewDealRelativeLayout(dealId, deal.nazvText!!, deal.selectedDate!!)
                             dealsContainer.addView(newRelativeLayout)
 
                             // Добавляем идентификатор сделки в HashSet
-                            addedDealIds.add(dealSnapshot.key!!)
+                            addedDealIds.add(dealId)
                         }
                     }
                 }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Log.w(MainActivity_list.TAG, "loadPost:onCancelled", databaseError.toException())
+                Log.w(MainActivity_homePage.TAG, "loadPost:onCancelled", databaseError.toException())
             }
         })
     }
@@ -224,7 +227,7 @@ class MainActivity_homePage : AppCompatActivity() {
         timePickerDialog.show()
     }
 
-    private fun createNewDealRelativeLayout(nazvText: String, selectedDate: String): RelativeLayout {
+    private fun createNewDealRelativeLayout(dealId: String,nazvText: String, selectedDate: String): RelativeLayout {
         val relativeLayout = RelativeLayout(this)
         val layoutParams = RelativeLayout.LayoutParams(320.dpToPx(), 56.dpToPx())
         layoutParams.setMargins(16, 0, 0, 16) // Margin between RelativeLayouts
@@ -290,11 +293,31 @@ class MainActivity_homePage : AppCompatActivity() {
         paramsEdit.addRule(RelativeLayout.CENTER_VERTICAL)
         paramsEdit.setMargins(0, 20.dpToPx(), 20.dpToPx(), 20.dpToPx())
         editImageView.layoutParams = paramsEdit
+        radioButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                // Remove deal from Firebase Realtime Database
+                val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+                dbDeals.child(currentUser?.uid ?: "").child(dealId).removeValue()
+
+                // Animate removal of RelativeLayout from dealsContainer
+                val animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out)
+                relativeLayout.startAnimation(animation)
+                animation.setAnimationListener(object : Animation.AnimationListener {
+                    override fun onAnimationStart(animation: Animation?) {}
+                    override fun onAnimationRepeat(animation: Animation?) {}
+                    override fun onAnimationEnd(animation: Animation?) {
+                        dealsContainer.removeView(relativeLayout)
+                    }
+                })
+            }}
         return relativeLayout
     }
 
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
+    }
+    companion object {
+        const val TAG = "MainActivity_homePage"
     }
 }

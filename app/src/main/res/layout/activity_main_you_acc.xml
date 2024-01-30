@@ -345,7 +345,7 @@
             </LinearLayout>
         </ScrollView>
     </RelativeLayout>
-    <View
+    <ImageView
             android:translationY="-0.25sp"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
