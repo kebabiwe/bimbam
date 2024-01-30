@@ -5,6 +5,7 @@ import android.content.*
 import android.os.Bundle
 import android.view.View
 import android.app.Activity
+import android.graphics.Color
 import android.graphics.Outline
 import android.graphics.drawable.BitmapDrawable
 import android.view.ViewOutlineProvider
@@ -16,6 +17,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
+import co.yml.charts.axis.AxisData
+import co.yml.charts.common.model.Point
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -24,7 +27,11 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.random.Random
 
+
+const val steps = 10
 
 class MainActivity_you_acc : AppCompatActivity() {
     private val REQUEST_CODE_EDIT_PROFILE = 101
@@ -40,7 +47,6 @@ class MainActivity_you_acc : AppCompatActivity() {
     private var nazvText: String? = null
     private var selectedDate: String? = null
 
-
     // BroadcastReceiver for updating data
     private val updateReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
@@ -50,6 +56,7 @@ class MainActivity_you_acc : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main_you_acc)
         currentUser = FirebaseAuth.getInstance().currentUser
         avatarImageView = findViewById(R.id.avatar)
@@ -372,7 +379,5 @@ class MainActivity_you_acc : AppCompatActivity() {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
     }
-
-
 
 }
