@@ -13,7 +13,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-
+ // оаывдрырваыфвар
 class MainActivity_registrationChild : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var name: EditText
