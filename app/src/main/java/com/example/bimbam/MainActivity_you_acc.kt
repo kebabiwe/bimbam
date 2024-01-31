@@ -233,30 +233,47 @@ class MainActivity_you_acc : AppCompatActivity() {
                             sexTextView.text = " ${it.sex ?: ""}"
                             birthdayTextView.text = " ${it.birthday ?: ""}"
                             diagnosTextView.text = " ${it.diagnos ?: ""}"
-                            // Получаем imageUrl из базы данных
-                            imageUrl = it.imageUrl
+
+                            imageUrl = it.imageUrl // Получаем imageUrl из базы данных
                             // Применяем imageUrl с помощью Picasso
                             if (!imageUrl.isNullOrEmpty()) {
-                                Picasso.get().load(imageUrl).into(avatarImageView)
-                            }
-                            // Обновляем рост и вес
-                            val userId = currentUser?.uid
-                            val dbParametres = FirebaseDatabase.getInstance().getReference("parametres")
-                            dbParametres.child(userId!!).addListenerForSingleValueEvent(object : ValueEventListener {
-                                override fun onDataChange(parametresSnapshot: DataSnapshot) {
-                                    if (parametresSnapshot.exists()) {
-                                        val parametres = parametresSnapshot.getValue(Parametres::class.java)
-                                        parametres?.let {
-                                            findViewById<TextView>(R.id.textView2).text = it.height
-                                            findViewById<TextView>(R.id.textView3).text = it.weight
+                                Picasso.get().load(imageUrl).into(avatarImageView, object : com.squareup.picasso.Callback {
+                                    override fun onSuccess() {
+                                        val radius = resources.getDimension(R.dimen.corner_radius) // Corner radius
+                                        avatarImageView.background = null // Clear any previous background
+                                        avatarImageView.scaleType = ImageView.ScaleType.CENTER_CROP // Maintain aspect ratio
+                                        avatarImageView.clipToOutline = true // Clip the image to the rounded corners
+
+                                        // Set the corner radius
+                                        avatarImageView.outlineProvider = object : ViewOutlineProvider() {
+                                            override fun getOutline(view: View, outline: Outline) {
+                                                outline.setRoundRect(0, 0, view.width, view.height, radius)
+                                            }
                                         }
                                     }
-                                }
 
-                                override fun onCancelled(databaseError: DatabaseError) {
-                                    // Обработка ошибки, если не удается получить данные
-                                }
-                            })
+                                    override fun onError(e: Exception?) {}
+                                })
+                            }
+                        }
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Обработка ошибки, если не удается получить данные
+                }
+            })
+
+            // Обновляем рост и вес
+            val userId = currentUser?.uid
+            val dbParametres = FirebaseDatabase.getInstance().getReference("parametres")
+            dbParametres.child(userId!!).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(parametresSnapshot: DataSnapshot) {
+                    if (parametresSnapshot.exists()) {
+                        val parametres = parametresSnapshot.getValue(Parametres::class.java)
+                        parametres?.let {
+                            findViewById<TextView>(R.id.textView2).text = it.height
+                            findViewById<TextView>(R.id.textView3).text = it.weight
                         }
                     }
                 }
