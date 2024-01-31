@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
- // оаывдрырваыфвар
 class MainActivity_registrationChild : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var name: EditText
@@ -58,7 +57,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
             .addOnCompleteListener(OnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Данные сохранены", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MainActivity_you_acc::class.java).apply {
+                    val intent = Intent(this, MainActivity_confirmation::class.java).apply {
                         putExtra("NAME", name)
                         putExtra("BIRTHDAY", birthday)
                         putExtra("SEX", sex)
@@ -71,4 +70,5 @@ class MainActivity_registrationChild : AppCompatActivity() {
                 }
             })
     }
+
 }

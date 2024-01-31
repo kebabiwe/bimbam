@@ -235,14 +235,14 @@ class MainActivity_emotions : AppCompatActivity() {
 
         val paramsNazv = textViewNazv.layoutParams as RelativeLayout.LayoutParams
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_START)
-        paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_TOP)
-        paramsNazv.setMargins(43.dpToPx(), 27, 0, 0)
+        paramsNazv.addRule(RelativeLayout.CENTER_VERTICAL) // Выравнивание по вертикали по центру
+        paramsNazv.setMargins(43.dpToPx(), 0, 0, 0) // Отступ от левого края
         textViewNazv.layoutParams = paramsNazv
 
         val paramsDate = textViewDate.layoutParams as RelativeLayout.LayoutParams
-        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_START)
-        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
-        paramsDate.setMargins(370, 0, 0, 17.dpToPx())
+        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_END)
+        paramsDate.addRule(RelativeLayout.CENTER_VERTICAL) // Выравнивание по вертикали по центру
+        paramsDate.setMargins(0, 0, 50.dpToPx(), 0) // Отступ от правого края
         textViewDate.layoutParams = paramsDate
 
         val paramsRadioButton = radioButton.layoutParams as RelativeLayout.LayoutParams

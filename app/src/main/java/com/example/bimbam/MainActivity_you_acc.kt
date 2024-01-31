@@ -93,11 +93,20 @@ class MainActivity_you_acc : AppCompatActivity() {
         AddADeal.setOnClickListener {
             addDeal()
         }
-        val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+        val EditHeight = findViewById<View>(R.id.vector_12)
+        EditHeight.setOnClickListener {
+            editHeight()
+        }
+        val EditWeight = findViewById<View>(R.id.vector_13)
+        EditWeight.setOnClickListener {
+            editWeight()
+        }
         selectedDate = intent.getStringExtra("SELECTEDDATE")
         nazvText = intent.getStringExtra("NAZV_TEXT")
 
     }
+
+
 
     override fun onResume() {
         super.onResume()
@@ -130,6 +139,88 @@ class MainActivity_you_acc : AppCompatActivity() {
             }
         }
     }
+    private fun editHeight() {
+        val builder = AlertDialog.Builder(this)
+
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.custom_design_for_height, null)
+        builder.setView(view)
+        val heightEditText = view.findViewById<EditText>(R.id.height)
+        val button = view.findViewById<RelativeLayout>(R.id.button)
+        val dialog = builder.create()
+
+        button.setOnClickListener {
+            val heightString = heightEditText.text.toString().trim()
+            if (heightString.isNotEmpty() && heightString.isNumeric()) {
+                val heightValue = heightString.toDouble()
+                val textView = findViewById<TextView>(R.id.textView2)
+                textView.text = heightString
+                val weightValue = findViewById<TextView>(R.id.textView3).text.toString() // Получаем текущее значение веса
+                if (weightValue.isNotEmpty() && weightValue.isNumeric()) {
+                    saveParametresToDatabase(heightValue, weightValue.toDouble())
+                }
+                dialog.dismiss()
+            }
+        }
+
+        dialog.show()
+    }
+
+    private fun editWeight() {
+        val builder = AlertDialog.Builder(this)
+
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.custom_design_for_weight, null)
+        builder.setView(view)
+        val weightEditText = view.findViewById<EditText>(R.id.height)
+        val button = view.findViewById<RelativeLayout>(R.id.button)
+        val dialog = builder.create()
+
+        button.setOnClickListener {
+            val weightString = weightEditText.text.toString().trim()
+            if (weightString.isNotEmpty() && weightString.isNumeric()) {
+                val weightValue = weightString.toDouble()
+                val textView = findViewById<TextView>(R.id.textView3)
+                textView.text = weightString
+                val heightValue = findViewById<TextView>(R.id.textView2).text.toString() // Получаем текущее значение роста
+                if (heightValue.isNotEmpty() && heightValue.isNumeric()) {
+                    saveParametresToDatabase(heightValue.toDouble(), weightValue)
+                }
+                dialog.dismiss()
+            }
+        }
+
+        dialog.show()
+    }
+
+
+
+    private fun String.isNumeric(): Boolean {
+        return try {
+            this.toDouble()
+            true
+        } catch (e: NumberFormatException) {
+            false
+        }
+    }
+
+    private fun saveParametresToDatabase(height: Double, weight: Double) {
+        val userId = currentUser?.uid
+        val parametres = Parametres(height.toString(), weight.toString())
+        val dbParametres = FirebaseDatabase.getInstance().getReference("parametres")
+        val newParametresRef = dbParametres.child(userId!!).push()
+        newParametresRef.setValue(parametres)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Успешно сохранено", Toast.LENGTH_SHORT).show()
+                    // Обновляем соответствующие текстовые поля
+                    findViewById<TextView>(R.id.textView2).text = height.toString()
+                    findViewById<TextView>(R.id.textView3).text = weight.toString()
+                } else {
+                    Toast.makeText(this, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
 
     private fun updateUserData() {
         currentUserUid?.let { uid ->
@@ -142,29 +233,31 @@ class MainActivity_you_acc : AppCompatActivity() {
                             sexTextView.text = " ${it.sex ?: ""}"
                             birthdayTextView.text = " ${it.birthday ?: ""}"
                             diagnosTextView.text = " ${it.diagnos ?: ""}"
-
-                            imageUrl = it.imageUrl // Получаем imageUrl из базы данных
+                            // Получаем imageUrl из базы данных
+                            imageUrl = it.imageUrl
                             // Применяем imageUrl с помощью Picasso
                             if (!imageUrl.isNullOrEmpty()) {
-                                Picasso.get().load(imageUrl).into(avatarImageView, object : com.squareup.picasso.Callback {
-                                    override fun onSuccess() {
-                                        val radius = resources.getDimension(R.dimen.corner_radius) // Corner radius
-                                        avatarImageView.background = null // Clear any previous background
-                                        avatarImageView.scaleType = ImageView.ScaleType.CENTER_CROP // Maintain aspect ratio
-                                        avatarImageView.clipToOutline = true // Clip the image to the rounded corners
-
-                                        // Set the corner radius
-                                        avatarImageView.outlineProvider = object : ViewOutlineProvider() {
-                                            override fun getOutline(view: View, outline: Outline) {
-                                                outline.setRoundRect(0, 0, view.width, view.height, radius)
-                                            }
+                                Picasso.get().load(imageUrl).into(avatarImageView)
+                            }
+                            // Обновляем рост и вес
+                            val userId = currentUser?.uid
+                            val dbParametres = FirebaseDatabase.getInstance().getReference("parametres")
+                            dbParametres.child(userId!!).addListenerForSingleValueEvent(object : ValueEventListener {
+                                override fun onDataChange(parametresSnapshot: DataSnapshot) {
+                                    if (parametresSnapshot.exists()) {
+                                        val parametres = parametresSnapshot.getValue(Parametres::class.java)
+                                        parametres?.let {
+                                            findViewById<TextView>(R.id.textView2).text = it.height
+                                            findViewById<TextView>(R.id.textView3).text = it.weight
                                         }
                                     }
+                                }
 
-                                    override fun onError(e: Exception?) {}
-                                })
+                                override fun onCancelled(databaseError: DatabaseError) {
+                                    // Обработка ошибки, если не удается получить данные
+                                }
+                            })
                         }
-                    }
                     }
                 }
 
@@ -174,6 +267,7 @@ class MainActivity_you_acc : AppCompatActivity() {
             })
         }
     }
+
 
     private fun addDeal() {
         val builder = AlertDialog.Builder(this)
@@ -351,15 +445,16 @@ class MainActivity_you_acc : AppCompatActivity() {
 
         val paramsNazv = textViewNazv.layoutParams as RelativeLayout.LayoutParams
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_START)
-        paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_TOP)
-        paramsNazv.setMargins(43.dpToPx(), 27, 0, 0)
+        paramsNazv.addRule(RelativeLayout.CENTER_VERTICAL) // Выравнивание по вертикали по центру
+        paramsNazv.setMargins(43.dpToPx(), 0, 0, 0) // Отступ от левого края
         textViewNazv.layoutParams = paramsNazv
 
         val paramsDate = textViewDate.layoutParams as RelativeLayout.LayoutParams
-        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_START)
-        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
-        paramsDate.setMargins(370, 0, 0, 17.dpToPx())
+        paramsDate.addRule(RelativeLayout.ALIGN_PARENT_END)
+        paramsDate.addRule(RelativeLayout.CENTER_VERTICAL) // Выравнивание по вертикали по центру
+        paramsDate.setMargins(0, 0, 50.dpToPx(), 0) // Отступ от правого края
         textViewDate.layoutParams = paramsDate
+
 
         val paramsRadioButton = radioButton.layoutParams as RelativeLayout.LayoutParams
         paramsRadioButton.addRule(RelativeLayout.ALIGN_PARENT_START)

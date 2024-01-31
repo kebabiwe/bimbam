@@ -48,6 +48,7 @@
                 android:textAlignment="gravity"
                 tools:ignore="NotSibling"
                 android:id="@+id/spinner1"
+                style="@style/SpinnerStyle"
                 android:background="@drawable/form"
                 android:layout_alignBottom="@+id/button"
                 android:popupBackground="@drawable/diagnos"/>
