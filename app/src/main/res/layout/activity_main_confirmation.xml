@@ -26,9 +26,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:contentDescription="@string/todo"/>
+            android:contentDescription="@string/todo" app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.552"/>
     <TextView
             android:layout_marginLeft="0dp"
+            android:textSize="33dp"
             android:layout_marginTop="0dp"
             android:scaleType="center"
             android:layout_width="0dp"
