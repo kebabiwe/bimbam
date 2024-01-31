@@ -149,34 +149,57 @@
             app:layout_constraintHorizontal_bias="0.0"/>
 
 
-    <TextView
-            android:text="Ваш список дел пока пуст"
-            android:textColor="#115931"
-            android:id="@+id/title1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentTop="true"
-            android:fontFamily="@font/opensans"
-            android:textAppearance="@style/title"
-            android:textSize="20dp"
-            android:alpha="0.5"
-            android:lineSpacingExtra="-1sp"
-            android:gravity="center_horizontal|top"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintBottom_toTopOf="@+id/dealsContainer"
-            app:layout_constraintTop_toBottomOf="@+id/rectangle_5"
-            app:layout_constraintStart_toStartOf="@+id/dealsContainer"/>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame_100">
 
-    <LinearLayout
-            android:layout_width="339dp"
-            android:layout_height="446dp"
-            tools:ignore="MissingConstraints"
-            android:orientation="vertical" android:id="@+id/dealsContainer"
-            app:layout_constraintTop_toBottomOf="@+id/rectangle_5"
-            android:layout_marginTop="36dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/tabbar"
-            app:layout_constraintHorizontal_bias="0.486" app:layout_constraintVertical_bias="0.0">
-    </LinearLayout>
+        <ScrollView
+                tools:ignore="NotSibling"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="190dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp" android:id="@+id/scrollView2">
+
+            <LinearLayout
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_width="339dp"
+                    android:layout_height="446dp"
+                    tools:ignore="MissingConstraints"
+                    android:orientation="vertical"
+                    android:id="@+id/dealsContainer"
+                    app:layout_constraintTop_toBottomOf="@+id/rectangle_5"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/tabbar"
+                    app:layout_constraintHorizontal_bias="0.486"
+                    app:layout_constraintVertical_bias="0.0">
+            </LinearLayout>
+
+        </ScrollView>
+        <TextView
+                android:text="Ваш список дел пока пуст"
+                android:textColor="#115931"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/opensans"
+                android:textAppearance="@style/title"
+                android:textSize="20dp"
+                android:alpha="0.5"
+                android:lineSpacingExtra="-1sp"
+                android:gravity="center_horizontal|top"
+                tools:ignore="MissingConstraints,NotSibling"
+                android:layout_marginTop="170dp"
+                android:layout_marginStart="1dp"
+                android:layout_alignStart="@+id/scrollView2"/>
+
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
