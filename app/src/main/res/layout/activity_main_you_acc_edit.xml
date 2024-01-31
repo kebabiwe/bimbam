@@ -7,43 +7,52 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity_you_acc_edit">
 
-    <Spinner
+
+
+    <RelativeLayout
             android:layout_centerHorizontal="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.549"
-            app:layout_constraintVertical_bias="0.785"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintVertical_bias="0.376"
             android:layout_width="320dp"
             android:layout_height="56dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:gravity="center_vertical"
-            android:spinnerMode="dropdown"
-            android:textAlignment="gravity"
-            tools:ignore="NotSibling"
-            android:id="@+id/spinner1"
+            android:clipToOutline="true"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="343dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="-133dp"
             android:background="@drawable/form"
-            android:layout_alignBottom="@+id/button"
-            android:popupBackground="@drawable/diagnos"/>
-    <TextView
-            app:layout_constraintBottom_toTopOf="@+id/spinner1"
+            android:layout_marginStart="35dp"
+            android:id="@+id/relativeLayout2">
 
-            android:textSize="16dp"
-            android:id="@+id/text5"
-            android:layout_width="238dp"
-            android:layout_height="22dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Индивидуальная особенность"
-            android:textAppearance="@style/text"
-            android:gravity="top"
-            android:fontFamily="@font/opensans"
-            android:layout_marginStart="37dp"
-            android:layout_alignStart="@+id/spinner1" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="128dp" android:layout_marginBottom="8dp"/>
+        <Spinner
+                android:layout_centerHorizontal="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.549"
+                app:layout_constraintVertical_bias="0.785"
+                android:layout_width="320dp"
+                android:layout_height="56dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="center_vertical"
+                android:spinnerMode="dropdown"
+                android:textAlignment="gravity"
+                tools:ignore="NotSibling"
+                android:id="@+id/spinner1"
+                android:background="@drawable/form"
+                android:layout_alignBottom="@+id/button"
+                android:popupBackground="@drawable/diagnos"/>
+
+    </RelativeLayout>
     <View
             android:id="@+id/rectangle_5"
             android:layout_width="0dp"
@@ -193,16 +202,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/text1"
+            android:textSize="16dp"
+            android:textColor="#0D0D0D"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:text="Имя ребенка"
             android:fontFamily="@font/opensans"
-            android:textAppearance="@style/text"
             android:gravity="top"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintVertical_bias="1.0"
             app:layout_constraintBottom_toTopOf="@+id/form1"/>
     <TextView
+            android:textSize="16dp"
+            android:textColor="#0D0D0D"
             app:layout_constraintStart_toStartOf="@+id/form2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -220,6 +232,8 @@
             app:layout_constraintBottom_toTopOf="@+id/form2"/>
 
     <TextView
+            android:textSize="16dp"
+            android:textColor="#0D0D0D"
             app:layout_constraintStart_toStartOf="@+id/relativeLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -250,7 +264,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
             android:clipToOutline="true"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="286dp"
             android:id="@+id/form2"
             android:background="@drawable/form"
             tools:ignore="MissingConstraints">
@@ -332,7 +346,7 @@
             android:layout_alignParentTop="true"
             android:clipToOutline="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="550dp"
+            android:layout_marginTop="540dp"
             tools:ignore="MissingConstraints"
             android:id="@+id/button"
             android:elevation="4dp"
@@ -403,4 +417,19 @@
             android:layout_centerHorizontal="true"
             app:layout_constraintHorizontal_bias="0.821"
             app:layout_constraintVertical_bias="0.952"/>
+    <TextView
+            android:textSize="16dp"
+            android:textColor="#0D0D0D"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/text5"
+            android:layout_width="238dp"
+            android:layout_height="22dp"
+            android:text="Индивидуальная особенность"
+            android:textAppearance="@style/text"
+            android:gravity="top"
+            android:fontFamily="@font/opensans"
+            app:layout_constraintStart_toStartOf="@+id/relativeLayout2"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout2" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="1.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,9 +49,10 @@ tools:context=".MainActivity_registrationChild">
                     android:layout_alignParentTop="true"/>
         </RelativeLayout>
         <TextView
+                android:textSize="16dp"
+                android:textColor="#0D0D0D"
                 app:layout_constraintBottom_toTopOf="@+id/form5"
                 app:layout_constraintStart_toStartOf="@+id/form5"
-                android:textSize="16dp"
                 android:id="@+id/text3"
                 android:layout_width="119dp"
                 android:layout_height="22dp"
@@ -68,12 +69,13 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginStart="37dp"
                 android:layout_alignStart="@+id/form5" tools:ignore="UnknownIdInLayout"/>
         <TextView
+                android:textSize="16dp"
+                android:textColor="#0D0D0D"
                 app:layout_constraintStart_toStartOf="@+id/form1"
                 app:layout_constraintBottom_toTopOf="@+id/form1"
                 android:id="@+id/text2"
                 android:layout_width="102dp"
                 android:layout_height="22dp"
-                android:textSize="16dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:text="Имя ребенка"
@@ -87,9 +89,10 @@ tools:context=".MainActivity_registrationChild">
                 android:layout_marginStart="37dp"
                 android:layout_alignStart="@+id/form1"/>
         <TextView
+                android:textSize="16dp"
+                android:textColor="#0D0D0D"
                 app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
                 app:layout_constraintStart_toStartOf="@+id/relativeLayout"
-                android:textSize="16dp"
                 android:layout_width="31dp"
                 android:layout_height="22dp"
                 android:layout_alignParentLeft="true"
@@ -153,9 +156,10 @@ tools:context=".MainActivity_registrationChild">
                 android:fontFamily="@font/pattaya"
                 app:layout_constraintTop_toTopOf="parent" android:layout_centerInParent="true"/>
         <TextView
+                android:textSize="16dp"
+                android:textColor="#0D0D0D"
                 app:layout_constraintBottom_toTopOf="@+id/form3"
                 app:layout_constraintStart_toStartOf="@+id/form3"
-                android:textSize="16dp"
                 android:id="@+id/text5"
                 android:layout_width="238dp"
                 android:layout_height="22dp"
