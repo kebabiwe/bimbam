@@ -1,21 +1,17 @@
 package com.example.bimbam
 
 import Deal
+import android.app.Activity
 import android.content.*
+import android.graphics.Outline
 import android.os.Bundle
 import android.view.View
-import android.app.Activity
-import android.graphics.Outline
-import android.graphics.drawable.BitmapDrawable
 import android.view.ViewOutlineProvider
-import android.view.ViewTreeObserver
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.graphics.drawable.RoundedBitmapDrawable
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -39,7 +35,7 @@ class MainActivity_you_acc : AppCompatActivity() {
     private lateinit var diagnosTextView: TextView
     private var nazvText: String? = null
     private var selectedDate: String? = null
-
+    private var imageUrl: String? = null // Добавлено поле для хранения imageUrl
 
     // BroadcastReceiver for updating data
     private val updateReceiver = object : BroadcastReceiver() {
@@ -90,6 +86,7 @@ class MainActivity_you_acc : AppCompatActivity() {
             intent.putExtra("SEX", sexTextView.text.toString())
             intent.putExtra("BIRTHDAY", birthdayTextView.text.toString())
             intent.putExtra("DIAGNOS", diagnosTextView.text.toString())
+            intent.putExtra("IMAGE_URL", imageUrl) // Передаем imageUrl для редактирования
             startActivityForResult(intent, REQUEST_CODE_EDIT_PROFILE)
         }
         val AddADeal = findViewById<View>(R.id.icon3)
@@ -124,6 +121,12 @@ class MainActivity_you_acc : AppCompatActivity() {
                 sexTextView.text = it.getStringExtra("SEX")
                 birthdayTextView.text = it.getStringExtra("BIRTHDAY")
                 diagnosTextView.text = it.getStringExtra("DIAGNOS")
+                // Получаем imageUrl из результатов редактирования
+                imageUrl = it.getStringExtra("IMAGE_URL")
+                // Применяем imageUrl
+                if (!imageUrl.isNullOrEmpty()) {
+                    Picasso.get().load(imageUrl).into(avatarImageView)
+                }
             }
         }
     }
@@ -138,8 +141,10 @@ class MainActivity_you_acc : AppCompatActivity() {
                             nameTextView.text = " ${it.name ?: ""}"
                             sexTextView.text = " ${it.sex ?: ""}"
                             birthdayTextView.text = " ${it.birthday ?: ""}"
+                            diagnosTextView.text = " ${it.diagnos ?: ""}"
 
-                            val imageUrl = it.imageUrl
+                            imageUrl = it.imageUrl // Получаем imageUrl из базы данных
+                            // Применяем imageUrl с помощью Picasso
                             if (!imageUrl.isNullOrEmpty()) {
                                 Picasso.get().load(imageUrl).into(avatarImageView, object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
@@ -158,16 +163,18 @@ class MainActivity_you_acc : AppCompatActivity() {
 
                                     override fun onError(e: Exception?) {}
                                 })
-                            }
                         }
+                    }
                     }
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
+                    // Обработка ошибки, если не удается получить данные
                 }
             })
         }
     }
+
     private fun addDeal() {
         val builder = AlertDialog.Builder(this)
 
@@ -372,7 +379,5 @@ class MainActivity_you_acc : AppCompatActivity() {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
     }
-
-
 
 }

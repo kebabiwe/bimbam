@@ -9,8 +9,6 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.FirebaseApp
-import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -26,26 +24,17 @@ class MainActivity_registrationChild : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_registration_child)
 
-        val RelativeLayout = findViewById<RelativeLayout>(R.id.button)
-        RelativeLayout.setOnClickListener {
-            val intent = Intent(this@MainActivity_registrationChild,MainActivity_confirmation::class.java)
-            startActivity(intent)
-
-        }
-
-
         mAuth = FirebaseAuth.getInstance()
         name = findViewById(R.id.childname)
         birthday = findViewById(R.id.childbirthday)
         sex = findViewById(R.id.spinner)
         diagnos = findViewById(R.id.spinner1)
         btn = findViewById(R.id.button)
-        // Создайте адаптер для пола
+
         val sexAdapter = ArrayAdapter.createFromResource(this, R.array.sex_array, android.R.layout.simple_spinner_item)
         sexAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         sex.adapter = sexAdapter
 
-        // Создайте адаптер для диагноза
         val diagnosAdapter = ArrayAdapter.createFromResource(this, R.array.diagnos_array, android.R.layout.simple_spinner_item)
         diagnosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         diagnos.adapter = diagnosAdapter
@@ -55,36 +44,16 @@ class MainActivity_registrationChild : AppCompatActivity() {
             val data1 = birthday.text.toString()
             val data2 = sex.selectedItem.toString()
             val data3 = diagnos.selectedItem.toString()
-            saveData(data, data1, data2, data3)
+            val imageUrl = "" // Пустой imageUrl
+            saveData(data, data1, data2, data3, imageUrl)
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        if (mAuth.currentUser == null) {
-            val intent = Intent(this, MainActivity_Login::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-            }
-            startActivity(intent)
-        }
-    }
-    private fun saveDataToSharedPreferences(name: String, birthday: String, sex: String, diagnos: String) {
-        val sharedPreferences = getPreferences(MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.putString("NAME", name)
-        editor.putString("BIRTHDAY", birthday)
-        editor.putString("SEX", sex)
-        editor.putString("DIAGNOS", diagnos)
-        editor.apply()
-    }
-
-    private fun saveData(name: String, birthday: String, sex: String, diagnos: String) {
+    private fun saveData(name: String, birthday: String, sex: String, diagnos: String, imageUrl: String) {
         val email = mAuth.currentUser?.email
-        val user = email?.let { Users(name, birthday, sex, diagnos) }
+        val user = email?.let { Users(name, birthday, sex, diagnos, imageUrl) }
 
-        // Обновите следующую строку, чтобы она указывала на правильную ссылку
         val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
-
         dbUsers.child(mAuth.currentUser!!.uid).setValue(user)
             .addOnCompleteListener(OnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -94,6 +63,7 @@ class MainActivity_registrationChild : AppCompatActivity() {
                         putExtra("BIRTHDAY", birthday)
                         putExtra("SEX", sex)
                         putExtra("DIAGNOS", diagnos)
+                        putExtra("IMAGE_URL", imageUrl) // Передаем пустой imageUrl
                     }
                     startActivity(intent)
                 } else {
@@ -101,5 +71,4 @@ class MainActivity_registrationChild : AppCompatActivity() {
                 }
             })
     }
-
 }

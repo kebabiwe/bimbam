@@ -37,12 +37,14 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
     private var data1: String = ""
     private var data2: String = ""
     private var data3: String = ""
+    private var data4: String = ""
     private var imageUrl: String = ""
     private val dbUsers = FirebaseDatabase.getInstance().getReference("Key")
     private val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid
     private var currentUser: FirebaseUser? = null
     private var nazvText: String? = null
     private var selectedDate: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,16 +88,22 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
         val mArrayAdapter = ArrayAdapter<Any?>(this, R.layout.spinner_list, mList)
         mArrayAdapter.setDropDownViewResource(R.layout.spinner_list)
         mSpinner.adapter = mArrayAdapter
+        val diagnos = findViewById<Spinner>(R.id.spinner1)
+        val diagnosAdapter = ArrayAdapter.createFromResource(this, R.array.diagnos_array, android.R.layout.simple_spinner_item)
+        diagnosAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        diagnos.adapter = diagnosAdapter
         mAuth = FirebaseAuth.getInstance()
         name = findViewById(R.id.childname)
         birthday = findViewById(R.id.childbirthday)
         sex = findViewById(R.id.spinner)
+
         btn = findViewById(R.id.button)
         btn.setOnClickListener {
             data1 = name.text.toString()
             data2 = birthday.text.toString()
             data3 = sex.selectedItem.toString()
-            saveData(data1, data2, data3, imageUrl) // Pass imageUrl here
+            data4 = diagnos.selectedItem.toString()
+            saveData(data1, data2, data3, data4, imageUrl) // Pass imageUrl here
         }
         findViewById<View>(R.id.vector_12).setOnClickListener {
             selectImageFromGallery()
@@ -107,6 +115,7 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
         val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
         selectedDate = intent.getStringExtra("SELECTEDDATE")
         nazvText = intent.getStringExtra("NAZV_TEXT")
+
     }
 
     private fun selectImageFromGallery() {
@@ -154,9 +163,9 @@ class MainActivity_you_acc_edit : AppCompatActivity() {
         }
     }
 
-    private fun saveData(name: String, birthday: String, sex: String, imageUrl: String) {
+    private fun saveData(name: String, birthday: String, sex: String, diagnos: String, imageUrl: String) {
         val email = mAuth.currentUser?.email
-        val user = email?.let { Users(name, birthday, sex, imageUrl) }
+        val user = email?.let { Users(name, birthday, sex, diagnos, imageUrl) }
 
         FirebaseDatabase.getInstance().getReference("Key").child(mAuth.currentUser!!.uid).setValue(user)
             .addOnCompleteListener(OnCompleteListener { task ->
