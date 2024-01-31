@@ -128,8 +128,8 @@
                 app:layout_constraintHorizontal_bias="1.0"/>
 
     </RelativeLayout>
+
     <TextView
-            android:layout_marginLeft="0dp"
             android:scaleType="center"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.102"
+            app:layout_constraintVertical_bias="0.084"
             android:layout_marginTop="20dp"
             android:textSize="32sp"
             android:fontFamily="@font/pattaya"
@@ -153,8 +153,7 @@
             android:textAppearance="@style/title"
             android:lineSpacingExtra="-7sp"
 
-    />
-
+            app:layout_constraintHorizontal_bias="0.0"/>
     <RelativeLayout
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -638,7 +637,7 @@
                             android:lineSpacingExtra="1sp"
                             android:translationY="-0.31sp"
                             android:gravity="top"
-                    />
+                            android:layout_alignParentBottom="true" android:layout_marginBottom="44dp"/>
                     <View
                             android:id="@+id/some_id_40"
                             android:layout_width="191dp"
