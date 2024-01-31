@@ -94,7 +94,7 @@ class MainActivity_homePage : AppCompatActivity() {
                 }
 
                 // Проверяем количество дел и показываем/скрываем TextView
-                if (dealsCount == 0) {
+                if (dealsCount == 0 && dealsContainer.childCount == 0) {
                     findViewById<TextView>(R.id.title1).visibility = View.VISIBLE
                 } else {
                     findViewById<TextView>(R.id.title1).visibility = View.GONE
