@@ -107,7 +107,7 @@
                 android:id="@+id/some_id"
                 android:layout_width="117dp"
                 android:layout_height="25dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="8dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="15dp"
                 android:layout_centerVertical="true"
@@ -117,9 +117,10 @@
                 android:lineSpacingExtra="1sp"
                 android:translationY="-0.31sp"
                 android:gravity="top"
-
-                android:layout_alignParentStart="true" android:layout_marginStart="15dp"
-                android:layout_alignParentEnd="true" android:layout_marginEnd="188dp"/>
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="188dp"/>
     </RelativeLayout>
     <RelativeLayout
             android:id="@+id/tabbar"
@@ -209,6 +210,7 @@
             app:layout_constraintHorizontal_bias="0.285"
             app:layout_constraintVertical_bias="0.0">
         <TextView
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="15dp"
                 android:id="@+id/some_id3"
                 android:layout_width="106dp"
@@ -260,6 +262,7 @@
             android:id="@+id/frame_30.3"
             tools:ignore="MissingConstraints">
         <TextView
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="15dp"
                 android:id="@+id/some_id2"
                 android:layout_width="78dp"
@@ -329,6 +332,7 @@
             android:id="@+id/frame_29"
             tools:ignore="MissingConstraints">
         <TextView
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="15dp"
                 android:layout_width="160dp"
                 android:layout_height="25dp"

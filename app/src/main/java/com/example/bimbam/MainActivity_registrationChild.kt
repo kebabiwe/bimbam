@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-
+ // оаывдрырваыфвар
 class MainActivity_registrationChild : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var name: EditText
