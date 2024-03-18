@@ -244,11 +244,17 @@
                             app:layout_constraintVertical_bias="0.952"/>
 
                 </LinearLayout>
-                <com.jjoe64.graphview.GraphView
-                        android:id="@+id/graph"
+                <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp" />
+                        android:layout_height="200dp">
 
+                    <com.jjoe64.graphview.GraphView
+                            android:id="@+id/graph"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rounded_background" />
+
+                </RelativeLayout>
 
                 <LinearLayout
                         android:orientation="horizontal"
