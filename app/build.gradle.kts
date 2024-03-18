@@ -59,8 +59,4 @@ dependencies {
     implementation ("com.google.firebase:firebase-messaging:23.4.1")
     implementation("com.google.firebase:firebase-storage")
     implementation ("com.squareup.picasso:picasso:2.71828")
-    implementation ("com.jjoe64:graphview:4.2.2")
-
-
-
 }
