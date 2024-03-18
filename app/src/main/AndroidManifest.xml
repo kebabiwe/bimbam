@@ -20,63 +20,78 @@
         <activity
                 android:name=".MainActivity_list"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_emotions"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_pitanie"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_game_together"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_you_acc_edit"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_recommendations"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_registrationChild"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"
                 tools:ignore="MissingClass"/>
         <activity
                 android:name=".MainActivity_about"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_you_acc"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_homePage"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_settings"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_confirmation"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_registrationAcc"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".MainActivity_Login"
                 android:exported="false"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait"/>
         <activity
                 android:name=".SplashActivityy"
                 android:exported="true"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -87,16 +102,19 @@
         <activity
                 android:name=".SplashActivity1"
                 android:exported="true"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".MainActivity_privetctvie"
                 android:exported="true"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".MainActivity_startmenu"
                 android:exported="true"
+                android:forceDarkAllowed="false"
                 android:screenOrientation="portrait">
         </activity>
 

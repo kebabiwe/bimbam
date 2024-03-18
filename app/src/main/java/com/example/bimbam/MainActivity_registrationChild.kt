@@ -71,4 +71,5 @@ class MainActivity_registrationChild : AppCompatActivity() {
             })
     }
 
+
 }
