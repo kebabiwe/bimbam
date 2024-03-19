@@ -209,7 +209,7 @@
                         android:textSize="20dp"
                         android:layout_marginTop="10dp"
                         android:lineSpacingExtra="-1sp"
-                        android:text="Рекомендации находятся во временной разработке."
+                        android:text="Рекомендации находятся во временной разработке"
                         android:gravity="center_horizontal|top"/>
 
 
