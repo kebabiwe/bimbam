@@ -5,6 +5,7 @@
         android:height="530dp"
         android:viewportWidth="320"
         android:viewportHeight="530"
+
 >
     <group>
         <clip-path
@@ -14,53 +15,7 @@
                 android:pathData="M0 0V530H320V0"
                 android:fillColor="#F9F9F9"
         />
-        <path
-                android:pathData="M32 0H288C305.673 0 320 14.3269 320 32V498C320 515.673 305.673 530 288 530H32C14.3269 530 0 515.673 0 498V32C0 14.3269 14.3269 0 32 0Z"
-                android:strokeWidth="2"
-                android:strokeColor="#33115931"
-        />
 
-        <!-- Добавляем линии по горизонтали -->
-        <path
-                android:pathData="M32 76H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 130H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 206H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 260H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 314H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 368H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 422H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
-        <path
-                android:pathData="M32 476H288"
-                android:strokeWidth="1"
-                android:strokeColor="#33115931"
-        />
 
     </group>
 </vector>
