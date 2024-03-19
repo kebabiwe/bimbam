@@ -74,7 +74,7 @@
 
         </RelativeLayout>
         <RelativeLayout
-                android:layout_width="282dp"
+                android:layout_width="260dp"
                 android:layout_height="50dp"
                 android:layout_centerHorizontal="true"
                 app:layout_constraintStart_toStartOf="parent"
