@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".SplashActivity1"
-        android:forceDarkAllowed="false">
+        >
     <RelativeLayout
             android:id="@+id/welcomescreen1"
             android:layout_width="match_parent"
