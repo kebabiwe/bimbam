@@ -18,7 +18,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity_list : AppCompatActivity() {
@@ -112,10 +111,6 @@ class MainActivity_list : AppCompatActivity() {
             }
         })
     }
-
-
-
-
 
     private fun addDeal() {
         val builder = AlertDialog.Builder(this)
@@ -211,7 +206,7 @@ class MainActivity_list : AppCompatActivity() {
 
         datePicker.init(year, month, day, null)
 
-        val datePickerDialog = AlertDialog.Builder(this)
+        val datePickerDialog =  AlertDialog.Builder(this)
             .setTitle("Выберите дату")
             .setView(customDatePickerView)
             .setPositiveButton("OK") { _, _ ->
@@ -293,8 +288,21 @@ class MainActivity_list : AppCompatActivity() {
 
         // Set OnClickListener for the editImageView (Edit button)
         editImageView.setOnClickListener {
-            // Here you can handle the click event for the Edit button
-            Log.d(TAG, "Edit button clicked for deal ID: $dealId")
+            // Обработчик клика на кнопку Edit
+            val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+            dbDeals.child(currentUser?.uid ?: "").child(dealId).addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val deal = dataSnapshot.getValue(Deal::class.java)
+                    if (deal != null) {
+                        // Создаем новый AlertDialog и заполняем его данными сделки
+                        showEditDealDialog(dataSnapshot)
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Log.w(TAG, "loadDeal:onCancelled", databaseError.toException())
+                }
+            })
         }
 
         // Layout params for TextViewNazv
@@ -330,7 +338,6 @@ class MainActivity_list : AppCompatActivity() {
                 // Remove deal from Firebase Realtime Database
                 val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
                 dbDeals.child(currentUser?.uid ?: "").child(dealId).removeValue()
-
                 // Animate removal of RelativeLayout from dealsContainer
                 val animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_out)
                 relativeLayout.startAnimation(animation)
@@ -347,13 +354,80 @@ class MainActivity_list : AppCompatActivity() {
         return relativeLayout
     }
 
-
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density
         return (this * density).toInt()
+    }
+
+    private fun showEditDealDialog(dealSnapshot: DataSnapshot) {
+        val builder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.custom_design1, null)
+        builder.setView(view)
+
+        val nazv = view.findViewById<EditText>(R.id.editTextText)
+        val description = view.findViewById<EditText>(R.id.editTextText2)
+        val selectedDateText = view.findViewById<TextView>(R.id.some_id)
+        val selectedTimeText = view.findViewById<TextView>(R.id.some_id1)
+        val date = view.findViewById<RelativeLayout>(R.id.date)
+        val time = view.findViewById<RelativeLayout>(R.id.time)
+        val delete = view.findViewById<RelativeLayout>(R.id.no)
+        val save = view.findViewById<RelativeLayout>(R.id.save)
+
+        val dealId = dealSnapshot.key // Получаем идентификатор сделки
+
+        val deal = dealSnapshot.getValue(Deal::class.java)
+        if (deal != null) {
+            nazv.setText(deal.nazvText)
+            description.setText(deal.description)
+            selectedDateText.text = deal.selectedDate
+            selectedTimeText.text = deal.selectedTime
+        }
+
+        val dialog = builder.create()
+
+        date.setOnClickListener {
+            showDatePicker(selectedDateText)
+        }
+
+        time.setOnClickListener {
+            showTimePicker(selectedTimeText)
+        }
+        delete.setOnClickListener {
+            dialog.dismiss()
+        }
+        save.setOnClickListener {
+            val newNazvText = nazv.text.toString()
+            val newDescriptionText = description.text.toString()
+            val newSelectedDate = selectedDateText.text.toString()
+            val newSelectedTime = selectedTimeText.text.toString()
+            val userId = currentUser?.uid
+
+            if (newNazvText.isNotEmpty() && newDescriptionText.isNotEmpty() && newSelectedDate.isNotEmpty() && newSelectedTime.isNotEmpty() && dealId != null) {
+                val updatedDeal = Deal(newNazvText, newDescriptionText, newSelectedDate, newSelectedTime)
+
+                userId?.let { uid ->
+                    val dbDeals = FirebaseDatabase.getInstance().getReference("deals")
+                    dbDeals.child(uid).child(dealId).setValue(updatedDeal)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(this, "Данные обновлены", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(this, "Ошибка при обновлении данных", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                }
+            } else {
+                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show()
+            }
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     companion object {
         const val TAG = "MainActivity_list"
     }
 }
+
