@@ -15,6 +15,7 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/rectangle_5"
             tools:ignore="MissingConstraints"
+            android:forceDarkAllowed="false"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

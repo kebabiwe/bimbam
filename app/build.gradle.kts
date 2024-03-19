@@ -38,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation ("co.yml:ycharts:2.1.0")
+
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -59,4 +59,6 @@ dependencies {
     implementation ("com.google.firebase:firebase-messaging:23.4.1")
     implementation("com.google.firebase:firebase-storage")
     implementation ("com.squareup.picasso:picasso:2.71828")
+
+
 }

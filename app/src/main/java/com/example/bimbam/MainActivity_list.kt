@@ -291,29 +291,40 @@ class MainActivity_list : AppCompatActivity() {
         relativeLayout.addView(radioButton)
         relativeLayout.addView(editImageView)
 
+        // Set OnClickListener for the editImageView (Edit button)
+        editImageView.setOnClickListener {
+            // Here you can handle the click event for the Edit button
+            Log.d(TAG, "Edit button clicked for deal ID: $dealId")
+        }
+
+        // Layout params for TextViewNazv
         val paramsNazv = textViewNazv.layoutParams as RelativeLayout.LayoutParams
         paramsNazv.addRule(RelativeLayout.ALIGN_PARENT_START)
-        paramsNazv.addRule(RelativeLayout.CENTER_VERTICAL) // Выравнивание по вертикали по центру
-        paramsNazv.setMargins(43.dpToPx(), 0, 0, 0) // Отступ от левого края
+        paramsNazv.addRule(RelativeLayout.CENTER_VERTICAL) // Vertically center
+        paramsNazv.setMargins(43.dpToPx(), 0, 0, 0) // Margin from left
         textViewNazv.layoutParams = paramsNazv
 
+        // Layout params for TextViewDate
         val paramsDate = textViewDate.layoutParams as RelativeLayout.LayoutParams
         paramsDate.addRule(RelativeLayout.ALIGN_PARENT_END)
-        paramsDate.addRule(RelativeLayout.CENTER_VERTICAL) // Выравнивание по вертикали по центру
-        paramsDate.setMargins(0, 0, 50.dpToPx(), 0) // Отступ от правого края
+        paramsDate.addRule(RelativeLayout.CENTER_VERTICAL) // Vertically center
+        paramsDate.setMargins(0, 0, 50.dpToPx(), 0) // Margin from right
         textViewDate.layoutParams = paramsDate
 
+        // Layout params for RadioButton
         val paramsRadioButton = radioButton.layoutParams as RelativeLayout.LayoutParams
         paramsRadioButton.addRule(RelativeLayout.ALIGN_PARENT_START)
         paramsRadioButton.addRule(RelativeLayout.CENTER_VERTICAL)
         paramsRadioButton.setMargins(5.dpToPx(), 11.dpToPx(), 0, 0)
         radioButton.layoutParams = paramsRadioButton
 
+        // Layout params for EditImageView
         val paramsEdit = editImageView.layoutParams as RelativeLayout.LayoutParams
         paramsEdit.addRule(RelativeLayout.ALIGN_PARENT_END)
         paramsEdit.addRule(RelativeLayout.CENTER_VERTICAL)
         paramsEdit.setMargins(0, 20.dpToPx(), 20.dpToPx(), 20.dpToPx())
         editImageView.layoutParams = paramsEdit
+
         radioButton.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 // Remove deal from Firebase Realtime Database
@@ -330,9 +341,12 @@ class MainActivity_list : AppCompatActivity() {
                         dealsContainer.removeView(relativeLayout)
                     }
                 })
-            }}
+            }
+        }
+
         return relativeLayout
     }
+
 
     fun Int.dpToPx(): Int {
         val density = resources.displayMetrics.density

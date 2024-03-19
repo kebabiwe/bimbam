@@ -19,6 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_alignParentLeft="true"
+            android:forceDarkAllowed="false"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
     />
